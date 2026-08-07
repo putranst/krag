@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "suluh-ecosystem"
+version = "0.1.0"
+description = "Sovereign, PDPA-compliant multi-agent AI ecosystem for higher education research (IsRAG + Dewan Council + SULUH AI)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Putra Nasution", email = "poetra@gmail.com"},
+    {name = "Suzani binti Mohamad Samuri", email = ""},
+]
+keywords = [
+    "souvereign-ai",
+    "multi-agent",
+    "isnad",
+    "israg",
+    "dewan-council",
+    "suluh",
+    "pdpa",
+    "irb",
+    "provenance",
+    "trust-scoring",
+    "southeast-asia",
+    "higher-education",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Workspace metadata only. Each package has its own pyproject.toml.
+[tool.hatch.build.targets.wheel]
+packages = []
+
+[tool.pip]
+# This is a meta-package; install each subpackage individually.
+# pip install -e packages/israg
+# pip install -e packages/council
+# pip install -e packages/suluh

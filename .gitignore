@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local/runtime state
+.hermes/
+.env
+.env.*
+!.env.example
+*.log
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Build/output artefacts
+build/
+dist/
+.coverage
+htmlcov/
+
+# Local benchmark outputs (keep source runner; review generated reports before release)
+benchmarks/*.json
+benchmarks/*.csv

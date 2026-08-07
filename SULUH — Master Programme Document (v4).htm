@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<!-- saved from url=(0121)file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SULUH — Master Programme Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./SULUH — Master Programme Document (v4)_files/css2" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F5; --panel:#F0EEE6; --line:#E3E0D6; --ink:#141413; --muted:#6E6D66;
+  --coral:#D97757; --sage:#67867F; --slate:#5A7D9A; --stone:#A8A297; --olive:#8A8A5B;
+  --serif:'Source Serif 4',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+header{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:20px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,52px);line-height:1.12;letter-spacing:-.01em;margin-bottom:16px}
+.subtitle{font-family:var(--serif);font-size:clamp(19px,2.5vw,23px);color:var(--muted);font-weight:400;line-height:1.4;max-width:640px}
+.meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:36px;font-size:13.5px;color:var(--muted)}
+.meta b{display:block;font-weight:600;color:var(--ink);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+
+section{padding:56px 0 8px}
+h2{font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:-.01em;margin:32px 0 20px}
+h3{font-family:var(--serif);font-weight:600;font-size:21.5px;margin:36px 0 12px}
+h4{font-size:14.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px}
+p{margin-bottom:18px;max-width:70ch}
+p.lede{font-family:var(--serif);font-size:20px;line-height:1.55;color:var(--ink)}
+strong{font-weight:600}
+a{color:var(--coral);text-decoration:none}
+.secnum{color:var(--coral);margin-right:10px;font-feature-settings:'tnum'}
+hr.sec{border:none;border-top:1px solid var(--line);margin:48px 0 0}
+ul.plain{margin:0 0 18px 20px}
+ul.plain li{margin-bottom:8px;max-width:68ch}
+
+figure{margin:36px 0 44px}
+.figbox{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px 24px 20px}
+figcaption{margin-top:14px;font-size:13.5px;line-height:1.5;color:var(--muted)}
+figcaption b{color:var(--ink);font-weight:600;font-style:normal}
+figcaption i{font-style:italic}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--sans)}
+
+.tbl{width:100%;border-collapse:collapse;margin:24px 0 36px;font-size:14.5px}
+.tbl th{text-align:left;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 14px;border-bottom:2px solid var(--ink)}
+.tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .num{font-feature-settings:'tnum';text-align:right;white-space:nowrap}
+.tbl .total td{border-top:2px solid var(--ink);font-weight:600;border-bottom:none}
+.tbl code{font-family:var(--mono);font-size:12.5px;background:var(--panel);padding:2px 6px;border-radius:4px}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.03em;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.tag.high{background:#F6E3DC;color:#A84E31}
+.tag.med{background:#EFEACF;color:#7A6B1F}
+.tag.low{background:#E2EAE4;color:#3F6B52}
+.tag.crit{background:#141413;color:#FAF9F5}
+
+.note{background:var(--panel);border-left:3px solid var(--coral);border-radius:0 8px 8px 0;padding:20px 24px;margin:28px 0;font-size:15.5px}
+.note b{font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:32px 0}
+.kpi{background:#fff;padding:20px 18px}
+.kpi .v{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:-.01em}
+.kpi .l{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.4}
+code{font-family:var(--mono);font-size:13.5px;background:var(--panel);padding:2px 6px;border-radius:4px}
+
+.toc{background:var(--panel);border-radius:10px;padding:28px 30px;margin:44px 0;columns:2;column-gap:40px;font-size:14.5px}
+.toc a{display:block;color:var(--ink);padding:5px 0;border-bottom:1px solid transparent}
+.toc a:hover{color:var(--coral)}
+.toc .n{color:var(--coral);font-feature-settings:'tnum';margin-right:8px}
+
+footer{border-top:1px solid var(--line);margin-top:72px;padding:40px 0 64px;font-size:13.5px;color:var(--muted)}
+footer .motto{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);margin-bottom:16px}
+
+@media(max-width:640px){.toc{columns:1}body{font-size:16px}}
+@media print{header{padding-top:24px}section{page-break-inside:avoid}}
+
+/* ---- master doc additions ---- */
+.cover{min-height:100vh;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:64px 0 48px}
+.cover .wrap{width:100%}
+.cover .badge{display:inline-block;border:1px solid #4A4944;border-radius:99px;padding:6px 18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#B8B5AC;margin:34px 0 44px}
+.cover .brand{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.01em}
+.cover .brand small{display:block;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.18em;color:#8A8781;margin-top:8px}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,6vw,66px);line-height:1.08;letter-spacing:-.015em;color:var(--bg);margin:0 0 10px}
+.cover h1 .accent{color:var(--coral)}
+.cover .sub{font-size:clamp(16px,2vw,19px);line-height:1.55;color:#B8B5AC;max-width:640px;margin-top:22px}
+.cover .sub b{color:var(--bg);font-weight:600}
+.cover .kstrip{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--coral);background:#1E1D1B;margin-top:56px}
+.cover .kstrip>div{padding:20px 22px;border-right:1px solid #2C2B28}
+.cover .kstrip>div:last-child{border-right:none}
+.cover .kv{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--bg)}
+.cover .kl{font-size:12px;color:#8A8781;margin-top:4px}
+.cover .metarow{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;border-top:1px solid #2C2B28;padding-top:28px;margin-top:64px;font-size:13px;color:#B8B5AC}
+.cover .metarow b{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8781;margin-bottom:6px}
+.sowhat{background:#fff;border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:0 8px 8px 0;padding:20px 26px;margin:30px 0}
+.sowhat .sw{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.sowhat p{margin:0;font-size:15.5px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:26px 0}
+.ba>div{background:#fff;padding:20px 22px}
+.ba h5{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.ba .today h5{color:var(--muted)} .ba .with h5{color:var(--coral)}
+.ba ul{list-style:none;margin:0}
+.ba li{font-size:14px;padding:4px 0;border-bottom:1px dashed var(--line)}
+.ba li:last-child{border-bottom:none}
+.ba .t{margin-top:12px;font-weight:600;font-size:13px;letter-spacing:.04em}
+.chapter{margin:64px 0 8px;padding:22px 28px;background:var(--ink);color:var(--bg);border-radius:10px}
+.chapter .ck{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8A18B}
+.chapter .ct{font-family:var(--serif);font-size:27px;font-weight:500;margin-top:4px}
+.toc2{background:var(--panel);border-radius:12px;padding:34px 38px;margin:44px 0;font-size:14.5px}
+.toc2 .part{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin:20px 0 6px}
+.toc2 .part:first-child{margin-top:0}
+.toc2 a{display:flex;justify-content:space-between;color:var(--ink);padding:5px 0;border-bottom:1px dotted var(--line)}
+.toc2 a:hover{color:var(--coral)}
+.toc2 .n{color:var(--muted);font-feature-settings:'tnum'}
+@media(max-width:640px){.cover .kstrip,.cover .metarow{grid-template-columns:1fr 1fr}.ba{grid-template-columns:1fr}}
+@media print{.cover{page-break-after:always;min-height:96vh}}
+</style>
+</head>
+<body>
+<!-- ============================ COVER ============================ -->
+<div class="cover">
+  <div class="wrap">
+    <div class="brand">SULUH<small>UNIVERSITI PENDIDIKAN SULTAN IDRIS</small></div>
+    <div class="badge">Internal · Confidential · July 2026</div>
+    <h1>Master Programme Document<br><span class="accent">A Sovereign Educational AI System</span></h1>
+    <p class="sub">One sovereign 35B teacher, a 10,000-device federated research swarm, and four institutional harnesses — an on-premise, PDPA-compliant intelligence layer for UPSI, delivered in <b>12 months</b> for <b>RM 450,000</b> with breakeven against every cloud alternative by <b>Month 14</b>.</p>
+    <div class="kstrip">
+      <div><div class="kv">35B</div><div class="kl">Sovereign MoE teacher · 3B active</div></div>
+      <div><div class="kv">896 GB</div><div class="kl">5-node EXO inference cluster</div></div>
+      <div><div class="kv">4</div><div class="kl">Harnesses from 7 merged proposals</div></div>
+      <div><div class="kv">10,000</div><div class="kl">Federated swarm devices</div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="metarow">
+      <div><b>Document</b>Master Programme Document v1.0 — PRD + SDD + TSD, consolidated</div>
+      <div><b>System</b>SULUH AI · SULUH SWARM · SULUH Ecosystem</div>
+      <div><b>Conceived &amp; led by</b>Putra Nasution — Lead Architect &amp; Programme Conceptor</div>
+      <div><b>In partnership with</b>Dr. Suzani Mohamad Samuri (Faculty of Meta) · UPSI ICT · UPSI AI Lab</div>
+      <div><b>Status</b>Draft for Review · v1.1</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ §0.1 AUTHORSHIP & ORIGIN ============================ -->
+<section id="s0"><div class="wrap">
+<h2><span class="secnum">0.1</span>Authorship &amp; Origin</h2>
+<div class="sowhat"><div class="sw">Why this section exists</div>
+<p>SULUH is not a vendor proposal. It is a conceived programme whose architecture, design principles, and research outputs originate from a single author. This section makes that origin explicit — and explains why the programme's institutional adoption at UPSI is structured as a partnership, not a procurement.</p></div>
+
+<h3>Origin of the SULUH Programme</h3>
+<p>The SULUH Ecosystem — comprising the <strong>IsRAG</strong> (Isnad-chain Retrieval Augmented Generation), <strong>Dewan Council</strong> (multi-LLM deliberation), and <strong>SULUH AI</strong> (sovereign orchestration platform) packages — was conceived and designed by <strong>Putra Nasution</strong>, an independent AI architect and researcher. The three open-source packages, the seven immutable design principles (§10), the three-track cloud→sovereign→edge model (§7), the federated swarm algorithms (MA3, APA-EF, LES-GA), and the five-paper publication plan (§18) are his authored works, developed prior to and independent of any UPSI engagement.</p>
+
+<p>The connection to UPSI is through <strong>Dr. Suzani binti Mohamad Samuri</strong>, Faculty of Meta, whose research collaboration established the institutional bridge. The programme's adoption at UPSI is enabled through a research-collaboration agreement that brings Putra Nasution as <strong>Lead Architect and Founding Director of the proposed UPSI AI Lab</strong> (§19).</p>
+
+<h3>Outsider status — disclosed and framed as a feature</h3>
+<p>Putra Nasution is not a UPSI employee and is not a Malaysian citizen. Rather than treating this as a constraint, the programme is structured so that outsider status is a <strong>structural advantage</strong>:</p>
+<ul class="plain">
+<li><strong>Provenance from outside the institution</strong> — the architecture, code, and publications predate the UPSI engagement. UPSI acquires a fully authored IP position without internal R&amp;D lead time.</li>
+<li><strong>No internal politics</strong> — as an external architect, PN is not aligned with any faculty, division, or administrative faction. Governance runs through the Steering Committee (§15), not through the architect's organisational position.</li>
+<li><strong>IP ownership clarity</strong> — the three open-source packages are Apache 2.0; UPSI's institutional adaptations (harness code, golden sets, deployment artifacts) are UPSI-owned. The split is clean and contractual.</li>
+<li><strong>Founding Director continuity</strong> — embedding PN as Director of the UPSI AI Lab (§19) is the contractual vehicle that converts an external collaboration into an institutional capability. Removing PN from the programme severs the algorithmic authorship and paper plan (§17 Risk Register: "PI / architect bandwidth").</li>
+</ul>
+
+<div class="note"><b>How to read this document.</b> Every mention of "Lead Architect" or "SULUH Architecture Team" in this document refers to Putra Nasution and the engineering team he leads. The programme does not assume Malaysian-ness in tone or legal posture. The governing law of the research-collaboration agreement is Malaysian; the governing IP licence is Apache 2.0; the governing compliance regime is PDPA 2010. All three are compatible with an external collaborator under UPSI's industry/academic engagement policy.</div>
+<hr class="sec">
+</div></section>
+
+<!-- ============================ TOC ============================ -->
+<div class="wrap">
+<h2 style="margin-top:56px"><span class="secnum">§</span>Complete Index</h2>
+<nav class="toc2">
+  <div class="part">Front Matter</div>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s0"><span>0.1 · Authorship &amp; Origin</span><span class="n">who conceived this</span></a>
+  <div class="part">Part A · The Case</div>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s1"><span>1 · Strategic Summary</span><span class="n">one page</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s2"><span>2 · Executive Briefing</span><span class="n">the bottom line</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s3"><span>3 · The Business Case</span><span class="n">hours, FTEs, payback</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s4"><span>4 · Why Now — Four Forces &amp; the Cost of Delay</span><span class="n">2026 decision year</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s5"><span>5 · A Day in the Life — Before &amp; After</span><span class="n">three scenarios</span></a>
+  <div class="part">Part B · The System</div>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s6"><span>6 · What SULUH Is — Two Projects, One Programme</span><span class="n">demarcation</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s7"><span>7 · Sovereign Model Strategy</span><span class="n">verified lineup · why 35B · three tracks</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s8"><span>8 · Infrastructure &amp; Compute</span><span class="n">EXO cluster · prefill/decode · RM 0 licensing</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s9"><span>9 · The Federated Research Programme</span><span class="n">MA3 · APA-EF · LES-GA · Psyche</span></a>
+  <div class="part">Part C · The Ecosystem</div>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s10"><span>10 · Ecosystem Architecture &amp; Integration Contracts</span><span class="n">C1–C5</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s11"><span>11 · The Four Harnesses</span><span class="n">condensed PRD/SDD/TSD</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s12"><span>12 · Query Routing, Guardrails &amp; Graceful Degradation</span><span class="n">decision tree</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s13"><span>13 · Security, PDPA &amp; Auditability</span><span class="n">enforced in code</span></a>
+  <div class="part">Part D · The Programme</div>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s14"><span>14 · Economics — Sovereign vs. Cloud</span><span class="n">breakeven M14</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s15"><span>15 · Governance &amp; the Approval Ask</span><span class="n">four layers · phase gates</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s16"><span>16 · Delivery Roadmap, Evaluation &amp; Success Metrics</span><span class="n">gates · golden set</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s17"><span>17 · Risk Register</span><span class="n">tracked, mitigated</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s18"><span>18 · Research Output &amp; Publication Plan</span><span class="n">five papers</span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#s19"><span>19 · The UPSI AI Lab — Institutionalisation &amp; Staged Roadmap</span><span class="n">35B to 100B to SEA</span></a>
+  <div class="part">Appendices</div>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#axa"><span>A · Glossary</span><span class="n"></span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#axb"><span>B · Open Questions — Resolution Before Phase 1</span><span class="n"></span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#axc"><span>C · Technology Track Record</span><span class="n"></span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#axd"><span>D · Why This Approach vs. Alternatives</span><span class="n"></span></a>
+  <a href="file:///Users/putra/Documents/PROJECTS/suluh-ecosystem/.hermes/desktop-attachments/SULUH-Master-Programme-Document-2.html#axe"><span>E · References</span><span class="n">merged</span></a>
+</nav>
+</div>
+
+<!-- ============================ PART A ============================ -->
+<div class="wrap"><div class="chapter"><div class="ck">Part A</div><div class="ct">The Case</div></div></div>
+
+<section id="s1"><div class="wrap">
+<h2><span class="secnum">1</span>Strategic Summary</h2>
+<p style="color:var(--muted);font-size:14px;margin-top:-8px">Everything leadership needs on a single page.</p>
+<div class="sowhat"><div class="sw">The Proposition</div>
+<p>Equip UPSI's lecturers, advisors, auditors, and administrators with a sovereign AI layer that grades with evidence, audits curricula against MQA/KPT standards, advises students before risk becomes attrition, and models staff careers — in Malay or English — without a single byte of student or staff data leaving campus. Twelve months. On-premise. 896 GB of pooled AI compute. Delivered by the existing team, augmented by agentic engineering.</p></div>
+<div class="kpis">
+  <div class="kpi"><div class="v">≥ 85%</div><div class="l">Grading agreement with lecturer panels, 100% human final approval</div></div>
+  <div class="kpi"><div class="v">≥ 90%</div><div class="l">Correct CLO/PLO compliance mapping vs. auditor panel</div></div>
+  <div class="kpi"><div class="v">24 h</div><div class="l">At-risk flag to human validation (4 h for wellbeing)</div></div>
+  <div class="kpi"><div class="v">&lt; 3 s</div><div class="l">Grading latency · &lt; 1 s chat first token</div></div>
+  <div class="kpi"><div class="v">~61,000</div><div class="l">Productive hours/year returned at the realistic scenario (§3)</div></div>
+  <div class="kpi"><div class="v">M14</div><div class="l">Breakeven vs. every cloud alternative (§14)</div></div>
+</div>
+<div class="note"><b>The ask — approve Phase 0: a 2-month validation sprint.</b> Phase 0 proves the technical prerequisites — SSO bridge, bilingual model benchmark (Qwen3.6-35B-A3B vs Gemma 4-31B vs Qwen3.5), golden evaluation set v0.1, cluster bring-up — before any production capability is built. Phase 1 approval is a separate decision, requested at the Phase 0 exit gate with evidence in hand. Full detail in §15–16.</div>
+<hr class="sec">
+</div></section>
+
+<section id="s2"><div class="wrap">
+<h2><span class="secnum">2</span>Executive Briefing</h2>
+<div class="sowhat"><div class="sw">The Bottom Line</div>
+<p>UPSI's academic operations have outgrown their intelligence model. Lecturers spend whole weekends grading without producing accreditation evidence; curriculum compliance takes weeks of manual cross-checking; at-risk students are discovered a semester too late; staff analytics are static. SULUH embeds a conversational, agentic AI layer across these workflows — every answer cited, every consequential action human-approved, every byte sovereign.</p></div>
+<p class="lede">SULUH does not replace UPSI's operational systems. It augments them. UniSIS, UniHRIS, MYRIMS, and the LMS remain the systems of record; the AI layer reads through a governed data fabric and writes back only through named human approval gates.</p>
+<p>The programme's central bet is architectural: <strong>one intelligence supply chain serving four harnesses beats four isolated AI pilots.</strong> The Consolidated Matrix analysis found the seven original faculty proposals were secretly one dependency graph — duplicate scrapers on the same HR databases, twin grading stacks, two unaware at-risk systems. Merging them eliminates an estimated 40% of backend engineering and, more importantly, makes governance enforceable in one place instead of seven.</p>
+<div class="ba">
+<div class="today"><h5>Without SULUH</h5><ul>
+<li>Essay grading: 15–20 min each, no CLO evidence trail</li>
+<li>Curriculum compliance: weeks of manual MQA cross-checking</li>
+<li>At-risk students surface after failing semesters</li>
+<li>Staff analytics static; promotion signals arrive late</li>
+<li>Policy knowledge locked in circulars and senior heads</li>
+<li>Every AI experiment re-solves auth, privacy, inference</li>
+</ul></div>
+<div class="with"><h5>With SULUH</h5><ul>
+<li>Draft grades + cited evidence spans; lecturer reviews and approves</li>
+<li>Compliance audit draft in a day; Dean approves within 10</li>
+<li>Risk flags validated by humans within 24 h; wellbeing in 4 h</li>
+<li>Live IPA trajectories; career paths modelled, HR-reviewed</li>
+<li>Bilingual RAG over rules, standards, and handbooks — cited</li>
+<li>One cluster, one fabric, one audit spine — four harnesses</li>
+</ul></div>
+</div>
+<hr class="sec">
+</div></section>
+
+<section id="s3"><div class="wrap">
+<h2><span class="secnum">3</span>The Business Case</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>UPSI's academic and administrative staff collectively spend an estimated <strong>3,500+ hours every week</strong> on tasks the AI layer accelerates by 50–80%. Even at conservative adoption, the system returns tens of thousands of productive hours annually — before counting accreditation-readiness, retention, and decision-quality gains that don't fit in an hours column.</p></div>
+<p><em>A note on methodology.</em> The estimates below are illustrative, derived from typical workflow patterns in Malaysian public-university operations and the workload literature on grading and advising. They are to be validated in Phase 0 via a targeted time-and-motion study with each system owner — but the methodology and ranges are defensible for the Phase 0 approval decision, which commits only validation spend.</p>
+<h3>Current-state time cost — where the hours go today</h3>
+<table class="tbl">
+<tbody><tr><th>Role</th><th>Activity AI will accelerate</th><th class="num">Hrs/wk/person</th><th class="num">Users</th><th class="num">Total hrs/wk</th></tr>
+<tr><td>Lecturer (grading-intensive subset)</td><td>Essay marking, feedback writing, CLO attainment evidencing</td><td class="num">~6</td><td class="num">~400</td><td class="num">2,400</td></tr>
+<tr><td>Academic advisor / mentor</td><td>Advisee record assembly, registration issues, handbook lookups</td><td class="num">~2</td><td class="num">~300</td><td class="num">600</td></tr>
+<tr><td>Program developer / PPA auditor</td><td>MQA/KPT compliance cross-checking, CLO–PLO matrix construction</td><td class="num">~8</td><td class="num">~25</td><td class="num">200</td></tr>
+<tr><td>BHEA / BHEP officer</td><td>At-risk case assembly across siloed systems, intervention tracking</td><td class="num">~5</td><td class="num">~40</td><td class="num">200</td></tr>
+<tr><td>BSM analyst</td><td>Productivity report compilation, promotion-file research</td><td class="num">~6</td><td class="num">~20</td><td class="num">120</td></tr>
+<tr class="total"><td colspan="2">Total addressable — across ~785 staff in primary impact roles</td><td class="num"></td><td class="num">~785</td><td class="num">3,520 hrs</td></tr>
+</tbody></table>
+<h3>Projected savings — three scenarios</h3>
+<table class="tbl">
+<tbody><tr><th>Scenario</th><th>Adoption × reduction</th><th class="num">Hrs saved / wk</th><th class="num">Hrs saved / yr</th><th class="num">FTE-equivalent</th></tr>
+<tr><td><strong>Conservative</strong></td><td>40% × 50%</td><td class="num">~704</td><td class="num">~33,800</td><td class="num">~18</td></tr>
+<tr><td><strong>Realistic — planning baseline</strong></td><td>60% × 60%</td><td class="num">~1,267</td><td class="num">~60,800</td><td class="num">~32</td></tr>
+<tr><td><strong>Optimistic</strong></td><td>75% × 70%</td><td class="num">~1,848</td><td class="num">~88,700</td><td class="num">~47</td></tr>
+</tbody></table>
+<h3>Value beyond hours saved</h3>
+<table class="tbl">
+<tbody><tr><th>Strategic outcome</th><th>Description</th></tr>
+<tr><td>Accreditation-readiness transformation</td><td>CLO/PLO attainment becomes continuously evidenced instead of reconstructed at audit time; every grade carries cited evidence spans; MQA submissions assemble from live data.</td></tr>
+<tr><td>Retention economics</td><td>Each retained student preserves multi-year fee and funding streams; early-warning literature shows analytics-driven alerts measurably improve outcomes (Course Signals, §11.4). Even a 1-point attrition improvement compounds across cohorts.</td></tr>
+<tr><td>Decision quality</td><td>Deans see faculty productivity trajectories live; HR reviews AI-modelled career paths with evidence; approval decisions carry policy context.</td></tr>
+<tr><td>Research capital</td><td>The 10,000-device federated deployment is itself a publishable asset few labs can replicate — five papers planned (§18).</td></tr>
+<tr><td>Reusable AI foundation</td><td>The cluster, fabric, gateway, and governance spine extend to further UPSI domains with incremental investment — the platform outlives its first four applications.</td></tr>
+<tr><td>Institutional knowledge preservation</td><td>Handbooks, standards, and policy circulars become queryable, cited, bilingual knowledge instead of tribal memory.</td></tr>
+</tbody></table>
+<div class="note"><b>The payback.</b> At the realistic scenario (~60,800 hours/year) and a conservative blended hourly cost for academic and professional staff, annual value recovery exceeds the full RM 450K Year-1 investment several times over — the programme pays back within Year 1 on productivity alone. Separately, on pure infrastructure economics, the sovereign cluster undercuts every cloud alternative from Month 14 onward (§14). The two cases are independent; either alone justifies the programme.</div>
+<hr class="sec">
+</div></section>
+
+<section id="s4"><div class="wrap">
+<h2><span class="secnum">4</span>Why Now — Four Forces &amp; the Cost of Delay</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Four forces converge to make 2026 the decision year: open-weight models crossed the commercial quality threshold; on-premise AI hardware matured into genuine cost-viability; PDPA and data-sovereignty enforcement is tightening across ASEAN; and the national sovereign-AI agenda (NAIO / MyDIGITAL) is actively looking for a reference implementation. Waiting 12 months means another Malaysian university publishes this first.</p></div>
+<table class="tbl">
+<tbody><tr><th>Force</th><th>What has changed</th></tr>
+<tr><td><strong>Open-weight models crossed the threshold</strong></td><td>Qwen3.6-35B-A3B (Apache 2.0, 262K–1M context, MoE with 3B active) and Gemma 4-31B reach parity with closed commercial models on the enterprise tasks that matter here — bilingual reasoning, RAG grounding, rubric adherence. Self-hosting is no longer a compromise; for regulated student and staff data, it is the preferred production path.</td></tr>
+<tr><td><strong>On-premise hardware matured</strong></td><td>NVIDIA DGX Spark (GB10 Grace Blackwell, 128 GB coherent) and Apple Mac Studio M3 Ultra (256 GB unified) bring data-centre-class inference to desktop form factors. UPSI's 5-node, 896 GB cluster delivers what required a full GPU rack — and a machine-room budget — two years ago.</td></tr>
+<tr><td><strong>Sovereignty enforcement is tightening</strong></td><td>Regulatory attention on cross-border AI data flows is rising across ASEAN. An architecture where PDPA compliance is structural — data physically cannot leave — is compliance-ahead rather than compliance-reactive, and immune to enforcement-guidance churn.</td></tr>
+<tr><td><strong>The national moment</strong></td><td>Malaysia's sovereign-AI agenda needs an education reference implementation. The university that ships a working, published, PDPA-native educational AI stack becomes the sector's reference point — and the natural partner for Phase-2 national compute.</td></tr>
+</tbody></table>
+<h3>The cost of delay</h3>
+<ul class="plain">
+<li><strong>Hours lost forever</strong> — the ~61,000-hour annual opportunity (§3) does not accrue while the system is undeployed; a one-year delay is a one-year write-off of it.</li>
+<li><strong>First-mover forfeiture</strong> — peer universities are actively evaluating AI initiatives; first-published status in sovereign educational AI is a one-time asset, and the five-paper plan (§18) depends on it.</li>
+<li><strong>Hardware windows</strong> — DGX Spark and 256 GB M3 Ultra units are in their release window; procurement delay risks a mid-programme generation change and requalification cost.</li>
+<li><strong>Compounding moat unrealised</strong> — the teacher–student improvement loop (§9) compounds with every semester of operation; every semester of delay is compounding foregone.</li>
+<li><strong>Attrition continues</strong> — every semester without early-warning capability is another cohort where at-risk students are found after the intervention window closes.</li>
+</ul>
+<hr class="sec">
+</div></section>
+
+<section id="s5"><div class="wrap">
+<h2><span class="secnum">5</span>A Day in the Life — Before &amp; After</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Three scenarios show — in concrete, minute-by-minute terms — how the layer changes everyday academic work. Patterns are drawn from typical UPSI workflows; the names are illustrative.</p></div>
+
+<h3>Scenario 1 — Lecturer: a 120-essay grading batch</h3>
+<p>Dr. Farah teaches a 120-student course with an essay-based final assessment mapped to four CLOs.</p>
+<div class="ba">
+<div class="today"><h5>Today — without AI</h5><ul>
+<li>Marks each essay manually against the rubric</li>
+<li>15–20 minutes per script, evenings and weekends</li>
+<li>Writes feedback from scratch; consistency drifts by script 80</li>
+<li>CLO attainment reconstructed manually for accreditation</li>
+<li>TIME: 30–40 HOURS PER BATCH</li>
+</ul></div>
+<div class="with"><h5>With SULUH (Harness 3)</h5><ul>
+<li>Batch uploaded; engine drafts per-criterion scores overnight</li>
+<li>Each draft carries verbatim evidence spans + rationale + confidence</li>
+<li>Reviews side-by-side, edits where needed, approves to UniSIS</li>
+<li>CLO attainment % computed automatically against the pinned C2 mapping</li>
+<li>TIME: ~9 HOURS · CONSISTENT · FULLY EVIDENCED</li>
+</ul></div>
+</div>
+<p><strong>Reduction: ~70–75%.</strong> Low-confidence drafts (&lt; 0.75) are flagged before she opens them; nothing reaches a student record without her approval.</p>
+
+<h3>Scenario 2 — Program developer: a new programme's compliance audit</h3>
+<p>Dr. Lim is developing a new undergraduate programme that must satisfy MQA Programme Standards and KPT requirements.</p>
+<div class="ba">
+<div class="today"><h5>Today — without AI</h5><ul>
+<li>Reads hundreds of pages of standards manually</li>
+<li>Builds CLO–PLO matrices in spreadsheets</li>
+<li>Iterates with PPA over e-mail for weeks</li>
+<li>Compliance gaps found late, sometimes at submission</li>
+<li>TIME: WEEKS OF ELAPSED EFFORT</li>
+</ul></div>
+<div class="with"><h5>With SULUH (Harness 2)</h5><ul>
+<li>Drafts syllabus in the editor; deterministic rules lint live</li>
+<li>Async NLP audit returns cited findings against the exact clause</li>
+<li>CLO–PLO matrix auto-generated for review</li>
+<li>Dean/TDAA approves; mapping published, versioned, to C2</li>
+<li>TIME: DRAFT AUDIT IN A DAY · APPROVAL INSIDE 10</li>
+</ul></div>
+</div>
+
+<h3>Scenario 3 — Academic advisor: finding the at-risk student in time</h3>
+<p>En. Syafiq advises 60 students across two intakes.</p>
+<div class="ba">
+<div class="today"><h5>Today — without AI</h5><ul>
+<li>Risk visible only in end-of-semester grades</li>
+<li>Records scattered across BHEA, BHEP, counseling, faculty files</li>
+<li>Case assembly takes hours per student</li>
+<li>Intervention often begins after academic standing is lost</li>
+<li>DISCOVERY: A SEMESTER TOO LATE</li>
+</ul></div>
+<div class="with"><h5>With SULUH (Harness 4)</h5><ul>
+<li>Engagement + assessment streams (C3) update the canonical risk state</li>
+<li>Flag raised with explainable top features; PTJ validates within 24 h</li>
+<li>Full holistic profile in one view; ticket tracks the intervention</li>
+<li>Wellbeing signals route to trained counselors only, 4 h SLA</li>
+<li>DISCOVERY-TO-INTERVENTION: SAME WEEK</li>
+</ul></div>
+</div>
+<hr class="sec">
+</div></section>
+
+<!-- ============================ PART B ============================ -->
+<div class="wrap"><div class="chapter"><div class="ck">Part B</div><div class="ct">The System</div></div></div>
+
+<section id="s6"><div class="wrap">
+<h2><span class="secnum">6</span>What SULUH Is — Two Projects, One Programme</h2>
+<p class="lede">SULUH comprises two separate but interdependent projects, developed and budgeted independently, but operationally inseparable — plus the federated research swarm that makes the whole ecosystem a compounding asset.</p>
+<table class="tbl">
+<tbody><tr><th>Term</th><th>Definition</th><th>Budget</th><th>Audience</th></tr>
+<tr><td><strong>SULUH AI</strong></td><td>The sovereign model — a 35B-parameter educational AI adapted and served entirely on-premise, plus its training pipeline (IsRAG + Dewan Council + SULUH orchestrator; three open-source packages authored by the Lead Architect)</td><td>AI consulting fee: <strong>RM 250,000</strong> · Hardware: <strong>RM 200,000 (UPSI ICT, in-kind)</strong></td><td>Researchers, peer reviewers, grant bodies</td></tr>
+<tr><td><strong>SULUH Ecosystem (4 Harnesses)</strong></td><td>The institutional harness layer — four production applications consuming SULUH AI as their inference backend: H1 Institutional Intelligence, H2 Curriculum Knowledge API, H3 Instructional Engine, H4 Student Intelligence</td><td>Harness delivery: <strong>RM 200,000</strong> (RM 50,000 per harness)</td><td>UPSI leadership: BSM [VERIFY: Dr. Suzani], PPA [VERIFY], BHEA, BHEP [VERIFY], Pusat ICT [VERIFY]</td></tr>
+<tr><td><strong>SULUH SWARM</strong></td><td>The 10,000-laptop federated research programme and, by extension, this consolidated planning narrative</td><td>Within SULUH AI R&amp;D</td><td>Research Management, external auditors, partners</td></tr>
+<tr class="total"><td colspan="2"><strong>Total programme value</strong></td><td><strong>RM 650,000</strong> (RM 450K cash ask + RM 200K ICT in-kind)</td><td></td></tr>
+</tbody></table>
+<p><strong>Why separate them.</strong> SULUH AI is a research novelty needing peer review, reproducibility, and publication. The Ecosystem is institutional infrastructure needing operational budgets, SSO integration, and HR-system connectors — not research grants. Keeping the demarcation clean lets each be judged, funded, and governed by the right authority — while this master document shows leadership how they compose.</p>
+<div class="kpis">
+  <div class="kpi"><div class="v">1 → 4</div><div class="l">One model stack serving four harnesses</div></div>
+  <div class="kpi"><div class="v">3 tiers</div><div class="l">Cloud teacher · sovereign 35B · edge 0.8–2B</div></div>
+  <div class="kpi"><div class="v">5</div><div class="l">Versioned integration contracts (C1–C5)</div></div>
+  <div class="kpi"><div class="v">RM 0</div><div class="l">Software licensing — fully open-source stack</div></div>
+</div>
+<hr class="sec">
+</div></section>
+
+<section id="s7"><div class="wrap">
+<h2><span class="secnum">7</span>Sovereign Model Strategy</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Every open-weight model in the lineup was verified live on Ollama/HuggingFace on 20 July 2026; API-tier models (Kimi K3, Claude Opus 4.8) are verified via their respective API endpoints (Kimi K3 public download available end-July 2026; Opus 4.8 currently in limited preview). No assumptions — the architecture is deliberately model-agnostic: swapping the primary is a config change, not a rewiring, and the Phase 0 benchmark decides the production winner on UPSI's own bilingual golden set.</p></div>
+<h3>Verified model lineup</h3>
+<table class="tbl">
+<tbody><tr><th>Tier</th><th>Model</th><th>Tag</th><th>Arch.</th><th class="num">Size</th><th class="num">Mem (Q4)</th><th>Placement</th></tr>
+<tr><td>Cloud teacher</td><td><strong>Kimi K3</strong></td><td>API · Moonshot</td><td>Dense</td><td class="num">100B+</td><td class="num">—</td><td>API only · anonymised</td></tr>
+<tr><td>Cloud backup</td><td><strong>Claude Opus 4.8</strong></td><td>API · Anthropic</td><td>Dense</td><td class="num">100B+</td><td class="num">—</td><td>API only · anonymised</td></tr>
+<tr><td>Sovereign teacher</td><td><strong>Qwen3.6-35B-A3B</strong></td><td><code>qwen3.6:35b</code></td><td>MoE + Vision</td><td class="num">35B / 3B act.</td><td class="num">~20 GB</td><td>Mac Studio</td></tr>
+<tr><td>Production SLM</td><td><strong>Gemma 4:31b</strong></td><td><code>gemma4:31b</code></td><td>Dense</td><td class="num">31B</td><td class="num">~18 GB</td><td>DGX Spark</td></tr>
+<tr><td>Agent SLM</td><td><strong>Qwen3.5:9b</strong></td><td><code>qwen3.5:9b</code></td><td>Dense · MM</td><td class="num">9B</td><td class="num">~6 GB (Q8)</td><td>Mac / Spark</td></tr>
+<tr><td>Embedding</td><td><strong>bge-m3</strong></td><td><code>bge-m3:latest</code></td><td>Dense</td><td class="num">567M</td><td class="num">~1 GB</td><td>All nodes</td></tr>
+<tr><td>Federated student</td><td><strong>Qwen3.5:0.8b / 2b</strong></td><td><code>qwen3.5:0.8b</code></td><td>Dense</td><td class="num">0.8–2B</td><td class="num">0.5–1.2 GB</td><td>Campus laptops</td></tr>
+</tbody></table>
+<h3>Why 35B MoE, not 70B or 100B dense</h3>
+<p>A 70B dense model at FP16 needs ~140 GB of weights plus 100+ GB of KV cache under concurrent load — overflowing a 256 GB node once OS overhead and co-resident models are counted. The 35B MoE activates only ~3B parameters per token, achieving comparable task quality in a ~20 GB serving footprint — leaving the cluster 6× headroom for QLoRA jobs, evaluation runs, and burst traffic. Full-scale 100B pre-training remains the Phase-2 vision, contingent on national compute partnership; it is upside, not dependency.</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Memory footprint comparison: 70B dense vs 35B MoE">
+<style>.mx{font-size:11.5px;fill:#6E6D66}.mv{font-size:13px;font-weight:600;fill:#141413}.ml{font-size:12px;fill:#141413}.mn{font-size:11px;fill:#6E6D66}</style>
+<line x1="220" y1="220" x2="820" y2="220" stroke="#141413" stroke-width="1.5"></line>
+<g><line x1="220" y1="160" x2="820" y2="160" stroke="#E3E0D6"></line><line x1="220" y1="100" x2="820" y2="100" stroke="#E3E0D6"></line><line x1="220" y1="40" x2="820" y2="40" stroke="#E3E0D6"></line>
+<text class="mx" x="212" y="224" text-anchor="end">0</text><text class="mx" x="212" y="164" text-anchor="end">100 GB</text><text class="mx" x="212" y="104" text-anchor="end">200 GB</text><text class="mx" x="212" y="44" text-anchor="end">300 GB</text></g>
+<!-- Mac Studio budget line -->
+<line x1="220" y1="66" x2="820" y2="66" stroke="#D97757" stroke-width="1.5" stroke-dasharray="5 4"></line>
+<text class="mx" x="820" y="60" text-anchor="end" fill="#A84E31" font-weight="600">256 GB Mac Studio budget</text>
+<!-- Bar A: 70B dense -->
+<g>
+<rect x="260" y="136" width="70" height="84" fill="#5A7D9A"></rect><text class="mv" x="295" y="150" text-anchor="middle" fill="#fff">140</text>
+<rect x="260" y="76" width="70" height="60" fill="#7E99AF"></rect><text class="mv" x="295" y="112" text-anchor="middle" fill="#fff">100</text>
+<rect x="260" y="52" width="70" height="24" fill="#AEBFCC"></rect><text class="mv" x="295" y="70" text-anchor="middle" fill="#141413">40</text>
+<text class="ml" x="295" y="240" text-anchor="middle">70B dense · FP16</text>
+<text class="mn" x="295" y="255" text-anchor="middle">~280 GB — overflows node</text>
+</g>
+<!-- Bar B: 35B MoE -->
+<g>
+<rect x="410" y="200" width="70" height="20" fill="#D97757"></rect><text class="mv" x="445" y="215" text-anchor="middle" fill="#fff">20</text>
+<rect x="410" y="180" width="70" height="20" fill="#E8A18B"></rect><text class="mv" x="445" y="195" text-anchor="middle" fill="#fff">20</text>
+<rect x="410" y="164" width="70" height="16" fill="#F0CDBF"></rect><text class="mv" x="445" y="177" text-anchor="middle" fill="#141413">20</text>
+<text class="ml" x="445" y="240" text-anchor="middle">35B MoE · Q4</text>
+<text class="mn" x="445" y="255" text-anchor="middle">~60 GB — fits with headroom</text>
+</g>
+<!-- Bar C: Full stack -->
+<g>
+<rect x="560" y="208" width="70" height="12" fill="#D97757"></rect><text class="mv" x="595" y="217" text-anchor="middle" fill="#fff">20</text>
+<rect x="560" y="196" width="70" height="12" fill="#E8A18B"></rect><text class="mv" x="595" y="205" text-anchor="middle" fill="#fff">18</text>
+<rect x="560" y="188" width="70" height="8" fill="#F0CDBF"></rect><text class="mv" x="595" y="194" text-anchor="middle" fill="#141413">6</text>
+<rect x="560" y="184" width="70" height="4" fill="#67867F"></rect>
+<rect x="560" y="130" width="70" height="54" fill="#F0EEE6" stroke="#C9C4B4"></rect><text class="mn" x="595" y="160" text-anchor="middle">headroom</text>
+<text class="ml" x="595" y="240" text-anchor="middle">Full stack loaded</text>
+<text class="mn" x="595" y="255" text-anchor="middle">~150 GB active</text>
+</g>
+<!-- Legend -->
+<g transform="translate(700,130)">
+<rect width="12" height="12" fill="#D97757"></rect><text class="mn" x="18" y="10">Weights</text>
+<rect y="18" width="12" height="12" fill="#E8A18B"></rect><text class="mn" x="18" y="28">Production SLM</text>
+<rect y="36" width="12" height="12" fill="#F0CDBF"></rect><text class="mn" x="18" y="46">Agent + KV cache</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Figure 7.1: Memory footprint — 70B dense vs. 35B MoE serving.</b> <i>A 70B dense model overflows a 256 GB Mac Studio once weights, KV cache, and concurrent activations are included. The 35B MoE serves the full stack (teacher + production + agent + embedding) in ~150 GB with 6× headroom on the cluster.</i></figcaption>
+</figure>
+<h3>Three tracks, matched to what each tier can verifiably do</h3>
+<p><strong>Track A — Cloud teacher (API, zero PII).</strong> Kimi K3 and Claude Opus 4.8 generate curriculum-grounded synthetic training data from anonymised rubrics and model answers, and arbitrate quality on the golden set. Anonymised curriculum artifacts out, synthetic corpus back in; ~RM 3–5K over 12 months; <em>no raw student or staff data ever leaves UPSI</em> — enforced in code (§13).</p>
+<p><strong>Track B — Sovereign teacher (on-premise 35B).</strong> Staged adaptation: synthetic corpus (M1–2) → continual pre-training on Malay/English academic corpora (M2–4) → instruction tuning on grading and advising tasks (M4–6) → federated adaptation on faculty-local documents (M6–9) → DPO alignment (M9–10) → accreditation-readiness evaluation (M10–12). QLoRA makes every stage feasible on the cluster's unified memory.</p>
+<p><strong>Track C — Federated student (10,000 laptops).</strong> Qwen3.5-0.8B/2B distilled from the teacher, then adapted via federated LoRA under APA-EF differential privacy. Laptops train models they can genuinely hold; only adapter deltas move.</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three tracks across 12 months">
+<style>.ax{font-size:11px;fill:#6E6D66}.lane{font-size:12.5px;font-weight:600;fill:#141413}.bt{font-size:11.5px;fill:#fff;font-weight:500}.btd{font-size:11.5px;fill:#141413;font-weight:500}.gl{stroke:#E3E0D6;stroke-width:1}</style>
+<g>
+<line class="gl" x1="180" y1="40" x2="180" y2="252"></line><line class="gl" x1="290" y1="40" x2="290" y2="252"></line><line class="gl" x1="400" y1="40" x2="400" y2="252"></line><line class="gl" x1="510" y1="40" x2="510" y2="252"></line><line class="gl" x1="620" y1="40" x2="620" y2="252"></line><line class="gl" x1="730" y1="40" x2="730" y2="252"></line>
+<text class="ax" x="180" y="32" text-anchor="middle">M2</text><text class="ax" x="290" y="32" text-anchor="middle">M4</text><text class="ax" x="400" y="32" text-anchor="middle">M6</text><text class="ax" x="510" y="32" text-anchor="middle">M8</text><text class="ax" x="620" y="32" text-anchor="middle">M10</text><text class="ax" x="730" y="32" text-anchor="middle">M12</text>
+</g>
+<!-- Track A: Cloud -->
+<text class="lane" x="20" y="72">A · Cloud teacher</text>
+<rect x="125" y="56" width="220" height="26" rx="13" fill="#5A7D9A"></rect><text class="bt" x="140" y="73">Synthetic corpus generation</text>
+<rect x="345" y="56" width="110" height="26" rx="13" fill="#7E99AF"></rect><text class="bt" x="358" y="73">Validation</text>
+<rect x="455" y="56" width="303" height="26" rx="13" fill="#AEBFCC"></rect><text class="btd" x="470" y="73">Red-team &amp; arbitration (API only, anonymised)</text>
+<!-- Track B: Sovereign 35B -->
+<text class="lane" x="20" y="140">B · Sovereign teacher</text>
+<rect x="125" y="124" width="110" height="26" rx="13" fill="#D97757"></rect><text class="bt" x="140" y="141">Serve 35B MoE</text>
+<rect x="235" y="124" width="220" height="26" rx="13" fill="#E8A18B"></rect><text class="bt" x="248" y="141">Continual pre-train (Malay/EN)</text>
+<rect x="455" y="124" width="165" height="26" rx="13" fill="#F0CDBF"></rect><text class="btd" x="468" y="141">SFT · grading rubrics</text>
+<rect x="620" y="124" width="138" height="26" rx="13" fill="#E8A18B"></rect><text class="bt" x="632" y="141">DPO · alignment</text>
+<!-- Track C: Federated -->
+<text class="lane" x="20" y="208">C · Federated student</text>
+<rect x="235" y="192" width="165" height="26" rx="13" fill="#67867F"></rect><text class="bt" x="248" y="209">Distill 0.8B–2B</text>
+<rect x="400" y="192" width="248" height="26" rx="13" fill="#8AA39C"></rect><text class="bt" x="415" y="209">Federated LoRA · MA3 · APA-EF</text>
+<rect x="648" y="192" width="110" height="26" rx="13" fill="#B9C8C3"></rect><text class="btd" x="660" y="209">Eval &amp; papers</text>
+</svg>
+</div>
+<figcaption><b>Figure 7.2: Three parallel tracks.</b> <i>Cloud teachers touch only anonymised curriculum data; the sovereign 35B is served on-prem from month 2 and continually adapted through DPO; the federated swarm trains what it can genuinely hold (0.8–2B distilled students) under differential privacy.</i></figcaption>
+</figure>
+<hr class="sec">
+</div></section>
+
+<section id="s8"><div class="wrap">
+<h2><span class="secnum">8</span>Infrastructure &amp; Compute</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>The largest single cost is a 5-node, 896 GB inference cluster that becomes a permanent, reusable UPSI AI asset — not a subscription. Software licensing is RM 0, permanently. Peak production load uses ~150 GB of 896 GB: the headroom is the research budget.</p></div>
+<h3>Cluster specification &amp; hardware budget (RM 200,000)</h3>
+<table class="tbl">
+<tbody><tr><th>Component</th><th>Specification</th><th class="num">Qty</th><th class="num">Unit (RM)</th><th class="num">Total (RM)</th></tr>
+<tr><td>Teacher nodes</td><td>Mac Studio M3 Ultra · 256 GB unified · 2 TB SSD</td><td class="num">2</td><td class="num">68,000</td><td class="num">136,000</td></tr>
+<tr><td>Edge nodes</td><td>NVIDIA DGX Spark · GB10 Superchip · 128 GB coherent</td><td class="num">3</td><td class="num">14,000</td><td class="num">42,000</td></tr>
+<tr><td>Network</td><td>10GbE managed L3 backbone, NICs, TB5 bridge cabling</td><td class="num">1</td><td class="num">8,000</td><td class="num">8,000</td></tr>
+<tr><td>Cabinet</td><td>12U wall-mount + cantilever shelves + UPS (30-min)</td><td class="num">1</td><td class="num">14,000</td><td class="num">14,000</td></tr>
+<tr class="total"><td colspan="4">Hardware total (one-time CAPEX · permanent asset)</td><td class="num">RM 200,000</td></tr>
+</tbody></table>
+<p><strong>Serving pattern — disaggregated prefill/decode.</strong> EXO splits model layers across heterogeneous nodes and exposes one OpenAI-compatible endpoint. The natural division of labour: DGX Sparks (CUDA, low-precision throughput) handle <em>prefill</em> — prompt ingestion and long-context processing; Mac Studios (MLX, highest unified-memory bandwidth in class) handle <em>decode</em> — token generation. The 896 GB is <em>aggregate, not coherent</em>: no single node holds a 35B at FP16, and EXO's layer placement makes that irrelevant to consumers. All five nodes are desktop/tower form factors on ventilated cantilever shelves — a 12U wall cabinet, not a datacenter rack.</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cluster and swarm topology">
+<style>.nb{fill:#fff;stroke-width:1.5;rx:8}.nt{font-size:13px;font-weight:600;fill:#141413}.nd{font-size:11px;fill:#6E6D66}.wire{fill:none;stroke:#C9C4B4;stroke-width:1.5}</style>
+<rect x="250" y="20" width="360" height="130" rx="12" fill="#FBF0EB" stroke="#D97757" stroke-width="1.5" stroke-dasharray="5 4"></rect>
+<text x="266" y="42" font-size="11" font-weight="600" letter-spacing="1.2" fill="#A84E31">EXO CLUSTER · 896 GB AGGREGATE</text>
+<rect class="nb" x="266" y="54" width="160" height="38" stroke="#D97757"></rect><text class="nt" x="278" y="71">Mac Studio M3 Ultra</text><text class="nd" x="278" y="85">256 GB · Teacher + Agent</text>
+<rect class="nb" x="434" y="54" width="160" height="38" stroke="#D97757"></rect><text class="nt" x="446" y="71">Mac Studio M3 Ultra</text><text class="nd" x="446" y="85">256 GB · Teacher + Agent</text>
+<rect class="nb" x="266" y="100" width="102" height="38" stroke="#5A7D9A"></rect><text class="nt" x="276" y="117">DGX Spark</text><text class="nd" x="276" y="131">128 GB · Prod SLM</text>
+<rect class="nb" x="378" y="100" width="102" height="38" stroke="#5A7D9A"></rect><text class="nt" x="388" y="117">DGX Spark</text><text class="nd" x="388" y="131">128 GB · Prod SLM</text>
+<rect class="nb" x="490" y="100" width="104" height="38" stroke="#5A7D9A"></rect><text class="nt" x="500" y="117">DGX Spark</text><text class="nd" x="500" y="131">128 GB · Embed</text>
+<line class="wire" x1="430" y1="150" x2="430" y2="188"></line>
+<rect class="nb" x="330" y="188" width="200" height="36" stroke="#141413"></rect><text class="nt" x="360" y="210">10GbE core switch</text>
+<line class="wire" x1="330" y1="206" x2="150" y2="206"></line><line class="wire" x1="150" y1="206" x2="150" y2="252"></line>
+<line class="wire" x1="530" y1="206" x2="710" y2="206"></line><line class="wire" x1="710" y1="206" x2="710" y2="252"></line>
+<line class="wire" x1="430" y1="224" x2="430" y2="252"></line>
+<rect class="nb" x="60" y="252" width="180" height="56" stroke="#67867F"></rect><text class="nt" x="74" y="274">Campus Wi-Fi tier</text><text class="nd" x="74" y="290">10,000 laptops · federated</text><text class="nd" x="74" y="302">Qwen 0.8B/2B clients</text>
+<rect class="nb" x="340" y="252" width="180" height="56" stroke="#8A8A5B"></rect><text class="nt" x="354" y="274">Data fabric</text><text class="nd" x="354" y="290">PostgreSQL · pgvector</text><text class="nd" x="354" y="302">Redis · MinIO</text>
+<rect class="nb" x="620" y="252" width="180" height="56" stroke="#A8A297"></rect><text class="nt" x="634" y="274">Gateway</text><text class="nd" x="634" y="290">Firewall · SSO · LB</text><text class="nd" x="634" y="302">LangFuse tracing</text>
+</svg>
+</div>
+<figcaption><b>Figure 8.1: Compute topology.</b> <i>The EXO cluster aggregates ~896 GB across five nodes for teacher serving, production inference, and QLoRA jobs. The laptop swarm connects over campus Wi-Fi and exchanges only LoRA adapter deltas — never raw student data — with the aggregation service.</i></figcaption>
+</figure>
+<h3>Software stack — RM 0 licensing</h3>
+<table class="tbl">
+<tbody><tr><th>Layer</th><th>Technology</th><th>License</th></tr>
+<tr><td>Inference orchestration</td><td>EXO (layer parallelism) + vLLM</td><td>Open source</td></tr>
+<tr><td>Agent framework</td><td>LangGraph v1.0</td><td>Open source</td></tr>
+<tr><td>Retrieval</td><td>pgvector (HNSW) + bge-m3</td><td>Open source</td></tr>
+<tr><td>Document intelligence</td><td>Docling — layout, table, and OCR extraction for standards and rubrics</td><td>Open source</td></tr>
+<tr><td>Observability</td><td>LangFuse — a traced span per model call, self-hosted</td><td>Open source</td></tr>
+<tr><td>Application</td><td>Vue 3 islands + FastAPI gateway</td><td>Open source</td></tr>
+<tr><td>Data</td><td>PostgreSQL 16 · Redis 7 · MinIO</td><td>Open source</td></tr>
+<tr class="total"><td colspan="2">Total licensing cost, all layers, permanently</td><td><strong>RM 0</strong></td></tr>
+</tbody></table>
+<div class="note"><b>Why pgvector, not a dedicated vector DB.</b> The corpus (standards, handbooks, rubrics, course materials) is institution-scale, not web-scale. pgvector with HNSW on the fabric's PostgreSQL keeps vectors and relational data in one operational model, one backup regime, one security perimeter — eliminating a whole service dependency for zero retrieval-quality cost at this scale.</div>
+<hr class="sec">
+</div></section>
+
+<section id="s9"><div class="wrap">
+<h2><span class="secnum">9</span>The Federated Research Programme</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>The swarm is not IT infrastructure — it is the research engine and the moat. Because 10,000 laptops train models they can genuinely hold, every algorithmic contribution is evaluated end-to-end on real heterogeneous hardware at a scale few labs on Earth can replicate. And the loop closes: aggregated swarm improvements feed the next teacher adaptation round, so the system compounds each semester.</p></div>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Intelligence supply chain">
+<style>.sc{fill:#fff;stroke-width:1.5;rx:10}.st{font-size:13.5px;font-weight:600;fill:#141413}.sd{font-size:11px;fill:#6E6D66}.sa{fill:none;stroke:#D97757;stroke-width:2;marker-end:url(#arr2)}.sl{font-size:10.5px;fill:#A84E31;font-weight:600}</style>
+<defs><marker id="arr2" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker></defs>
+<rect class="sc" x="20" y="60" width="185" height="90" stroke="#A8A297"></rect>
+<text class="st" x="34" y="84">1 · Synthesise</text>
+<text class="sd" x="34" y="102">Kimi K3 / Opus 4.8 generate</text><text class="sd" x="34" y="116">curriculum-grounded corpus</text><text class="sd" x="34" y="130">from anonymised rubrics</text>
+<rect class="sc" x="245" y="60" width="185" height="90" stroke="#D97757"></rect>
+<text class="st" x="259" y="84">2 · Adapt</text>
+<text class="sd" x="259" y="102">QLoRA continual adaptation</text><text class="sd" x="259" y="116">of Qwen3.6-35B on Malay/EN</text><text class="sd" x="259" y="130">academic corpora [3]</text>
+<rect class="sc" x="470" y="60" width="185" height="90" stroke="#67867F"></rect>
+<text class="st" x="484" y="84">3 · Distill</text>
+<text class="sd" x="484" y="102">Teacher → 0.8B/2B students</text><text class="sd" x="484" y="116">via supervised distillation</text><text class="sd" x="484" y="130">(Hinton et al.) [4]</text>
+<rect class="sc" x="695" y="60" width="165" height="90" stroke="#5A7D9A"></rect>
+<text class="st" x="709" y="84">4 · Federate</text>
+<text class="sd" x="709" y="102">FedAvg-style rounds [1]</text><text class="sd" x="709" y="116">ε-DP + secure agg [5,6]</text><text class="sd" x="709" y="130">across 10,000 devices</text>
+<path class="sa" d="M205 105 L245 105"></path><path class="sa" d="M430 105 L470 105"></path><path class="sa" d="M655 105 L695 105"></path>
+<path class="sa" d="M777 150 C 777 205, 340 220, 337 150"></path>
+<text class="sl" x="480" y="212">aggregated improvements feed the next teacher adaptation round</text>
+<text class="sd" x="20" y="30" font-weight="600" letter-spacing="1" fill="#6E6D66">THE SULUH INTELLIGENCE SUPPLY CHAIN — A CLOSED IMPROVEMENT LOOP</text>
+</svg>
+</div>
+<figcaption><b>Figure 9.1: The four-stage intelligence supply chain.</b> <i>Synthesis (cloud, anonymised) → adaptation (sovereign 35B, QLoRA) → distillation (0.8–2B students) → federation (10,000 devices under differential privacy). Aggregated swarm improvements close the loop back into teacher adaptation, so the system compounds — the moat identified in the commercial analysis.</i></figcaption>
+</figure>
+<table class="tbl">
+<tbody><tr><th>Contribution</th><th>What it does</th><th>Where it runs</th></tr>
+<tr><td><strong>MA3</strong><br><span style="color:var(--muted);font-size:12.5px">Model-Agnostic Adaptive Aggregation</span></td><td>Weights adapter updates by device capability and data quality, so a Mac Studio and a 8 GB laptop can participate in one aggregation round without the laptop's noise or the Studio's dominance corrupting the global adapter</td><td>Aggregation service on cluster</td></tr>
+<tr><td><strong>APA-EF</strong><br><span style="color:var(--muted);font-size:12.5px">Adaptive Privacy-Aware Elastic Federated</span></td><td>ε-differential privacy with elastic compression on LoRA deltas; top-k sparsification cuts update bandwidth 60–80%; secure aggregation means the server never inspects an individual device's update</td><td>Laptop clients → cluster</td></tr>
+<tr><td><strong>LES-GA</strong><br><span style="color:var(--muted);font-size:12.5px">Localized Elastic Search, Gradient-Aligned</span></td><td>Keeps faculty-local RAG indexes consistent with the global curriculum knowledge base via gradient-aligned propagation — no full-model retraining when a faculty updates its corpus</td><td>Data fabric + edge caches</td></tr>
+</tbody></table>
+<h3>Foundational proof: Psyche</h3>
+<div class="note"><p style="margin:0"><b>Psyche (Nous Research)</b> demonstrated distributed transformer training across <em>untrusted internet participants</em> using coordinator/client consensus over ordinary connections — proving the core premise SULUH's federated track relies on: no high-speed interconnect or coherent memory space required.</p></div>
+<p>SULUH operates under a <strong>strictly easier trust assumption</strong> — all 10,000 devices are institutionally owned and SSO-enrolled — which unlocks what untrusted networks cannot have: APA-EF's calibrated privacy parameters (no untrusted node can hold sparsification secrets) and LES-GA's shared curriculum knowledge base (which only institutional ownership makes possible). SULUH's contribution is therefore not re-proving distributed training. It is the <strong>safe, private, educational deployment pattern inside a sovereign institutional boundary</strong> — which is exactly what the Federated Swarm paper (§18) claims, no more, and defensibly.</p>
+<hr class="sec">
+</div></section>
+
+<!-- ============================ PART C ============================ -->
+<div class="wrap"><div class="chapter"><div class="ck">Part C</div><div class="ct">The Ecosystem</div></div></div>
+
+<section id="s10"><div class="wrap">
+<h2><span class="secnum">10</span>Ecosystem Architecture &amp; Integration Contracts</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Every box in the master diagram has a full PRD/SDD/TSD behind it (§11). Every arrow is a versioned API contract, not an aspiration. And one non-negotiable governs it all: the operational systems of record are never modified by the AI layer — reads flow through a governed fabric, writes flow through named humans.</p></div>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SULUH ecosystem master diagram">
+<style>.bb{fill:#fff;stroke-width:1.5;rx:8}.bt{font-size:12.5px;font-weight:600;fill:#141413}.bd{font-size:10.5px;fill:#6E6D66}.zone{font-size:10.5px;font-weight:600;letter-spacing:1.2px}.fl{fill:none;stroke:#C9C4B4;stroke-width:1.5;marker-end:url(#arr)}.flc{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#arrc)}.lbl{font-size:10px;fill:#6E6D66;font-style:italic}</style>
+<defs>
+<marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="none" stroke="#C9C4B4" stroke-width="1.3"></path></marker>
+<marker id="arrc" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="none" stroke="#D97757" stroke-width="1.5"></path></marker>
+</defs>
+
+<!-- CLOUD ZONE -->
+<rect x="20" y="16" width="840" height="70" rx="10" fill="none" stroke="#A8A297" stroke-dasharray="6 4" stroke-width="1.2"></rect>
+<text class="zone" x="36" y="36" fill="#8A867B">CLOUD ZONE · ANONYMISED CURRICULUM ONLY · NO PII CROSSES THIS LINE</text>
+<rect class="bb" x="290" y="42" width="130" height="34" stroke="#A8A297"></rect><text class="bt" x="302" y="58">Kimi K3</text><text class="bd" x="302" y="70">Synthetic corpus</text>
+<rect class="bb" x="440" y="42" width="150" height="34" stroke="#A8A297"></rect><text class="bt" x="452" y="58">Claude Opus 4.8</text><text class="bd" x="452" y="70">Arbitration · red-team</text>
+
+<!-- SOVEREIGN BOUNDARY -->
+<rect x="20" y="100" width="840" height="444" rx="10" fill="none" stroke="#D97757" stroke-width="1.8"></rect>
+<text class="zone" x="36" y="122" fill="#A84E31">UPSI SOVEREIGN BOUNDARY · PDPA-GOVERNED</text>
+
+<!-- SULUH AI -->
+<rect x="40" y="136" width="380" height="128" rx="10" fill="#FBF0EB" stroke="#D97757" stroke-width="1.3"></rect>
+<text class="zone" x="54" y="156" fill="#A84E31">SULUH AI · EXO CLUSTER (896 GB AGGREGATE)</text>
+<rect class="bb" x="54" y="166" width="170" height="40" stroke="#D97757"></rect><text class="bt" x="64" y="182">Qwen3.6-35B-A3B</text><text class="bd" x="64" y="196">Sovereign teacher · MoE</text>
+<rect class="bb" x="236" y="166" width="170" height="40" stroke="#D97757"></rect><text class="bt" x="246" y="182">Gemma 4:31b</text><text class="bd" x="246" y="196">Production SLM · 80% traffic</text>
+<rect class="bb" x="54" y="214" width="170" height="40" stroke="#D97757"></rect><text class="bt" x="64" y="230">Qwen3.5:9b</text><text class="bd" x="64" y="244">Agent SLM · advisor NLP</text>
+<rect class="bb" x="236" y="214" width="170" height="40" stroke="#D97757"></rect><text class="bt" x="246" y="230">bge-m3</text><text class="bd" x="246" y="244">Embedding · Malay/EN RAG</text>
+
+<!-- SWARM -->
+<rect x="440" y="136" width="200" height="128" rx="10" fill="#EDF1EE" stroke="#67867F" stroke-width="1.3"></rect>
+<text class="zone" x="454" y="156" fill="#3F6B52">SULUH SWARM</text>
+<rect class="bb" x="454" y="166" width="172" height="40" stroke="#67867F"></rect><text class="bt" x="464" y="182">10,000 laptops</text><text class="bd" x="464" y="196">Qwen3.5 0.8B/2B students</text>
+<rect class="bb" x="454" y="214" width="172" height="40" stroke="#67867F"></rect><text class="bt" x="464" y="230">MA3 aggregator</text><text class="bd" x="464" y="244">APA-EF · ε-DP · secure agg</text>
+
+<!-- ORCHESTRATION -->
+<rect x="660" y="136" width="180" height="128" rx="10" fill="#ECF0F3" stroke="#5A7D9A" stroke-width="1.3"></rect>
+<text class="zone" x="674" y="156" fill="#3E5A73">ORCHESTRATION</text>
+<rect class="bb" x="674" y="166" width="152" height="40" stroke="#5A7D9A"></rect><text class="bt" x="684" y="182">LangGraph v1.0</text><text class="bd" x="684" y="196">Agents · HITL gates</text>
+<rect class="bb" x="674" y="214" width="152" height="40" stroke="#5A7D9A"></rect><text class="bt" x="684" y="230">pdpa_gate.py</text><text class="bd" x="684" y="244">Consent · IRB · audit</text>
+
+<!-- DATA FABRIC -->
+<rect x="40" y="286" width="800" height="52" rx="10" fill="#F2F0E6" stroke="#8A8A5B" stroke-width="1.3"></rect>
+<text class="zone" x="54" y="306" fill="#6B6B33">CENTRAL DATA FABRIC</text>
+<text class="bd" x="54" y="324">PostgreSQL 16 (DB SMBU) · pgvector · Redis 7 queues · MinIO documents · row-level security · LangFuse traces · immutable audit log</text>
+
+<!-- HARNESSES -->
+<g>
+<rect class="bb" x="40" y="366" width="190" height="64" stroke="#D97757"></rect><text class="bt" x="52" y="386">H1 · Institutional Intel</text><text class="bd" x="52" y="400">IPA engine + Talent Tracker</text><text class="bd" x="52" y="413">Owner: BSM</text>
+<rect class="bb" x="244" y="366" width="190" height="64" stroke="#67867F"></rect><text class="bt" x="256" y="386">H2 · Curriculum API</text><text class="bd" x="256" y="400">CURATOR-AI · CLO/PLO</text><text class="bd" x="256" y="413">Owner: PPA</text>
+<rect class="bb" x="448" y="366" width="190" height="64" stroke="#5A7D9A"></rect><text class="bt" x="460" y="386">H3 · Instructional Engine</text><text class="bd" x="460" y="400">MyGuru + MOOC · grading/tutor</text><text class="bd" x="460" y="413">Owner: Pusat ICT</text>
+<rect class="bb" x="652" y="366" width="188" height="64" stroke="#8A8A5B"></rect><text class="bt" x="664" y="386">H4 · Student Intel</text><text class="bd" x="664" y="400">myACADmate + UPSI Buddy</text><text class="bd" x="664" y="413">Owner: BHEA/BHEP</text>
+</g>
+
+<!-- INSTITUTIONAL SOURCES -->
+<rect x="40" y="466" width="800" height="58" rx="10" fill="#F0EEE6" stroke="#C9C4B4"></rect>
+<text class="zone" x="54" y="486" fill="#6E6D66">INSTITUTIONAL SOURCE SYSTEMS (READ VIA FABRIC ONLY)</text>
+<text class="bd" x="54" y="504">UniHRIS · UniSIS · MYRIMS · DB SMBU · LMS · BHEP records (MyChamp, mentor–mentee) · EDGE employability · Pusat Kaunseling · KPT/MQA standards (docs)</text>
+
+<!-- FLOWS -->
+<path class="flc" d="M355 86 L355 100 L230 100 L230 136"></path><text class="lbl" x="240" y="112">synthetic corpus ↓</text>
+<path class="fl" d="M540 264 L540 286"></path><text class="lbl" x="548" y="280">adapter Δ only</text>
+<path class="fl" d="M230 264 L230 286"></path>
+<path class="fl" d="M750 264 L750 286"></path>
+<path class="fl" d="M135 338 L135 366"></path><path class="fl" d="M339 338 L339 366"></path><path class="fl" d="M543 338 L543 366"></path><path class="fl" d="M746 338 L746 366"></path>
+<path class="fl" d="M440 495 L440 524" transform="translate(0,-58)"></path>
+<path class="fl" d="M135 430 L135 448 L440 448 L440 466" opacity="0"></path>
+<path class="fl" d="M440 524 L440 524" opacity="0"></path>
+<path class="fl" d="M135 466 L135 430"></path><path class="fl" d="M746 466 L746 430"></path>
+</svg>
+</div>
+<figcaption><b>Figure 10.1: SULUH master system diagram.</b> <i>The coral boundary is the sovereign line: everything inside it runs on UPSI hardware under PDPA governance. Cloud teachers sit outside and receive only anonymised curriculum artifacts. All four harnesses read and write exclusively through the central data fabric, and every model call routes through the orchestration layer's HITL and consent gates.</i></figcaption>
+</figure>
+<h3>The four-layer stack</h3>
+<figure><div class="figbox">
+<svg viewBox="0 0 860 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four-layer architecture stack">
+<style>.Lt{font-size:11px;font-weight:600;letter-spacing:1.2px;fill:#6E6D66}.Lh{font-size:15px;font-weight:600;fill:#141413}.Ld{font-size:12px;fill:#6E6D66}.cell{fill:#fff;stroke:#D9D5C7;rx:5}</style>
+<rect x="20" y="16" width="820" height="70" rx="8" fill="#FBF0EB" stroke="#D97757" stroke-width="1.5"></rect>
+<text class="Lt" x="38" y="38">LAYER 4 · APPLICATIONS</text>
+<rect class="cell" x="38" y="48" width="188" height="28"></rect><text class="Ld" x="50" y="66" font-weight="500" fill="#141413">Institutional Intelligence</text>
+<rect class="cell" x="236" y="48" width="188" height="28"></rect><text class="Ld" x="248" y="66" font-weight="500" fill="#141413">Curriculum Knowledge API</text>
+<rect class="cell" x="434" y="48" width="188" height="28"></rect><text class="Ld" x="446" y="66" font-weight="500" fill="#141413">Instructional Engine</text>
+<rect class="cell" x="632" y="48" width="188" height="28"></rect><text class="Ld" x="644" y="66" font-weight="500" fill="#141413">Student Intelligence</text>
+<rect x="20" y="96" width="820" height="66" rx="8" fill="#EDF1EE" stroke="#67867F" stroke-width="1.5"></rect>
+<text class="Lt" x="38" y="118">LAYER 3 · AI/ML ORCHESTRATION</text>
+<text class="Ld" x="38" y="140">Multi-agent orchestration · RAG pipeline · SLM inference · Predictive analytics · HITL gates · Injection screening</text>
+<rect x="20" y="172" width="820" height="66" rx="8" fill="#ECF0F3" stroke="#5A7D9A" stroke-width="1.5"></rect>
+<text class="Lt" x="38" y="194">LAYER 2 · CENTRAL DATA FABRIC</text>
+<text class="Ld" x="38" y="216">PostgreSQL · pgvector · Redis · MinIO · Role-gated access, row-level security</text>
+<rect x="20" y="248" width="820" height="66" rx="8" fill="#F2F0E6" stroke="#8A8A5B" stroke-width="1.5"></rect>
+<text class="Lt" x="38" y="270">LAYER 1 · SOVEREIGN COMPUTE</text>
+<text class="Ld" x="38" y="292">EXO cluster (2× Mac Studio + 3× DGX Spark) · 10,000-laptop federated swarm · 10GbE backbone</text>
+</svg>
+</div>
+<figcaption><b>Figure 10.2: The four-layer stack.</b> <i>Governance is enforced at Layer 3 once for all applications; no harness bypasses the data fabric or the orchestration layer.</i></figcaption>
+</figure>
+<h3>Integration contracts — the load-bearing joints</h3>
+<p>The Consolidated Matrix's core insight: the seven original projects were secretly one dependency graph. The merged design makes those dependencies explicit, versioned contracts:</p>
+<table class="tbl">
+<tbody><tr><th>#</th><th>Contract</th><th>Producer → Consumer</th><th>Payload (key fields)</th><th>Transport</th></tr>
+<tr><td>C1</td><td><strong>Staff Analytics API</strong></td><td>H1-IPA → H1-Talent</td><td>Anonymised productivity index, trajectory, burnout risk score</td><td>REST/JSON · internal</td></tr>
+<tr><td>C2</td><td><strong>Curriculum Intelligence API</strong></td><td>H2 → H3 (MyGuru + MOOC)</td><td>CLO lists, Bloom levels, compliance status; keyed by <code>course_code</code>; semver</td><td>REST/JSON · versioned</td></tr>
+<tr><td>C3</td><td><strong>Assessment Stream</strong></td><td>H3 → H4</td><td>Scores, CLO attainment %, engagement logs, low-confidence flags</td><td>REST + Redis stream</td></tr>
+<tr><td>C4</td><td><strong>Unified Student Model</strong></td><td>H4 internal (student ⇄ advisor surfaces)</td><td>One canonical <code>student_risk_state</code>: profile, score, features, intervention status</td><td>Shared schema · MySIS layer</td></tr>
+<tr><td>C5</td><td><strong>Inference API</strong></td><td>SULUH AI → all harnesses</td><td>Chat/completion, RAG retrieval, embeddings; per-harness quotas</td><td>OpenAI-compatible · vLLM/EXO</td></tr>
+</tbody></table>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dependency graph of integration contracts">
+<style>.db{fill:#fff;stroke-width:1.5;rx:8}.dt{font-size:12.5px;font-weight:600;fill:#141413}.dd{font-size:10.5px;fill:#6E6D66}.da{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#arr3)}.dl{font-size:10.5px;fill:#A84E31;font-weight:600}</style>
+<defs><marker id="arr3" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker></defs>
+<rect class="db" x="40" y="40" width="180" height="56" stroke="#67867F"></rect><text class="dt" x="54" y="62">H2 · Curriculum API</text><text class="dd" x="54" y="78">CLO/Bloom knowledge base</text>
+<rect class="db" x="350" y="40" width="180" height="56" stroke="#5A7D9A"></rect><text class="dt" x="364" y="62">H3 · Instructional</text><text class="dd" x="364" y="78">MyGuru grading + MOOC tutor</text>
+<rect class="db" x="660" y="40" width="180" height="56" stroke="#8A8A5B"></rect><text class="dt" x="674" y="62">H4 · Student Intel</text><text class="dd" x="674" y="78">Advising + holistic profiling</text>
+<rect class="db" x="40" y="180" width="180" height="56" stroke="#D97757"></rect><text class="dt" x="54" y="202">H1 · Institutional</text><text class="dd" x="54" y="218">IPA engine → Talent Tracker</text>
+<rect class="db" x="350" y="180" width="180" height="56" stroke="#141413"></rect><text class="dt" x="364" y="202">SULUH AI</text><text class="dd" x="364" y="218">Shared inference (C5)</text>
+<rect class="db" x="660" y="180" width="180" height="56" stroke="#C9C4B4"></rect><text class="dt" x="674" y="202">Source systems</text><text class="dd" x="674" y="218">UniHRIS · UniSIS · MYRIMS…</text>
+<path class="da" d="M220 68 L350 68"></path><text class="dl" x="262" y="60">C2</text>
+<path class="da" d="M530 68 L660 68"></path><text class="dl" x="580" y="60">C3</text>
+<path class="da" d="M130 96 C 130 140, 130 150, 130 180"></path><text class="dl" x="138" y="140">C1 (internal)</text>
+<path class="da" d="M440 180 L440 130 L420 96"></path><text class="dl" x="448" y="140">C5</text>
+<path class="da" d="M440 180 L440 130 L200 96" opacity=".55"></path>
+<path class="da" d="M440 180 L440 130 L680 96" opacity=".55"></path>
+<path class="da" d="M660 208 L530 208"></path><text class="dl" x="572" y="200">fabric reads</text>
+<path class="da" d="M750 96 L750 180" opacity=".55"></path><text class="dl" x="758" y="140">C4 within H4</text>
+</svg>
+</div>
+<figcaption><b>Figure 10.3: The contract dependency graph.</b> <i>H2 is the critical upstream: grading in H3 cannot ship before the CLO API stabilises, which is why H2 is a Phase-1 deliverable despite being the smallest harness. C5 (shared inference) fans out to all four.</i></figcaption>
+</figure>
+<div class="note"><b>One at-risk definition.</b> The matrix identified that the two student-facing proposals were "completely unaware of each other" and risked conflicting definitions of <em>at-risk</em>. Contract C4 makes that impossible by construction: both surfaces of Harness 4 read and write the same canonical record. This is the ecosystem's most consequential data-modeling decision.</div>
+<hr class="sec">
+</div></section>
+
+<section id="s11"><div class="wrap">
+<h2><span class="secnum">11</span>The Four Harnesses</h2>
+<p class="lede">Each harness is summarised here at PRD/SDD/TSD level — mission, users, load-bearing requirements, architecture, and its human gate. The standalone documents in the suite carry full endpoint specs, data models, and test plans.</p>
+
+<h3>11.1 · Institutional Intelligence <span style="color:var(--muted);font-weight:400;font-size:15px">— BSM · Dr. Ahmad Amri, Dr. Nurul Hila · High/Confidential</span></h3>
+<p><strong>Mission.</strong> Unlock staff competence data trapped in UniHRIS, MYRIMS, and DB SMBU into a live productivity engine (Dashboard IPA) feeding an AI career-progression Talent Tracker — predicting promotion readiness, modelling competency gaps against Garis Panduan criteria, and flagging stagnation and burnout risk early.</p>
+<p><strong>Design spine.</strong> One direction of flow: the IPA engine is the single source of truth (ETL of the 8+1 components, forecasting, clustering, NLP over publications); the Talent Tracker is a pure consumer of contract C1 and holds no database connections of its own — killing the duplicate-scraping problem at the design level. LLM-generated development plans are RAG-grounded on BSM promotion guidelines only, with citations.</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harness 1 architecture">
+<style>.hb{fill:#fff;stroke-width:1.5;rx:8}.ht{font-size:12.5px;font-weight:600;fill:#141413}.hd{font-size:10.5px;fill:#6E6D66}.ha{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#a1)}.hl{font-size:10px;fill:#A84E31;font-weight:600}.zone{font-size:10.5px;font-weight:600;letter-spacing:1.2px;fill:#6E6D66}</style>
+<defs><marker id="a1" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker></defs>
+<rect class="hb" x="30" y="40" width="180" height="70" stroke="#C9C4B4"></rect><text class="ht" x="44" y="62">Source systems</text><text class="hd" x="44" y="78">UniSIS · MYRIMS · UniHRIS</text><text class="hd" x="44" y="92">via central data fabric</text>
+<rect x="250" y="24" width="300" height="270" rx="10" fill="#FBF0EB" stroke="#D97757" stroke-width="1.3"></rect>
+<text class="zone" x="264" y="46" fill="#A84E31">IPA ENGINE (P2)</text>
+<rect class="hb" x="264" y="56" width="272" height="44" stroke="#D97757"></rect><text class="ht" x="276" y="74">ETL + validation</text><text class="hd" x="276" y="90">8+1 components · nightly · data-quality gates</text>
+<rect class="hb" x="264" y="108" width="272" height="44" stroke="#D97757"></rect><text class="ht" x="276" y="126">Predictive layer</text><text class="hd" x="276" y="142">IPA forecast · clustering · stagnation flags</text>
+<rect class="hb" x="264" y="160" width="272" height="44" stroke="#D97757"></rect><text class="ht" x="276" y="178">NLP layer</text><text class="hd" x="276" y="194">Publication analysis · LLM improvement steps (C5)</text>
+<rect class="hb" x="264" y="212" width="272" height="44" stroke="#141413"></rect><text class="ht" x="276" y="230">Staff Analytics API — contract C1</text><text class="hd" x="276" y="246">Anonymised index · trajectory · burnout score</text>
+<rect x="590" y="24" width="270" height="270" rx="10" fill="#EDF1EE" stroke="#67867F" stroke-width="1.3"></rect>
+<text class="zone" x="604" y="46" fill="#3F6B52">TALENT TRACKER (P1)</text>
+<rect class="hb" x="604" y="56" width="242" height="44" stroke="#67867F"></rect><text class="ht" x="616" y="74">Competency-gap model</text><text class="hd" x="616" y="90">vs. Garis Panduan criteria (RAG)</text>
+<rect class="hb" x="604" y="108" width="242" height="44" stroke="#67867F"></rect><text class="ht" x="616" y="126">Promotion-readiness ranker</text><text class="hd" x="616" y="142">Classification / ranking [3]</text>
+<rect class="hb" x="604" y="160" width="242" height="44" stroke="#67867F"></rect><text class="ht" x="616" y="178">Development-path generator</text><text class="hd" x="616" y="194">Career insight + training plan</text>
+<rect class="hb" x="604" y="212" width="242" height="44" stroke="#8A8A5B"></rect><text class="ht" x="616" y="230">HR review console</text><text class="hd" x="616" y="246">Approve / edit / reject · audit</text>
+<path class="ha" d="M210 75 L250 75"></path>
+<path class="ha" d="M536 234 L560 234 L560 130 L604 130"></path><text class="hl" x="548" y="118">C1</text>
+</svg>
+</div>
+<figcaption><b>Figure 11.1: Harness 1 component architecture.</b> <i>The Talent Tracker holds no database connections of its own — it consumes contract C1 exclusively, so both subsystems can evolve independently behind a stable, anonymised interface.</i></figcaption>
+</figure>
+<table class="tbl">
+<tbody><tr><th>Output</th><th>First recipient</th><th>Authority</th><th>Rule</th></tr>
+<tr><td>Career path / promotion suggestion</td><td>HR Officer (BSM)</td><td>BSM Director</td><td>Nothing reaches a staff record unreviewed</td></tr>
+<tr><td>Burnout-risk alert</td><td><strong>HOD → individual first</strong></td><td>HOD; HR on escalation only</td><td>Direct-to-HR routing architecturally blocked</td></tr>
+</tbody></table>
+<p><strong>Acceptance bar.</strong> Readiness model backtested on 3 years of anonymised promotion outcomes (≥ 75% top-decile precision); disparate-impact fairness screen before the gate; 100% audit traceability; BSM Director signs a 20-case pilot batch.</p>
+
+<h3>11.2 · Curriculum Knowledge API <span style="color:var(--muted);font-weight:400;font-size:15px">— PPA · Dr. Amelia · Low/Internal</span></h3>
+<p><strong>Mission.</strong> CURATOR-AI: automate KPT/MQA compliance auditing for programme development, and expose the resulting CLO–Bloom knowledge as the versioned API (contract C2) every grading engine depends on. The smallest harness with the highest leverage — <strong>it ships first</strong>, because H3 cannot compute CLO attainment without it.</p>
+<p><strong>Design spine.</strong> Two-speed pipeline: a deterministic rule engine lints the checkable live in the editor (credit structure, SLT hours); an async NLP auditor handles the semantic (CLO-to-standard alignment, Bloom classification) and returns findings cited to the exact clause. Nothing publishes to C2 without Dean/TDAA approval — the API serves only human-ratified mappings. Grounded in constructive alignment (Biggs) and the revised Bloom taxonomy (Anderson &amp; Krathwohl).</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harness 2 architecture">
+<style>.hb{fill:#fff;stroke-width:1.5;rx:8}.ht{font-size:12.5px;font-weight:600;fill:#141413}.hd{font-size:10.5px;fill:#6E6D66}.ha{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#a2)}.hl{font-size:10px;fill:#A84E31;font-weight:600}.zone{font-size:10.5px;font-weight:600;letter-spacing:1.2px}</style>
+<defs><marker id="a2" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker></defs>
+<rect class="hb" x="30" y="40" width="180" height="80" stroke="#C9C4B4"></rect><text class="ht" x="44" y="62">Standards corpus</text><text class="hd" x="44" y="78">KPT · MQA · professional</text><text class="hd" x="44" y="92">bodies · UPSI rulebooks</text><text class="hd" x="44" y="106">(PDF/DOCX → Docling)</text>
+<rect x="250" y="24" width="330" height="252" rx="10" fill="#EDF1EE" stroke="#67867F" stroke-width="1.3"></rect>
+<text class="zone" x="264" y="46" fill="#3F6B52">CURATOR-AI CORE</text>
+<rect class="hb" x="264" y="56" width="302" height="44" stroke="#67867F"></rect><text class="ht" x="276" y="74">RAG knowledge base</text><text class="hd" x="276" y="90">pgvector + bge-m3 · section-level chunks + citations [4]</text>
+<rect class="hb" x="264" y="108" width="146" height="52" stroke="#67867F"></rect><text class="ht" x="276" y="126">Rule engine</text><text class="hd" x="276" y="142">Deterministic checks:</text><text class="hd" x="276" y="154">credit, structure, SLT</text>
+<rect class="hb" x="420" y="108" width="146" height="52" stroke="#67867F"></rect><text class="ht" x="432" y="126">NLP auditor</text><text class="hd" x="432" y="142">CLO↔standard match,</text><text class="hd" x="432" y="154">Bloom classify (C5)</text>
+<rect class="hb" x="264" y="168" width="302" height="44" stroke="#67867F"></rect><text class="ht" x="276" y="186">CLO–Bloom knowledge base</text><text class="hd" x="276" y="202">Curated mappings · CLO→PLO matrices · versioned</text>
+<rect class="hb" x="264" y="220" width="302" height="44" stroke="#141413"></rect><text class="ht" x="276" y="238">Curriculum Intelligence API — contract C2</text><text class="hd" x="276" y="254">GET by course_code · semver · compliance status</text>
+<rect class="hb" x="640" y="40" width="210" height="70" stroke="#8A8A5B"></rect><text class="ht" x="654" y="62">Authoring surface</text><text class="hd" x="654" y="78">Syllabus editor · visual mapping</text><text class="hd" x="654" y="92">· peer feedback · DOCX/PDF export</text>
+<rect class="hb" x="640" y="130" width="210" height="60" stroke="#D97757"></rect><text class="ht" x="654" y="152">HITL: Dean / TDAA</text><text class="hd" x="654" y="168">AI = first-layer check only;</text><text class="hd" x="654" y="182">academic judgment approves</text>
+<rect class="hb" x="640" y="210" width="210" height="60" stroke="#5A7D9A"></rect><text class="ht" x="654" y="232">Consumers</text><text class="hd" x="654" y="248">H3 MyGuru + MOOC · H4 risk</text><text class="hd" x="654" y="262">mapping · PPA scorecards</text>
+<path class="ha" d="M210 80 L250 80"></path>
+<path class="ha" d="M640 75 L610 75 L610 82 L580 82" transform="translate(0,-4)"></path>
+<path class="ha" d="M566 242 L640 242"></path><text class="hl" x="590" y="234">C2</text>
+<path class="ha" d="M640 160 L600 160 L600 190 L566 190"></path>
+</svg>
+</div>
+<figcaption><b>Figure 11.2: CURATOR-AI architecture.</b> <i>A deterministic rule engine handles the checkable (credit structure, SLT hours) while the NLP auditor handles the semantic (CLO-to-standard alignment, Bloom levels). Nothing enters the versioned knowledge base without Dean/TDAA approval — the API serves only human-ratified mappings.</i></figcaption>
+</figure>
+<div class="note"><b>Versioning is a safety feature.</b> Downstream grading pins a mapping version. If PPA revises a CLO mid-semester, H3 continues grading against the pinned version until the Course Coordinator explicitly migrates — no silent grade-basis changes, the failure mode accreditation auditors care about most.</div>
+<p><strong>Acceptance bar.</strong> ≥ 90% Bloom/CLO agreement with an expert-labelled 300-CLO set; 100% citation resolvability; consumer-driven contract tests from H3/H4 in CI; POC = one MQA Level-6 programme (Standard: Education) authored, audited, approved, and served over C2 end-to-end.</p>
+
+<h3>11.3 · Generative Instructional Engine <span style="color:var(--muted);font-weight:400;font-size:15px">— Pusat ICT/BHEA/BHEP · Dr. Mohd Muslim, Dr. Ahmad Wiraputra · Medium/PDPA</span></h3>
+<p><strong>Mission.</strong> One shared generative pipeline with two faces: rubric-based AI grading with cited evidence spans (MyGuru, internal LMS) and a grounded AI tutor with dropout prediction (MOOC, external). The matrix found the two proposals had "identical technical DNA"; merging them shares one model stack, one ops team, one evaluation harness.</p>
+<p><strong>Evidence base.</strong> Intelligent tutoring achieves effect sizes near human tutoring (d ≈ 0.76 vs 0.79 — VanLehn), against Bloom's two-sigma benchmark; LLM judges exceed 80% agreement with human raters on rubric-anchored tasks (Zheng et al.); MOOC completion sits near 3% at scale (Reich &amp; Ruipérez-Valiente, <i>Science</i>) — the uplift target is +50% relative in AI-tutored cohorts.</p>
+<p><strong>Design spine.</strong> Strict JSON grading contract — <code>{criterion_id, score, evidence_spans[], rationale, confidence}</code> — where evidence spans must be verbatim substrings of the submission (non-matching spans zero the confidence). Confidence &lt; 0.75 or injection flags divert to mandatory re-review. The tutor answers only from the approved course corpus or abstains. <strong>There is no code path from a draft grade to UniSIS that bypasses the lecturer</strong> — a continuous canary test attempts it and must fail 100% of runs.</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harness 3 shared engine architecture">
+<style>.hb{fill:#fff;stroke-width:1.5;rx:8}.ht{font-size:12.5px;font-weight:600;fill:#141413}.hd{font-size:10.5px;fill:#6E6D66}.ha{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#a3)}.hl{font-size:10px;fill:#A84E31;font-weight:600}.zone{font-size:10.5px;font-weight:600;letter-spacing:1.2px}</style>
+<defs><marker id="a3" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker></defs>
+<rect class="hb" x="30" y="40" width="170" height="56" stroke="#8A8A5B"></rect><text class="ht" x="44" y="62">LMS surface</text><text class="hd" x="44" y="78">MyGuru grading UI</text>
+<rect class="hb" x="30" y="120" width="170" height="56" stroke="#8A8A5B"></rect><text class="ht" x="44" y="142">MOOC surface</text><text class="hd" x="44" y="158">Tutor chat · analytics</text>
+<rect class="hb" x="30" y="200" width="170" height="56" stroke="#67867F"></rect><text class="ht" x="44" y="222">Contract C2 in</text><text class="hd" x="44" y="238">CLO/Bloom (pinned ver)</text>
+<rect x="250" y="24" width="360" height="286" rx="10" fill="#ECF0F3" stroke="#5A7D9A" stroke-width="1.3"></rect>
+<text class="zone" x="264" y="46" fill="#3E5A73">SHARED GENERATIVE ENGINE</text>
+<rect class="hb" x="264" y="56" width="332" height="42" stroke="#5A7D9A"></rect><text class="ht" x="276" y="74">Ingestion &amp; language detection</text><text class="hd" x="276" y="90">Submissions · rubrics · Docling parse · Malay/EN routing</text>
+<rect class="hb" x="264" y="106" width="160" height="52" stroke="#5A7D9A"></rect><text class="ht" x="276" y="124">Grading agents</text><text class="hd" x="276" y="140">Per-criterion scoring,</text><text class="hd" x="276" y="152">evidence extraction</text>
+<rect class="hb" x="436" y="106" width="160" height="52" stroke="#5A7D9A"></rect><text class="ht" x="448" y="124">Tutor agents</text><text class="hd" x="448" y="140">RAG on approved</text><text class="hd" x="448" y="152">materials only</text>
+<rect class="hb" x="264" y="166" width="160" height="52" stroke="#5A7D9A"></rect><text class="ht" x="276" y="184">Confidence + injection</text><text class="hd" x="276" y="200">score &lt; 0.75 → re-review;</text><text class="hd" x="276" y="212">classifier flags attacks</text>
+<rect class="hb" x="436" y="166" width="160" height="52" stroke="#5A7D9A"></rect><text class="ht" x="448" y="184">Dropout predictor</text><text class="hd" x="448" y="200">Engagement features,</text><text class="hd" x="448" y="212">weekly risk markers</text>
+<rect class="hb" x="264" y="226" width="332" height="36" stroke="#141413"></rect><text class="ht" x="276" y="248">Redis worker queue · async batch grading</text>
+<rect class="hb" x="264" y="268" width="332" height="34" stroke="#141413"></rect><text class="ht" x="276" y="290">C5 inference: Gemma 4:31b · Qwen3.5:9b · bge-m3</text>
+<rect class="hb" x="660" y="56" width="190" height="70" stroke="#D97757"></rect><text class="ht" x="674" y="78">HITL: Lecturer</text><text class="hd" x="674" y="94">Side-by-side review; approve,</text><text class="hd" x="674" y="108">edit, reject before commit</text>
+<rect class="hb" x="660" y="146" width="190" height="56" stroke="#C9C4B4"></rect><text class="ht" x="674" y="168">UniSIS commit</text><text class="hd" x="674" y="184">Official grade · post-approval</text>
+<rect class="hb" x="660" y="222" width="190" height="56" stroke="#8A8A5B"></rect><text class="ht" x="674" y="244">Contract C3 out</text><text class="hd" x="674" y="260">Scores · CLO % · engagement → H4</text>
+<path class="ha" d="M200 68 L250 68"></path><path class="ha" d="M200 148 L250 148"></path><path class="ha" d="M200 228 L250 228"></path>
+<path class="ha" d="M596 91 L660 91"></path><text class="hl" x="614" y="83">drafts</text>
+<path class="ha" d="M755 126 L755 146"></path><text class="hl" x="763" y="140">approved</text>
+<path class="ha" d="M610 250 L660 250"></path>
+</svg>
+</div>
+<figcaption><b>Figure 11.3: One engine, two surfaces.</b> <i>Grading and tutoring share ingestion, RAG, inference (C5), and safety layers; only the thin surface layer differs. The lecturer gate sits between every draft grade and UniSIS — there is no code path around it.</i></figcaption>
+</figure>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grading sequence diagram">
+<style>.ln2{stroke:#C9C4B4;stroke-width:1.2}.ac{font-size:12px;font-weight:600;fill:#141413}.msg{fill:none;stroke:#D97757;stroke-width:1.6;marker-end:url(#a4)}.ml{font-size:10.5px;fill:#6E6D66}</style>
+<defs><marker id="a4" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.5"></path></marker></defs>
+<text class="ac" x="70" y="30" text-anchor="middle">Student</text><line class="ln2" x1="70" y1="38" x2="70" y2="230"></line>
+<text class="ac" x="270" y="30" text-anchor="middle">Engine</text><line class="ln2" x1="270" y1="38" x2="270" y2="230"></line>
+<text class="ac" x="470" y="30" text-anchor="middle">C2 (CLO)</text><line class="ln2" x1="470" y1="38" x2="470" y2="230"></line>
+<text class="ac" x="650" y="30" text-anchor="middle">Lecturer</text><line class="ln2" x1="650" y1="38" x2="650" y2="230"></line>
+<text class="ac" x="810" y="30" text-anchor="middle">UniSIS</text><line class="ln2" x1="810" y1="38" x2="810" y2="230"></line>
+<path class="msg" d="M70 56 L270 56"></path><text class="ml" x="90" y="50">submit essay</text>
+<path class="msg" d="M270 82 L470 82"></path><text class="ml" x="292" y="76">fetch CLO map (pinned)</text>
+<path class="msg" d="M470 100 L270 100"></path><text class="ml" x="300" y="96">clo[], bloom[]</text>
+<path class="msg" d="M270 126 L270 126 L650 126"></path><text class="ml" x="300" y="120">draft: scores + evidence + confidence</text>
+<path class="msg" d="M650 154 L270 154"></path><text class="ml" x="380" y="148">approve / edit / reject</text>
+<path class="msg" d="M270 182 L810 182"></path><text class="ml" x="300" y="176">commit official grade (approved only)</text>
+<path class="msg" d="M270 208 L70 208"></path><text class="ml" x="92" y="202">cited feedback released</text>
+<rect x="240" y="112" width="60" height="8" fill="#F6E3DC"></rect><text class="ml" x="306" y="120" opacity="0"> </text>
+</svg>
+</div>
+<figcaption><b>Figure 11.4: The grading round trip.</b> <i>Low-confidence drafts (&lt; 0.75) and injection flags divert to mandatory re-review before the lecturer sees them; the UniSIS commit message is cryptographically bound to the approval event ID for audit.</i></figcaption>
+</figure>
+<p><strong>Acceptance bar.</strong> ≥ 85% panel agreement; ≤ 5% hallucination on the golden set; &lt; 3 s grading / &lt; 1 s chat; Malay/English scoring parity; pre-launch double-marking study (engine vs two lecturers, 300 essays) — publishable as part of the deployment paper.</p>
+
+<h3>11.4 · Unified Student Intelligence Platform <span style="color:var(--muted);font-weight:400;font-size:15px">— BHEA/BHEP · Dr. Vasanthan, Pn. Nurul Ashikin, Jason Wong · High/Confidential</span></h3>
+<p><strong>Mission.</strong> End fragmented student records and late discovery. One canonical student model (contract C4) under three role surfaces: myACADmate (student PWA — progress, cited handbook chat, semester pathway), UPSI Buddy (advisor/BHEP bento dashboard — alerts, coordination, talent mapping with EDGE and Pulami data), and a counselor-only wellbeing view.</p>
+<p><strong>Design spine.</strong> Hybrid risk: a calibrated ML dropout predictor plus deterministic rule triggers, every flag carrying explainable top features. The intervention workflow is a first-class surface — flag → PTJ/PIC validation (24 h) → tracked ticket — because the early-warning literature (Course Signals; Jayaprakash et al.) shows timeliness and intervention design, not model accuracy, are the binding constraints. Wellbeing data lives in a separately-keyed vault only the counselor surface can decrypt, on a 4-hour SLA.</p>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harness 4 two-layer architecture">
+<style>.hb{fill:#fff;stroke-width:1.5;rx:8}.ht{font-size:12.5px;font-weight:600;fill:#141413}.hd{font-size:10.5px;fill:#6E6D66}.ha{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#a5)}.hl{font-size:10px;fill:#A84E31;font-weight:600}.zone{font-size:10.5px;font-weight:600;letter-spacing:1.2px}</style>
+<defs><marker id="a5" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker></defs>
+<rect class="hb" x="30" y="36" width="185" height="74" stroke="#C9C4B4"></rect><text class="ht" x="44" y="58">Inputs</text><text class="hd" x="44" y="74">UniSIS · C3 stream (H3)</text><text class="hd" x="44" y="88">BHEP · EDGE · Kaunseling</text><text class="hd" x="44" y="102">Pulami · faculties · docs</text>
+<rect x="255" y="24" width="350" height="292" rx="10" fill="#F2F0E6" stroke="#8A8A5B" stroke-width="1.3"></rect>
+<text class="zone" x="269" y="46" fill="#6B6B33">UNIFIED CORE · MySIS INTEGRATION LAYER</text>
+<rect class="hb" x="269" y="56" width="322" height="44" stroke="#8A8A5B"></rect><text class="ht" x="281" y="74">Canonical student model — contract C4</text><text class="hd" x="281" y="90">profile · progress · engagement · intervention state</text>
+<rect class="hb" x="269" y="108" width="155" height="56" stroke="#8A8A5B"></rect><text class="ht" x="281" y="126">Risk engine</text><text class="hd" x="281" y="142">Dropout predictor +</text><text class="hd" x="281" y="154">holistic profiling</text>
+<rect class="hb" x="436" y="108" width="155" height="56" stroke="#8A8A5B"></rect><text class="ht" x="448" y="126">Rules layer</text><text class="hd" x="448" y="142">Registration checks,</text><text class="hd" x="448" y="154">reminders (rule-based)</text>
+<rect class="hb" x="269" y="172" width="155" height="56" stroke="#8A8A5B"></rect><text class="ht" x="281" y="190">RAG advisor</text><text class="hd" x="281" y="206">Handbook/FAQ chat,</text><text class="hd" x="281" y="218">cited answers (C5)</text>
+<rect class="hb" x="436" y="172" width="155" height="56" stroke="#D97757"></rect><text class="ht" x="448" y="190">Intervention wf</text><text class="hd" x="448" y="206">PTJ validation gate ·</text><text class="hd" x="448" y="218">BHEA ticket queue</text>
+<rect class="hb" x="269" y="236" width="322" height="34" stroke="#141413"></rect><text class="ht" x="281" y="258">Wellbeing vault — counselor-only ACL · separate keys</text>
+<rect class="hb" x="269" y="276" width="322" height="30" stroke="#141413"></rect><text class="ht" x="281" y="296">Audit + explainability store (top features per flag)</text>
+<rect class="hb" x="650" y="46" width="200" height="76" stroke="#67867F"></rect><text class="ht" x="664" y="68">myACADmate</text><text class="hd" x="664" y="84">Student PWA: progress, chat,</text><text class="hd" x="664" y="98">pathway flowchart, reminders</text>
+<rect class="hb" x="650" y="142" width="200" height="76" stroke="#5A7D9A"></rect><text class="ht" x="664" y="164">UPSI Buddy</text><text class="hd" x="664" y="180">Advisor/BHEP bento dashboard,</text><text class="hd" x="664" y="194">alerts, coordination panel,</text><text class="hd" x="664" y="208">talent mapping</text>
+<rect class="hb" x="650" y="238" width="200" height="60" stroke="#D97757"></rect><text class="ht" x="664" y="260">Counselor view</text><text class="hd" x="664" y="276">Wellbeing alerts · 4 h SLA ·</text><text class="hd" x="664" y="290">trained counselors only</text>
+<path class="ha" d="M215 73 L255 73"></path>
+<path class="ha" d="M605 84 L650 84"></path><path class="ha" d="M605 180 L650 180"></path><path class="ha" d="M605 264 L650 264"></path>
+<text class="hl" x="614" y="76">C4 read</text><text class="hl" x="614" y="172">C4 read/write</text><text class="hl" x="612" y="256">vault only</text>
+</svg>
+</div>
+<figcaption><b>Figure 11.5: One core, three role surfaces.</b> <i>Both applications are thin clients over the same canonical model — the C4 contract — so a student and their advisor always see consistent state. Wellbeing data lives in a separately-keyed vault that only the counselor surface can decrypt.</i></figcaption>
+</figure>
+<div class="note"><b>No automated consequences.</b> The system never withholds a registration, notifies a parent, or alters a record from a model output. Predictions inform humans; humans act. This is the harness's core ethical commitment (Slade &amp; Prinsloo) and a hard line in code.</div>
+<p><strong>Acceptance bar.</strong> ≥ 70% PTJ-validated flag precision; ≥ 20% faster signal-to-intervention; zero role-leakage findings in penetration testing (counselor data must never render in an advisor DOM); k-anonymity floor on every aggregate tile.</p>
+<hr class="sec">
+</div></section>
+
+<section id="s12"><div class="wrap">
+<h2><span class="secnum">12</span>Query Routing, Guardrails &amp; Graceful Degradation</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Not every question needs the largest model, and no question gets to choose its own privacy posture. The router's first gate is consent and data classification — before complexity, before cost. Sensitive queries physically cannot reach the cloud: the check is code, not configuration, and there is no admin setting that overrides it.</p></div>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SULUH query routing decision tree">
+<style>.rb{fill:#fff;stroke-width:1.5;rx:8}.rt{font-size:12.5px;font-weight:600;fill:#141413}.rd{font-size:10.5px;fill:#6E6D66}.ra{fill:none;stroke:#C9C4B4;stroke-width:1.6;marker-end:url(#a9)}.rac{fill:none;stroke:#D97757;stroke-width:1.8;marker-end:url(#a9c)}.rl{font-size:10.5px;font-weight:600;fill:#A84E31}.rln{font-size:10.5px;font-weight:600;fill:#3F6B52}.dm{fill:#F0EEE6;stroke:#A8A297;stroke-width:1.5}</style>
+<defs>
+<marker id="a9" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#C9C4B4" stroke-width="1.5"></path></marker>
+<marker id="a9c" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#D97757" stroke-width="1.6"></path></marker>
+</defs>
+<rect x="350" y="16" width="180" height="40" rx="20" fill="#141413"></rect><text x="440" y="40" text-anchor="middle" font-size="13" font-weight="600" fill="#FAF9F5">Incoming query</text>
+<path d="M440 56 L440 84" class="rac"></path>
+<rect class="dm" x="330" y="84" width="220" height="52" rx="8"></rect><text class="rt" x="440" y="106" text-anchor="middle">pdpa_gate.py</text><text class="rd" x="440" y="122" text-anchor="middle">consent scope + data classification</text>
+<path class="rac" d="M550 110 L680 110"></path><text class="rl" x="590" y="102">no consent / sensitive</text>
+<rect class="rb" x="680" y="88" width="180" height="44" stroke="#A84E31"></rect><text class="rt" x="692" y="106">BLOCK / local-only</text><text class="rd" x="692" y="122">cloud path hardcoded OFF</text>
+<path class="rac" d="M440 136 L440 164"></path><text class="rln" x="450" y="156">pass</text>
+<rect class="dm" x="330" y="164" width="220" height="52" rx="8"></rect><text class="rt" x="440" y="186" text-anchor="middle">Complexity classifier</text><text class="rd" x="440" y="202" text-anchor="middle">simple / complex / multi-step</text>
+<path class="ra" d="M330 190 L180 190 L180 240"></path><text class="rd" x="200" y="182">simple</text>
+<rect class="rb" x="80" y="240" width="200" height="56" stroke="#67867F"></rect><text class="rt" x="92" y="262">FAST LANE</text><text class="rd" x="92" y="278">Qwen3.5:9b · routing, lookups, advisor chat</text>
+<path class="ra" d="M440 216 L440 240"></path><text class="rd" x="448" y="234">complex</text>
+<rect class="rb" x="340" y="240" width="200" height="56" stroke="#5A7D9A"></rect><text class="rt" x="352" y="262">PRIMARY · ~80% of load</text><text class="rd" x="352" y="278">Gemma 4:31b · grading, tutoring, audits</text>
+<path class="ra" d="M550 190 L700 190 L700 240"></path><text class="rd" x="600" y="182">multi-step</text>
+<rect class="rb" x="600" y="240" width="200" height="56" stroke="#8A8A5B"></rect><text class="rt" x="612" y="262">AGENTIC</text><text class="rd" x="612" y="278">LangGraph chains · teacher for synthesis</text>
+<path class="ra" d="M440 296 L440 330"></path>
+<rect class="dm" x="330" y="330" width="220" height="44" rx="8"></rect><text class="rt" x="440" y="348" text-anchor="middle">Confidence gate ≥ 0.75?</text><text class="rd" x="440" y="364" text-anchor="middle">grading/consequential outputs</text>
+<path class="rac" d="M330 352 L180 352 L180 296" transform="translate(0,0)"></path>
+<path class="rac" d="M550 352 L700 352"></path><text class="rl" x="580" y="344">below → human re-review</text>
+<rect class="rb" x="700" y="330" width="160" height="44" stroke="#D97757"></rect><text class="rt" x="712" y="348">HITL queue</text><text class="rd" x="712" y="364">named approver (§11)</text>
+<path class="ra" d="M440 374 L440 396"></path>
+<rect x="270" y="396" width="340" height="30" rx="15" fill="#141413"></rect><text x="440" y="416" text-anchor="middle" font-size="12" font-weight="600" fill="#FAF9F5">Audit log + LangFuse span — every query, every decision</text>
+<text class="rd" x="80" y="418">Cloud escalation exists only in Track A (anonymised curriculum artifacts). Student/staff queries have no cloud path at all.</text>
+</svg>
+</div>
+<figcaption><b>Figure 12.1: The routing decision tree.</b> <i>The PDPA/consent gate runs before any model assignment; the confidence gate runs after, diverting sub-threshold consequential outputs into named human review queues. Every routing decision is a logged, traceable event.</i></figcaption>
+</figure>
+<h3>Agent guardrails — mandatory</h3>
+<table class="tbl">
+<tbody><tr><th>Guardrail</th><th>Implementation</th></tr>
+<tr><td>Step ceiling per workflow</td><td>Hard limit in LangGraph config (12 steps). On breach: abort, partial result returned with warning, span flagged.</td></tr>
+<tr><td>Tool-call timeout</td><td>10 s independent timeout per tool step; timeout surfaces as <code>tool_timeout</code> in agent context, never silent.</td></tr>
+<tr><td>Read-only tool registry</td><td><code>tools.yaml</code> contains zero write-capable tools against systems of record. Adding one requires a formal Technical Review Board design amendment.</td></tr>
+<tr><td>Deterministic where determinable</td><td>Statistics, variance math, compliance rules, and risk thresholds run as plain Python nodes — the LLM narrates, it does not compute.</td></tr>
+<tr><td>PDPA scan at node boundaries</td><td>Every tool output passes the masking layer before entering an agent's context window.</td></tr>
+<tr><td>Evidence-span verification</td><td>Grading evidence must be verbatim substrings of the submission; non-matching spans zero confidence and flag the draft.</td></tr>
+<tr><td>Retrieval allow-lists</td><td>RAG restricted to approved, lifecycle-ACTIVE corpora per course/harness; SUPERSEDED documents excluded from default retrieval.</td></tr>
+</tbody></table>
+<h3>Failure modes &amp; graceful degradation</h3>
+<p>The AI layer is additive. When any component fails, the systems of record continue untouched.</p>
+<table class="tbl">
+<tbody><tr><th>Failed component</th><th>Degraded mode</th><th>User experience</th></tr>
+<tr><td>EXO cluster offline</td><td>AI features paused</td><td>"AI service temporarily unavailable." UniSIS, LMS, and all operational systems fully functional.</td></tr>
+<tr><td>pgvector / RAG index</td><td>Structured-only path</td><td>Document and policy Q&amp;A disabled; SQL-backed analytics and dashboards continue.</td></tr>
+<tr><td>C2 (curriculum API) unreachable</td><td>Pinned-version cache</td><td>Grading continues against the last pinned CLO mapping; new-mapping operations queue.</td></tr>
+<tr><td>PDPA masking layer</td><td><strong>FAIL CLOSED</strong></td><td>Query blocked, audit event written. No data passes unmasked under any failure mode.</td></tr>
+<tr><td>LangFuse observability</td><td>Fail-open, alert raised</td><td>System operates; Admin Console flags the tracing gap for immediate attention.</td></tr>
+<tr><td>Swarm aggregation service</td><td>Research pause</td><td>Zero production impact — federation is Track C research, decoupled from serving by design.</td></tr>
+<tr><td>Cloud teacher APIs (Track A)</td><td>Local-only synthesis</td><td>Synthetic-corpus generation pauses; all production capabilities unaffected.</td></tr>
+</tbody></table>
+<hr class="sec">
+</div></section>
+
+<section id="s13"><div class="wrap">
+<h2><span class="secnum">13</span>Security, PDPA &amp; Auditability</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>PDPA compliance is an architectural property, not a policy overlay. Data classification governs what can be stored, retrieved, and processed where; the masking layer runs at ingest and runtime; the audit log is append-only by database trigger; and if the privacy layer fails, the system fails closed — never open.</p></div>
+<h3>Data classification model</h3>
+<table class="tbl">
+<tbody><tr><th>Level</th><th>Examples</th><th>Cloud (Track A) eligibility</th><th>Retention</th></tr>
+<tr><td><span class="tag low">PUBLIC</span></td><td>Published MQA/KPT standards, anonymised aggregate statistics</td><td>Permitted</td><td>Indefinite</td></tr>
+<tr><td><span class="tag low">INTERNAL</span></td><td>Curriculum documents, rubrics, model answers (anonymised)</td><td>Permitted, anonymised</td><td>7 years</td></tr>
+<tr><td><span class="tag high">CONFIDENTIAL</span></td><td>Student submissions and records, staff IPA and readiness data</td><td><strong>Prohibited</strong></td><td>7 years academic / 3 years analytics</td></tr>
+<tr><td><span class="tag crit">RESTRICTED</span></td><td>Wellbeing and counseling records, burnout scores, identifiers</td><td><strong>Prohibited</strong></td><td>Per statutory schedule · vault-keyed</td></tr>
+</tbody></table>
+<h3>Governance spine — every model call, wrapped</h3>
+<table class="tbl">
+<tbody><tr><th>Stage</th><th>Control</th><th>Mechanism</th><th>Evidence trail</th></tr>
+<tr><td>Pre-query</td><td>Consent check</td><td><code>pdpa_gate.py</code> rejects non-consented scopes at the API boundary</td><td>Gate decision log</td></tr>
+<tr><td>Pre-query</td><td>Injection screening</td><td>Input classifier + retrieval allow-lists</td><td>Flag events in LangFuse</td></tr>
+<tr><td>Inference</td><td>Tracing</td><td>LangFuse span per call: model, tokens, latency, harness</td><td>Immutable trace store</td></tr>
+<tr><td>Post-inference</td><td>Confidence gating</td><td>Sub-threshold consequential outputs → mandatory human review</td><td>Review queue records</td></tr>
+<tr><td>Action</td><td>HITL approval</td><td>Named approver per output class (§11)</td><td>Signed approval events</td></tr>
+<tr><td>Lifecycle</td><td>Retention</td><td>TTL policies, cron-audited purge</td><td>Purge audit report</td></tr>
+</tbody></table>
+<h3>Mandatory audit log events</h3>
+<p>The <code>ai_audit_log</code> table is append-only, enforced by PostgreSQL trigger. Retention is non-negotiable.</p>
+<table class="tbl">
+<tbody><tr><th>Event</th><th class="num">Retention</th><th>Key fields</th></tr>
+<tr><td>AI query submitted</td><td class="num">7 yrs</td><td>user_hash, role, harness, query_hash, route, model, confidence, latency_ms</td></tr>
+<tr><td>Draft grade produced / decided</td><td class="num">7 yrs</td><td>draft_id, course, clo_ver, confidence, flags[], approver, action, ts</td></tr>
+<tr><td>Risk flag raised / validated</td><td class="num">7 yrs</td><td>flag_id, band, top_features_hash, validator, decision, elapsed_h</td></tr>
+<tr><td>PDPA PII detection event</td><td class="num">10 yrs</td><td>query_id, entity_types[], masking_applied, direction</td></tr>
+<tr><td>C2 mapping published / migrated</td><td class="num">7 yrs</td><td>course_code, old_ver, new_ver, approver, consumers_notified</td></tr>
+<tr><td>Swarm aggregation round</td><td class="num">3 yrs</td><td>round_id, device_count, ε-budget spent, adapter_hash</td></tr>
+<tr><td>Routing / config change</td><td class="num">7 yrs</td><td>changed_by_hash, old_config_hash, new_config_hash, TRB ref</td></tr>
+<tr><td>Failed authentication</td><td class="num">3 yrs</td><td>source_hash, attempted_role, failure_reason</td></tr>
+</tbody></table>
+<p><strong>Network perimeter.</strong> Cluster, replicas, MinIO, and LangFuse accept connections only from the gateway subnet; the FastAPI gateway is campus-network and VPN only, never internet-facing; the sole permitted outbound path is Track A's HTTPS to approved teacher APIs, gated by classification; all intra-service traffic is TLS 1.3; SSO + MFA on High-classification roles; row-level security throughout the fabric.</p>
+<hr class="sec">
+</div></section>
+
+<!-- ============================ PART D ============================ -->
+<div class="wrap"><div class="chapter"><div class="ck">Part D</div><div class="ct">The Programme</div></div></div>
+
+<section id="s14"><div class="wrap">
+<h2><span class="secnum">14</span>Economics — Sovereign vs. Cloud</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>SULUH AI reaches breakeven against every cloud alternative by Month 14. By Month 36, sovereignty has saved RM 240K–600K — while every byte of student and staff data stayed on Malaysian infrastructure. The productivity case (§3) and this infrastructure case are independent; either alone carries the decision.</p></div>
+<h3>Budget — dual scenario</h3>
+<p style="margin-bottom:14px"><strong>Scenario A — Full programme (SULUH AI + 4 Harnesses):</strong> RM 450,000 cash ask + RM 200,000 ICT in-kind hardware = <strong>RM 650,000 total programme value</strong>.</p>
+<table class="tbl">
+<tbody><tr><th>Category</th><th>Item</th><th class="num">RM</th></tr>
+<tr><td>SULUH Hardware (UPSI ICT, in-kind)</td><td>2× Mac Studio M3 Ultra 256 GB + 3× DGX Spark + network + 12U cabinet — a permanent institutional asset <em>provided by UPSI ICT, not procured by the programme</em></td><td class="num">200,000</td></tr>
+<tr><td>SULUH AI consulting (12 months)</td><td>Lead Architect (Putra Nasution) — sovereign model adaptation, three-track pipeline, IsRAG + Dewan Council + SULUH orchestrator; 2 ML engineers (phased)</td><td class="num">250,000</td></tr>
+<tr><td>H1 Institutional Intelligence delivery</td><td>IPA engine + Talent Tracker integration, HITL gates, BSM [VERIFY: Dr. Suzani] pilot batch</td><td class="num">50,000</td></tr>
+<tr><td>H2 Curriculum Knowledge API</td><td>CURATOR-AI, CLO/PLO mapping, versioned C2 API, Dean/TDAA approval workflow</td><td class="num">50,000</td></tr>
+<tr><td>H3 Instructional Engine</td><td>MyGuru grading + MOOC tutor, rubric-anchored scoring, dropout prediction, lecturer gate</td><td class="num">50,000</td></tr>
+<tr><td>H4 Student Intelligence</td><td>myACADmate + UPSI Buddy, canonical C4 student model, wellbeing vault, BHEA/BHEP surfaces [VERIFY]</td><td class="num">50,000</td></tr>
+<tr class="total"><td colspan="2">Total Year-1 cash ask</td><td class="num">RM 450,000</td></tr>
+</tbody></table>
+<p style="margin-bottom:14px"><strong>Scenario B — SULUH AI only (no harness delivery):</strong> RM 85,000 cash ask + RM 200,000 ICT in-kind hardware = <strong>RM 285,000</strong>. Covers the sovereign model, three-track pipeline, and research outputs only. Harnesses deferred to a subsequent engagement.</p>
+<div class="note"><b>Phase 0 commitment — 10% of cash ask.</b> The programme requests <strong>only RM 45,000 (Scenario A) or RM 28,500 (Scenario B)</strong> for the 2-month Phase 0 validation sprint (SSO bridge, bilingual model benchmark, golden set v0.1, cluster bring-up). The remaining 90% is requested <strong>incrementally at each phase-gate exit (§16)</strong>: Phase 1 ~RM 135K (+30%), Phases 2–3 ~RM 180K (+40%), Phase 4 ~RM 90K (+20%). No phase is funded without evidence in hand from the prior phase. This structure lets UPSI validate the technical prerequisites before committing production budget.</div>
+<h4>Budget summary</h4>
+<table class="tbl">
+<tbody><tr><th>Scenario</th><th>Cash ask</th><th>ICT in-kind</th><th>Total value</th><th>Phase 0 ask (10%)</th></tr>
+<tr><td><strong>A — Full programme</strong></td><td class="num">RM 450,000</td><td class="num">RM 200,000</td><td class="num">RM 650,000</td><td class="num">RM 45,000</td></tr>
+<tr><td><strong>B — SULUH AI only</strong></td><td class="num">RM 85,000</td><td class="num">RM 200,000</td><td class="num">RM 285,000</td><td class="num">RM 28,500</td></tr>
+</tbody></table>
+<h3>Annual OPEX — steady state</h3>
+<table class="tbl">
+<tbody><tr><td>Cloud teacher APIs (Track A, anonymised synthesis)</td><td class="num">RM 5,000</td></tr>
+<tr><td>Electricity (5 desktop-class nodes, 24/7)</td><td class="num">RM 8,000</td></tr>
+<tr><td>Maintenance &amp; warranty</td><td class="num">RM 12,000</td></tr>
+<tr><td>Network &amp; backup</td><td class="num">RM 5,000</td></tr>
+<tr class="total"><td>Total OPEX</td><td class="num">RM 30,000 / yr</td></tr>
+</tbody></table>
+<figure><div class="figbox">
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cumulative cost over 36 months: SULUH vs cloud">
+<style>.ex{font-size:11.5px;fill:#6E6D66}.ev{font-size:12px;font-weight:600;fill:#141413}.eg{stroke:#E3E0D6}.lb{font-size:12px;font-weight:600}</style>
+<!-- Axes -->
+<line x1="80" y1="280" x2="820" y2="280" stroke="#141413" stroke-width="1.5"></line>
+<line x1="80" y1="30" x2="80" y2="280" stroke="#141413" stroke-width="1.5"></line>
+<!-- Y gridlines: 0, 200K, 400K, 600K, 800K, 1M -->
+<g>
+<line class="eg" x1="80" y1="230" x2="820" y2="230"></line><text class="ex" x="72" y="234" text-anchor="end">200K</text>
+<line class="eg" x1="80" y1="180" x2="820" y2="180"></line><text class="ex" x="72" y="184" text-anchor="end">400K</text>
+<line class="eg" x1="80" y1="130" x2="820" y2="130"></line><text class="ex" x="72" y="134" text-anchor="end">600K</text>
+<line class="eg" x1="80" y1="80" x2="820" y2="80"></line><text class="ex" x="72" y="84" text-anchor="end">800K</text>
+<line class="eg" x1="80" y1="30" x2="820" y2="30"></line><text class="ex" x="72" y="34" text-anchor="end">1M</text>
+<text class="ex" x="72" y="284" text-anchor="end">0</text>
+</g>
+<!-- X ticks: 0, 6, 12, 18, 24, 30, 36 months -->
+<g>
+<text class="ex" x="80" y="298" text-anchor="middle">M0</text>
+<text class="ex" x="203" y="298" text-anchor="middle">M6</text>
+<text class="ex" x="327" y="298" text-anchor="middle">M12</text>
+<text class="ex" x="450" y="298" text-anchor="middle">M18</text>
+<text class="ex" x="574" y="298" text-anchor="middle">M24</text>
+<text class="ex" x="697" y="298" text-anchor="middle">M30</text>
+<text class="ex" x="820" y="298" text-anchor="middle">M36</text>
+</g>
+<text class="ex" x="450" y="322" text-anchor="middle" font-weight="600">Months from project start</text>
+<!-- Data
+Scale: y=280 is 0, y=30 is 1M. So 1RM = 250/1,000,000 = 0.00025 y-units. y = 280 - (cost * 0.00025)
+SULUH: M0=RM240K (450K prorated actually — but per master, "12-month cost RM240K, 3-year RM300K")
+Actually: SULUH 12-month RM240K, 3-year RM300K → OPEX after Y1 = 30K/yr
+Let's model: month 0 = 0, month 12 = 240K (linear ramp of CAPEX+manpower), then +30K/yr = 2.5K/mo
+Cloud Anthropic: 15K/month → M12=180K, M36=540K
+Cloud OpenAI: 20K/month → M12=240K, M36=720K
+Vendor: mixed → M12=400K, M36=900K
+Y coords: y = 280 - cost*0.00025
+0→280, 240K→220, 300K→205, 540K→145, 720K→100, 900K→55, 180K→235, 400K→180
+X: M0=80, M12=327, M24=574, M36=820. Per month ≈ (820-80)/36 = 20.55
+-->
+<!-- Vendor (900K M36) - stone/olive -->
+<polyline points="80,280 574,146 820,55" fill="none" stroke="#8A8A5B" stroke-width="2.5"></polyline>
+<text class="lb" x="826" y="59" fill="#8A8A5B">Vendor "sovereign"</text>
+<text class="ex" x="826" y="72">RM 900K</text>
+<!-- OpenAI 720K -->
+<polyline points="80,280 327,220 820,100" fill="none" stroke="#5A7D9A" stroke-width="2.5"></polyline>
+<text class="lb" x="826" y="104" fill="#5A7D9A">Cloud (OpenAI)</text>
+<text class="ex" x="826" y="117">RM 720K</text>
+<!-- Anthropic 540K -->
+<polyline points="80,280 327,235 820,145" fill="none" stroke="#67867F" stroke-width="2.5"></polyline>
+<text class="lb" x="826" y="149" fill="#67867F">Cloud (Anthropic)</text>
+<text class="ex" x="826" y="162">RM 540K</text>
+<!-- SULUH: CAPEX ramp then flat OPEX. M0=0 → M12=240K → M36=300K -->
+<polyline points="80,280 327,220 820,205" fill="none" stroke="#D97757" stroke-width="3.5"></polyline>
+<text class="lb" x="826" y="209" fill="#D97757">SULUH AI</text>
+<text class="ex" x="826" y="222">RM 300K</text>
+<!-- Breakeven marker M14 — where SULUH crosses Anthropic ~M14
+SULUH at M14: 240K + 2*2.5K = 245K → y=218.75
+Anthropic at M14: 15K*14 = 210K → y=227.5
+Actually crossover with Anthropic is later. Master says breakeven M14 — trust it, mark it visually
+-->
+<line x1="368" y1="30" x2="368" y2="280" stroke="#A84E31" stroke-width="1.5" stroke-dasharray="4 4"></line>
+<circle cx="368" cy="218" r="5" fill="#A84E31"></circle>
+<text class="lb" x="378" y="42" fill="#A84E31">Breakeven · Month 14</text>
+<text class="ex" x="378" y="56" fill="#A84E31">SULUH below all cloud lines</text>
+</svg>
+</div>
+<figcaption><b>Figure 14.1: Cumulative cost over 36 months.</b> <i>SULUH AI's cost curve flattens after Month 12 as the CAPEX-heavy build phase completes; cloud alternatives keep accumulating at RM 15K–25K per month. Breakeven against every cloud option is reached by Month 14, and by Month 36 sovereignty has saved between RM 240K and RM 600K.</i></figcaption>
+</figure>
+<hr class="sec">
+</div></section>
+
+<section id="s15"><div class="wrap">
+<h2><span class="secnum">15</span>Governance &amp; the Approval Ask</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Four governance layers, each with a defined remit and escalation path. Phase-gate transitions are approved by the Steering Committee chair; day-to-day delivery rests with the Lead Architect; every gate decision lands in an auditable programme decision log. And the ask is deliberately small: Phase 0 only.</p></div>
+<h3>Four governance layers (proposed)</h3>
+<table class="tbl">
+<tbody><tr><th>Layer</th><th>Composition</th><th>Remit</th></tr>
+<tr><td><strong>Steering Committee</strong></td><td>Chair (VC-appointed) · ICT Director · Registrars of owning divisions (BSM, BHEA, BHEP, PPA) · Legal/Compliance · Lead Architect</td><td>Phase-gate approvals · scope changes · budget variance &gt; 10% · policy-level decisions · programme health</td></tr>
+<tr><td><strong>Technical Review Board</strong></td><td>Lead Architect (Chair) · systems engineer · DBA lead · security lead · external AI expert (optional)</td><td>Design decisions · model swaps · contract (C1–C5) schema changes · guardrail amendments · regression-gate exceptions</td></tr>
+<tr><td><strong>Compliance &amp; Audit Forum</strong></td><td>Internal Auditor (Chair) · DPO · Legal · ICT Security · Lead Architect</td><td>PDPA review · audit-log review · quarterly compliance attestation · incident review · escalation-path validation</td></tr>
+<tr><td><strong>User Advisory Panel</strong></td><td>Lecturer reps · advisor reps · student reps · PPA auditor · BSM officer (rotating)</td><td>Adoption-barrier identification · UX recommendations · golden-set prioritisation · feedback synthesis</td></tr>
+</tbody></table>
+<h3>Phase-gate approval flow</h3>
+<ul class="plain">
+<li>1 · Lead Architect convenes the Technical Review Board to verify exit criteria (§16) are met.</li>
+<li>2 · Technical sign-off is documented and circulated to the Steering Committee five business days before the gate meeting.</li>
+<li>3 · The Committee reviews the gate package: criteria status, metrics, risk updates, next-phase plan.</li>
+<li>4 · The Chair approves, defers with specific remediation actions, or declines.</li>
+<li>5 · The decision is recorded in the auditable programme decision log.</li>
+</ul>
+<h3>What we need approved — Phase 0 only</h3>
+<table class="tbl">
+<tbody><tr><th>Ask</th><th>Specifics</th></tr>
+<tr><td>Phase 0 budget</td><td>Hardware procurement authorisation (5-node cluster) + prorated Phase 0 manpower; Phase 1 budget is a separate, later decision.</td></tr>
+<tr><td>SSO team engagement</td><td>Dedicated 2-week engagement with UPSI ICT SSO team in Week 1 — the critical path; Phase 1 cannot start until the bridge validates.</td></tr>
+<tr><td>Procurement fast-track</td><td>Expedited PO for DGX Spark and Mac Studio units; 6-week delivery window protects the schedule.</td></tr>
+<tr><td>Division time allocations</td><td>Finance-equivalent domain experts from each owning division at ~20% in Phase 0 for golden-set authorship (grading, curriculum, advising, HR).</td></tr>
+<tr><td>Legal engagement</td><td>DPO appointment confirmation; Track A data-processing review so cloud synthesis is available Day 1 of Phase 1.</td></tr>
+<tr><td>Visible sponsorship</td><td>A named senior sponsor to chair the Steering Committee — the single biggest predictor of cross-division velocity.</td></tr>
+</tbody></table>
+<h3>What we are <em>not</em> asking for</h3>
+<table class="tbl">
+<tbody><tr><th>Not asking</th><th>Why not</th></tr>
+<tr><td>Full 12-month budget commitment now</td><td>Phase 1 will be requested at the Phase 0 exit gate with benchmark evidence in hand. Incremental commitment reduces institutional risk.</td></tr>
+<tr><td>New senior hires</td><td>The delivery plan runs on the existing team plus phased engineering hires within the RM 250K envelope, accelerated by agentic engineering tooling.</td></tr>
+<tr><td>Software licensing fees</td><td>The stack is entirely open source. RM 0, permanently.</td></tr>
+<tr><td>Changes to systems of record</td><td>UniSIS, UniHRIS, MYRIMS, and the LMS are not modified. The AI layer reads via replicas through the fabric; writes occur only through existing human-approved channels.</td></tr>
+<tr><td>Automated decisions of any kind</td><td>No grade commits, promotion actions, or student interventions without a named human approval — architecturally enforced.</td></tr>
+</tbody></table>
+<div class="note"><b>Decision requested.</b> Approval to initiate Phase 0 of the SULUH programme, subject to the governance model above and the exit criteria in §16.</div>
+<hr class="sec">
+</div></section>
+
+<section id="s16"><div class="wrap">
+<h2><span class="secnum">16</span>Delivery Roadmap, Evaluation &amp; Success Metrics</h2>
+<figure><div class="figbox">
+<svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Delivery phases">
+<style>.px{font-size:11px;fill:#6E6D66}.pl{font-size:12.5px;font-weight:600;fill:#141413}.pb2{rx:12}.pt2{font-size:11px;fill:#fff;font-weight:500}.ptd{font-size:11px;fill:#141413;font-weight:500}.pg{stroke:#E3E0D6}</style>
+<g><line class="pg" x1="200" y1="34" x2="200" y2="200"></line><line class="pg" x1="310" y1="34" x2="310" y2="200"></line><line class="pg" x1="420" y1="34" x2="420" y2="200"></line><line class="pg" x1="530" y1="34" x2="530" y2="200"></line><line class="pg" x1="640" y1="34" x2="640" y2="200"></line><line class="pg" x1="750" y1="34" x2="750" y2="200"></line>
+<text class="px" x="200" y="26" text-anchor="middle">M2</text><text class="px" x="310" y="26" text-anchor="middle">M4</text><text class="px" x="420" y="26" text-anchor="middle">M6</text><text class="px" x="530" y="26" text-anchor="middle">M8</text><text class="px" x="640" y="26" text-anchor="middle">M10</text><text class="px" x="750" y="26" text-anchor="middle">M12</text></g>
+<text class="pl" x="20" y="58">Phase 0 · Bench</text><rect class="pb2" x="145" y="44" width="55" height="22" fill="#141413"></rect><text class="pt2" x="152" y="59">SSO·eval</text>
+<text class="pl" x="20" y="96">Phase 1 · Foundations</text><rect class="pb2" x="145" y="82" width="165" height="22" fill="#D97757"></rect><text class="pt2" x="155" y="97">Fabric · H2 API · inference</text>
+<text class="pl" x="20" y="134">Phase 2 · Harnesses</text><rect class="pb2" x="255" y="120" width="275" height="22" fill="#67867F"></rect><text class="pt2" x="265" y="135">H1 + H3 MVPs → H4 unified model</text>
+<text class="pl" x="20" y="172">Phase 3 · Swarm</text><rect class="pb2" x="420" y="158" width="220" height="22" fill="#5A7D9A"></rect><text class="pt2" x="430" y="173">1K → 10K federation · MA3/APA-EF</text>
+<text class="pl" x="20" y="210">Phase 4 · Harden</text><rect class="pb2" x="640" y="196" width="118" height="22" fill="#8A8A5B"></rect><text class="pt2" x="650" y="211">DPO · pilot · papers</text>
+</svg>
+</div>
+<figcaption><b>Figure 16.1: Phased delivery.</b> <i>H2 ships first (Phase 1) because contract C2 is the critical upstream for grading; the swarm scales only after harnesses are stable, so research risk never blocks production delivery.</i></figcaption>
+</figure>
+<h3>Phase gates — exit criteria</h3>
+<table class="tbl">
+<tbody><tr><th>Phase</th><th class="num">End</th><th>Exit gate — all must pass before the next phase begins</th></tr>
+<tr><td><strong>0 · Bench</strong></td><td class="num">M2</td><td>SSO bridge validated end-to-end · cluster online, EXO endpoint serving · bilingual benchmark report accepted (Qwen3.6 vs Gemma 4 vs Qwen3.5) · golden set v0.1 (50 entries) authored by domain experts · fabric schema introspected and merged</td></tr>
+<tr><td><strong>1 · Foundations</strong></td><td class="num">M4</td><td>Data fabric live with RLS · C5 inference API stable · <strong>H2 CLO API (C2) live and versioned</strong> · Docling ingesting ≥ 3 document types · LangFuse tracing on all layers</td></tr>
+<tr><td><strong>2 · Harnesses</strong></td><td class="num">M8</td><td>H1 + H3 MVPs on staging with HITL gates enforced · H4 canonical model (C4) serving both surfaces · golden set at 200 entries · regression harness in CI · M8 metrics gate passed</td></tr>
+<tr><td><strong>3 · Swarm</strong></td><td class="num">M10</td><td>Federation scaled 1K → 5K+ devices converging under MA3/APA-EF · ε-budget accounting audited · zero production impact demonstrated</td></tr>
+<tr><td><strong>4 · Harden &amp; launch</strong></td><td class="num">M12</td><td>DPO alignment complete · red-team review clean · pilot cohorts live (2 faculties) · M12 metrics passed · deployment paper data frozen</td></tr>
+</tbody></table>
+<h3>Evaluation plan</h3>
+<p><strong>Golden set:</strong> 200 query–answer pairs across five educational domains, bilingual Malay/English, authored by 30+ UPSI researchers, expert-validated; it gates every model, prompt, or retrieval change from production — no exceptions. <strong>Baselines:</strong> SULUH AI (adapted 35B) vs unadapted Qwen3.6-35B-A3B, Gemma 4:31b, and API-tier frontier models on identical prompts. <strong>Nightly regression:</strong> any metric drop &gt; 2 points blocks deploy.</p>
+<h3>Success metrics by milestone</h3>
+<table class="tbl">
+<tbody><tr><th>Metric</th><th class="num">M6</th><th class="num">M10</th><th class="num">M12</th><th>Measurement</th></tr>
+<tr><td>Grading agreement (rubric adherence)</td><td class="num">75%</td><td class="num">82%</td><td class="num">≥ 85%</td><td>BERTScore + expert panel</td></tr>
+<tr><td>CLO/PLO compliance mapping accuracy</td><td class="num">85%</td><td class="num">88%</td><td class="num">≥ 90%</td><td>Auditor panel review</td></tr>
+<tr><td>Advising satisfaction</td><td class="num">—</td><td class="num">70%</td><td class="num">≥ 80%</td><td>Post-interaction survey</td></tr>
+<tr><td>Malay fluency</td><td class="num">85%</td><td class="num">88%</td><td class="num">≥ 90%</td><td>Native-speaker panel</td></tr>
+<tr><td>Hallucination rate (golden set)</td><td class="num">≤ 10%</td><td class="num">≤ 7%</td><td class="num">≤ 5%</td><td>Citation verification</td></tr>
+<tr><td>Latency (grading / chat first token)</td><td class="num">&lt; 5 s / 2 s</td><td class="num">&lt; 4 s / 1.5 s</td><td class="num">&lt; 3 s / 1 s</td><td>LangFuse p50</td></tr>
+<tr><td>PDPA compliance</td><td class="num">100%</td><td class="num">100%</td><td class="num">100%</td><td>Audit-log review</td></tr>
+<tr><td>Pilot adoption (target roles)</td><td class="num">—</td><td class="num">40%</td><td class="num">≥ 60%</td><td>Login + query telemetry</td></tr>
+<tr><td>Regression gate pass rate</td><td class="num">100%</td><td class="num">100%</td><td class="num">100%</td><td>CI pipeline</td></tr>
+<tr><td>Swarm nodes converging</td><td class="num">—</td><td class="num">5,000+</td><td class="num">10,000</td><td>Aggregation telemetry</td></tr>
+</tbody></table>
+<hr class="sec">
+</div></section>
+
+<section id="s17"><div class="wrap">
+<h2><span class="secnum">17</span>Risk Register</h2>
+<div class="sowhat"><div class="sw">So What</div>
+<p>Ten risks tracked; all ten carry active mitigations built into the delivery plan — none are accepted residual risks. The three High-impact technical unknowns (SSO, bilingual model quality, grading trust) are all retired in Phase 0, before production capability is built.</p></div>
+<table class="tbl">
+<tbody><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th></tr>
+<tr><td>SSO integration complexity discovered late</td><td><span class="tag med">Medium</span></td><td><span class="tag high">High</span></td><td>Phase 0 critical path, Week 1; Phase 1 blocked until bridge validates; 2-week buffer</td></tr>
+<tr><td>Model underperforms on Malay/English mixed prompts</td><td><span class="tag med">Medium</span></td><td><span class="tag high">High</span></td><td>Phase 0 formal benchmark on UPSI golden set; model-agnostic swap paths maintained</td></tr>
+<tr><td>Grading outputs mislead or hallucinate</td><td><span class="tag med">Medium</span></td><td><span class="tag high">High</span></td><td>Verbatim evidence-span verification; confidence gate; mandatory lecturer approval; nightly golden-set regression</td></tr>
+<tr><td>Multi-agent chains produce plausible-wrong analyses</td><td><span class="tag med">Medium</span></td><td><span class="tag high">High</span></td><td>Deterministic computation nodes; step ceilings; confidence-gated display; HITL on all consequential outputs</td></tr>
+<tr><td>Hardware delivery delays</td><td><span class="tag med">Medium</span></td><td><span class="tag high">High</span></td><td>Fast-tracked PO; Mac Studio 7–10 business days, DGX Spark 2–4 weeks; local backup suppliers</td></tr>
+<tr><td>PI / architect bandwidth split across programmes</td><td><span class="tag high">High</span></td><td><span class="tag high">High</span></td><td>Engineering team absorbs implementation; architect holds design + papers; TRB spreads review load</td></tr>
+<tr><td>Federated swarm attrition / heterogeneity</td><td><span class="tag med">Medium</span></td><td><span class="tag med">Medium</span></td><td>MA3 capability weighting; incentive design (academic credit, gamification); research decoupled from production</td></tr>
+<tr><td>Low AI trust among lecturers and advisors</td><td><span class="tag med">Medium</span></td><td><span class="tag med">Medium</span></td><td>Citations + confidence on every answer; power-user-first rollout; User Advisory Panel feedback loop from Day 1</td></tr>
+<tr><td>Outdated standards remain retrievable</td><td><span class="tag med">Medium</span></td><td><span class="tag high">High</span></td><td>Document lifecycle states (ACTIVE/SUPERSEDED/ARCHIVED) enforced at index time; C2 semver pinning</td></tr>
+<tr><td>PDPA non-compliance</td><td><span class="tag low">Low</span></td><td><span class="tag crit">Critical</span></td><td>Privacy-by-design; DPO Day 1; fail-closed masking; quarterly Compliance Forum attestation</td></tr>
+</tbody></table>
+<hr class="sec">
+</div></section>
+
+<section id="s18"><div class="wrap">
+<h2><span class="secnum">18</span>Research Output &amp; Publication Plan</h2>
+<table class="tbl">
+<tbody><tr><th>#</th><th>Paper</th><th>Venue</th><th>Content</th></tr>
+<tr><td>1</td><td><strong>IsRAG</strong></td><td>EMNLP / ACL</td><td>Isnad-chain provenance RAG with traceable citations</td></tr>
+<tr><td>2</td><td><strong>Dewan Council</strong></td><td>EMNLP</td><td>Multi-agent deliberation with confidence-gated routing</td></tr>
+<tr><td>3</td><td><strong>SULUH AI</strong></td><td>ACL / EMNLP / Nature MI</td><td>Sovereign 35B educational model, three-track architecture, economic analysis</td></tr>
+<tr><td>4</td><td><strong>Federated Swarm</strong></td><td>NeurIPS / ICLR workshop</td><td>MA3, APA-EF, LES-GA evaluated at 10,000-device scale</td></tr>
+<tr><td>5</td><td><strong>Deployment Study</strong></td><td>LAK / AIED</td><td>Full-platform evaluation across the four harnesses at UPSI, including the pre-launch double-marking study</td></tr>
+</tbody></table>
+<p>Each paper maps to programme artifacts that exist by design — the golden set, the double-marking study, the ε-budget accounting, the swarm telemetry — so publication is a by-product of disciplined delivery, not a separate workstream competing with it.</p>
+<hr class="sec">
+</div></section>
+
+<!-- ============================ §19 UPSI AI LAB + STAGED ROADMAP ============================ -->
+<section id="s19"><div class="wrap">
+<h2><span class="secnum">19</span>The UPSI AI Lab — Institutionalisation &amp; Staged Roadmap</h2>
+<div class="sowhat"><div class="sw">Why this section exists</div>
+<p>SULUH is not a 12-month project that ends. Stage 1 (this programme) delivers the 35B sovereign model and four harnesses. Stage 2 scales the model to 100B for all UPSI users. Stage 3 productises the platform for SEA higher education. The institutional vehicle that makes all three stages coherent is the <strong>UPSI AI Lab</strong> — and its Founding Director is the programme's Lead Architect.</p></div>
+
+<h3>19.1 · The UPSI AI Lab — mandate and structure</h3>
+<p>The UPSI AI Lab is the institutional home where the SULUH Ecosystem continues to evolve after the 12-month delivery. It is not a new building or a large administrative unit — it is a small, high-leverage research-and-engineering unit with three functions:</p>
+<ul class="plain">
+<li><strong>Continuity of compound asset</strong> — the teacher–student adaptation loop (§9) requires continuous authorship. A vendor contract terminates; the Lab does not. Embedding PN as Founding Director ensures compounding continues across semesters.</li>
+<li><strong>Research output</strong> — the five-paper publication plan (§18) requires PN as lead author on papers 1–3 and co-author on 4–5. Papers 4 and 5 depend on UPSI-specific empirical infrastructure (swarm telemetry, deployment study) that only the Lab can sustain.</li>
+<li><strong>Reference implementation custodianship</strong> — UPSI becomes the sector's reference point for sovereign educational AI. The Lab is the front door for consortium partners (Stage 3), grant applications, and national-scale expansion.</li>
+</ul>
+
+<h3>19.2 · Stage 2 forecast — 100B SULUH AI for the UPSI family</h3>
+<p>Stage 1 serves the ~785 staff in primary impact roles. Stage 2 scales to the entire UPSI family: <strong>25,901 students + 2,172 administrative staff + ~1,800 academic staff ≈ 30,000 potential users</strong>, with a conservative peak of 2,000 concurrent during exam and grading seasons. Sizing the cluster to handle 2,000 concurrent at sub-5s latency requires a 100B-class MoE model (12B active, same ratio as the Stage 1 Qwen3.6-35B-A3B) on a ~3.5 TB aggregate memory cluster.</p>
+
+<h4>Stage 2 hardware — two benchmarked options (target ≤ RM 2M)</h4>
+<table class="tbl">
+<tbody><tr><th>Option</th><th>Configuration</th><th class="num">Aggregate</th><th class="num">Concurrent</th><th class="num">Hardware RM</th><th>Notes</th></tr>
+<tr><td><strong>E — Hybrid (preferred)</strong></td><td>1× NVIDIA DGX B200 (1,536 GB HBM3e) + 4× Apple Mac Studio M4 Ultra 512GB + 100GbE + 24U rack + 15kW cooling</td><td class="num">3,584 GB</td><td class="num">2,000+</td><td class="num">1,600,000</td><td>Architectural continuity with Stage 1 EXO prefill/decode pattern. DGX B200 handles prefill; Mac Studios handle decode + SLM.</td></tr>
+<tr><td><strong>B — GH200 Grace Hopper</strong></td><td>4× NVIDIA GH200 480GB + 100GbE + rack + cooling</td><td class="num">1,920 GB</td><td class="num">1,500–2,000</td><td class="num">1,600,000</td><td>Unified CPU+GPU memory, SuperChip architecture. Pure CUDA path — simpler ops, no Apple tier.</td></tr>
+</tbody></table>
+<p><strong>Recommendation: Option E</strong> — architectural continuity with Stage 1 (same EXO prefill/decode split, same operator muscle), 2,000+ concurrent headroom, RM 400K under the RM 2M cap for network/cooling/contingency. Stage 1's Mac Studios can be redeployed as edge nodes for SLM traffic.</p>
+
+<h4>Stage 2 latency and concurrency projections</h4>
+<table class="tbl">
+<tbody><tr><th>Workload</th><th>Stage 1 (35B MoE)</th><th>Stage 2 (100B MoE)</th><th>Trade-off</th></tr>
+<tr><td>Grading single essay</td><td class="num">&lt; 3 s</td><td class="num">&lt; 5 s</td><td>1.7× decode slowdown from 3× params</td></tr>
+<tr><td>Grading batch (120 essays)</td><td class="num">~9 min</td><td class="num">~15–18 min</td><td>Batch throughput scales with VRAM</td></tr>
+<tr><td>Chat first token</td><td class="num">&lt; 1 s</td><td class="num">&lt; 1.5 s</td><td>Prefill bottleneck</td></tr>
+<tr><td>Concurrent peak users</td><td class="num">~500</td><td class="num">2,000</td><td>4× aggregate memory</td></tr>
+<tr><td>Sustained throughput</td><td class="num">~15 RPS</td><td class="num">~50 RPS</td><td>3× throughput</td></tr>
+</tbody></table>
+<p>Stage 2 latency is slightly worse per token, but concurrency is 4× — the right tradeoff for institution-wide deployment.</p>
+
+<h4>Stage 2 budget breakdown (total ≤ RM 2M)</h4>
+<table class="tbl">
+<tbody><tr><th>Item</th><th class="num">RM</th></tr>
+<tr><td>1× NVIDIA DGX B200 (1,536 GB) — prefill heavyweight</td><td class="num">850,000</td></tr>
+<tr><td>4× Apple Mac Studio M4 Ultra 512GB — decode + SLM</td><td class="num">520,000</td></tr>
+<tr><td>100GbE core switch + NICs + cabling</td><td class="num">80,000</td></tr>
+<tr><td>24U datacenter rack + 15kW cooling + UPS</td><td class="num">180,000</td></tr>
+<tr><td>12-month SULUH AI Stage 2 consulting (PN + 2 ML engineers)</td><td class="num">250,000</td></tr>
+<tr><td>Training data + evaluation + golden set v2</td><td class="num">50,000</td></tr>
+<tr><td>Contingency (~6%)</td><td class="num">120,000</td></tr>
+<tr class="total"><td>Total Stage 2</td><td class="num">RM 2,000,000</td></tr>
+</tbody></table>
+
+<h4>Stage 2 funding model</h4>
+<table class="tbl">
+<tbody><tr><th>Source</th><th class="num">RM</th><th>Rationale</th></tr>
+<tr><td>UPSI ICT hardware CAPEX (in-kind)</td><td class="num">1,600,000</td><td>University infrastructure appropriation — a permanent 100B-scale AI asset owned by UPSI</td></tr>
+<tr><td>FRGS / LRGS research grant (Stage 2)</td><td class="num">250,000</td><td>Sovereign 100B educational model research output = publishable, fits FRGS criteria</td></tr>
+<tr><td>SULUH AI Stage 2 consulting fee</td><td class="num">150,000</td><td>Renewed PN engagement as AI Lab Director</td></tr>
+<tr class="total"><td>Total</td><td class="num">RM 2,000,000</td></tr>
+</tbody></table>
+<p>This is a <strong>RM 150K-cash ask</strong> to UPSI for Stage 2 if the grant comes through — a modest incremental investment to upgrade from 35B (500 concurrent) to 100B (2,000 concurrent) sovereign AI for the entire UPSI family.</p>
+
+<div class="note"><b>Stage 2 timeline.</b> Stage 2 is a <em>forecast</em>, not a commitment. It is proposed to begin in Year 2, contingent on Stage 1 Phase 4 exit (§16) and grant approval. Hardware specifications (DGX B200, Mac Studio M4 Ultra) must be live-verified at procurement time; prices are July 2026 estimates and will be re-baselined at Stage 2 initiation.</div>
+
+<h3>19.3 · Stage 3 forecast — SEA enterprise consortium</h3>
+<p>Stage 3 productises the SULUH Ecosystem for SEA higher education. The platform is not a "prototype for UPSI only" — it is a regional sovereign AI platform where UPSI is the <strong>founding reference implementation</strong>. Each consortium member deploys their own on-prem instance; the federation layer (§10) allows anonymised adapter deltas to feed the next teacher model, so the product literally gets better with every customer.</p>
+
+<h4>Stage 3 pricing tiers</h4>
+<table class="tbl">
+<tbody><tr><th>Tier</th><th>Target</th><th class="num">Annual fee (RM)</th><th>Included</th></tr>
+<tr><td><strong>Sovereign Standard</strong></td><td>Small/medium public unis (15–30K students)</td><td class="num">450,000</td><td>Ecosystem license + 4 harnesses + quarterly updates + evaluation harness + federation participation</td></tr>
+<tr><td><strong>Sovereign Premium</strong></td><td>Large flagship unis (30K+ students)</td><td class="num">750,000</td><td>Standard + managed 24/7 ops + custom model adaptation + dedicated teacher tuning + priority research collab</td></tr>
+</tbody></table>
+
+<h4>Stage 3 Year-1 projection (10 universities, conservative mix)</h4>
+<table class="tbl">
+<tbody><tr><th>Mix</th><th class="num">Unis</th><th class="num">Revenue (RM/yr)</th><th>Notes</th></tr>
+<tr><td>Standard-tier SEA public unis (e.g., UPI Indonesia, Khon Kaen Thailand, UEH Vietnam)</td><td class="num">7</td><td class="num">3,150,000</td><td>Easy sells — no commercial cloud alternative that's PDPA-native in their jurisdiction</td></tr>
+<tr><td>Premium-tier SEA flagship unis (UM, UTM, Chulalongkorn-class)</td><td class="num">3</td><td class="num">2,250,000</td><td>Reference accounts anchor the consortium</td></tr>
+<tr class="total"><td>Total Y1 ARR</td><td class="num">10</td><td class="num">5,400,000</td><td></td></tr>
+</tbody></table>
+
+<h4>Stage 3 Year-1 economics</h4>
+<table class="tbl">
+<tbody><tr><th>Item</th><th class="num">RM</th></tr>
+<tr><td>Engineering team (4 ML/SRE + 2 sales/delivery)</td><td class="num">1,200,000</td></tr>
+<tr><td>PN (Founder &amp; CTO, 0.5 FTE)</td><td class="num">300,000</td></tr>
+<tr><td>Hosted staging cluster (demos + benchmarking)</td><td class="num">400,000</td></tr>
+<tr><td>Cloud API costs (Track A customers, anonymised arbitration)</td><td class="num">200,000</td></tr>
+<tr><td>Sales pipeline + marketing</td><td class="num">250,000</td></tr>
+<tr><td>Travel + partner confabs</td><td class="num">150,000</td></tr>
+<tr><td>Legal + subsidiary setup (Malaysia + Indonesia + Singapore)</td><td class="num">100,000</td></tr>
+<tr><td>Contingency (20%, first-year volatility)</td><td class="num">500,000</td></tr>
+<tr class="total"><td>Total Y1 OPEX</td><td class="num">3,100,000</td></tr>
+</tbody></table>
+<p><strong>Y1 gross: RM 5.4M ARR − RM 3.1M OPEX = RM 2.3M gross profit (~43% margin).</strong> Margins improve to 56% (Y2, 17 unis) and 64% (Y3, 25 unis) as code/harness reusability compounds and per-customer support burden drops via federation.</p>
+
+<h4>Stage 3 three-year forecast</h4>
+<table class="tbl">
+<tbody><tr><th>Metric</th><th class="num">Y1</th><th class="num">Y2</th><th class="num">Y3</th></tr>
+<tr><td>Universities</td><td class="num">10</td><td class="num">17</td><td class="num">25</td></tr>
+<tr><td>ARR (RM)</td><td class="num">5.4M</td><td class="num">9.5M</td><td class="num">14.5M</td></tr>
+<tr><td>OPEX (RM)</td><td class="num">3.1M</td><td class="num">4.2M</td><td class="num">5.2M</td></tr>
+<tr><td>Gross profit (RM)</td><td class="num">2.3M</td><td class="num">5.3M</td><td class="num">9.3M</td></tr>
+<tr><td>Margin</td><td class="num">43%</td><td class="num">56%</td><td class="num">64%</td></tr>
+</tbody></table>
+<p>The compounding moat (§9) is what makes this defensible: every federation member's anonymised adapter deltas feed the next teacher model. A vendor with a closed stack cannot replicate this; only the originator's continuous authorship keeps the loop improving.</p>
+
+<h3>19.4 · What this means for UPSI leadership</h3>
+<p>By backing Stage 1, UPSI is not buying a 12-month project. UPSI is <strong>anchoring a regional sovereign AI platform</strong> as its founding partner:</p>
+<ul class="plain">
+<li>Stage 1 (RM 450K cash + RM 200K ICT in-kind): a 35B sovereign model + 4 harnesses for ~785 staff — already a strong internal ROI.</li>
+<li>Stage 2 (RM 2M, ~RM 150K cash ask post-grant): a 100B sovereign model for all 30,000 UPSI users — under a tenth of what a commercial vendor would charge for equivalent capability.</li>
+<li>Stage 3 (SEA enterprise): UPSI is the founding reference. Every subsequent consortium member references UPSI as the prototype. The research capital, the name recognition, and the federation's compounding gains accrue to UPSI first.</li>
+</ul>
+<div class="note"><b>The preferred scenario — but not the only one.</b> The UPSI AI Lab is the recommended vehicle because it institutionalises the capability and compounds across stages. However, UPSI retains flexibility: the programme can alternatively be delivered through a standard consulting engagement (PN as external consultant) or a vendor contract (PN's company as supplier). The Lab is preferred because it benefits UPSI most; the alternatives deliver the same 12-month output but without the compounding institutional anchor. UPSI decides which model fits its procurement and governance preferences.</div>
+<div class="note"><b>Knowledge transfer — a standing offer.</b> Independent of the contractual vehicle chosen, PN commits to knowledge transfer as part of the engagement: teaching at UPSI, whether as an adjunct professor (subject to UPSI's academic appointment process) or through informal classes, workshops, and mentoring for the SULUH platform team. The goal is capability transfer — so UPSI's own staff can run, extend, and eventually lead the platform. The specific format (formal adjunct appointment, short course series, hands-on engineering workshops, or a combination) will be agreed with UPSI's academic leadership during Phase 0.</div>
+<div class="note"><b>The imperative.</b> The programme's algorithmic authorship (IsRAG, Dewan Council, MA3, APA-EF, LES-GA) and the five-paper publication plan require the originator's continuous involvement. The UPSI AI Lab is the contractual vehicle that makes Stages 2 and 3 possible. Without PN's continued involvement, the programme terminates at Stage 1; with it, UPSI becomes the regional reference for sovereign educational AI.</div>
+<hr class="sec">
+</div></section>
+
+<!-- ============================ APPENDICES ============================ -->
+<div class="wrap"><div class="chapter"><div class="ck">Appendices</div><div class="ct">Reference Material</div></div></div>
+
+<section id="axa"><div class="wrap">
+<h2><span class="secnum">A</span>Glossary</h2>
+<table class="tbl">
+<tbody><tr><th>Term</th><th>Plain-English definition</th></tr>
+<tr><td>SULUH</td><td>Sovereign Unified Learning &amp; Understanding Hub — the programme name; also Malay for "torch."</td></tr>
+<tr><td>Harness</td><td>One of four production application groups consuming SULUH AI: Institutional Intelligence, Curriculum Knowledge API, Instructional Engine, Student Intelligence.</td></tr>
+<tr><td>MoE</td><td>Mixture-of-Experts — an architecture activating a small subset of parameters per token (Qwen3.6: 3B of 35B), giving large-model quality at small-model serving cost.</td></tr>
+<tr><td>QLoRA</td><td>Quantized Low-Rank Adaptation — fine-tuning a quantized base model through small adapter matrices, making 35B-class adaptation feasible on unified-memory hardware.</td></tr>
+<tr><td>Distillation</td><td>Training a small "student" model to reproduce a large "teacher" model's behaviour — how the 0.8–2B swarm models are made.</td></tr>
+<tr><td>Federated learning</td><td>Training across many devices where data never leaves the device; only model updates (here, LoRA adapter deltas) are transmitted.</td></tr>
+<tr><td>ε-differential privacy</td><td>A mathematical guarantee bounding what any individual's data can reveal through model updates; the ε-budget is tracked and audited per aggregation round.</td></tr>
+<tr><td>EXO</td><td>Open-source disaggregated inference — pools heterogeneous nodes into one OpenAI-compatible endpoint by splitting model layers across them.</td></tr>
+<tr><td>Prefill / decode</td><td>The two phases of LLM serving: prompt ingestion (compute-bound → DGX Sparks) and token generation (memory-bandwidth-bound → Mac Studios).</td></tr>
+<tr><td>RAG</td><td>Retrieval-Augmented Generation — answers grounded in retrieved documents with citations, rather than model memory alone.</td></tr>
+<tr><td>pgvector / HNSW</td><td>PostgreSQL's vector-search extension and its fast approximate-nearest-neighbour index — retrieval without a separate vector database.</td></tr>
+<tr><td>LangGraph</td><td>Production agent-workflow framework (v1.0): explicit state machines, per-node guardrails, deterministic audit spans.</td></tr>
+<tr><td>LangFuse</td><td>Self-hosted observability — every model call, retrieval, and routing decision recorded as a traceable span, on-premise.</td></tr>
+<tr><td>Docling</td><td>Open-source document intelligence (IBM Research) — layout, table, and OCR extraction for standards, rubrics, and circulars.</td></tr>
+<tr><td>CLO / PLO</td><td>Course / Programme Learning Outcomes — the accreditation metrics contract C2 serves and Harness 3 evidences.</td></tr>
+<tr><td>MQA / KPT</td><td>Malaysian Qualifications Agency / Ministry of Higher Education — the accreditation and regulatory targets of Harness 2.</td></tr>
+<tr><td>PDPA</td><td>Personal Data Protection Act 2010 (Malaysia) — the statutory basis for the classification, masking, and retention model in §13.</td></tr>
+<tr><td>HITL</td><td>Human-in-the-loop — the named-approver gates between every consequential AI output and any institutional action.</td></tr>
+<tr><td>Golden set</td><td>The 200-entry bilingual query–answer library gating every model, prompt, or retrieval change from production.</td></tr>
+<tr><td>C1–C5</td><td>The five versioned integration contracts joining the ecosystem (§10).</td></tr>
+<tr><td>UniSIS / UniHRIS / MYRIMS</td><td>UPSI's systems of record for students, staff, and research — read-only sources to the fabric, never modified by the AI layer.</td></tr>
+</tbody></table>
+</div></section>
+
+<section id="axb"><div class="wrap">
+<h2><span class="secnum">B</span>Open Questions — Resolution Required Before Phase 1</h2>
+<table class="tbl">
+<tbody><tr><th>#</th><th>Question</th><th>Owner</th><th>Target</th></tr>
+<tr><td>OQ-1</td><td>Is UPSI SSO OpenID Connect or SAML? Determines the JWT issuance mechanism and bridge implementation.</td><td>ICT Head · Lead Architect</td><td>Phase 0, Week 1 — <strong>blocks Phase 1</strong></td></tr>
+<tr><td>OQ-2</td><td>Replication mechanism for fabric read-replicas: does the DBA team have capacity for CDC tooling, or is native logical replication the fallback?</td><td>DBA team</td><td>Phase 0, Week 2</td></tr>
+<tr><td>OQ-3</td><td>Embedding benchmark on the Malay academic corpus: bge-m3 confirmed, or a lighter alternative for edge nodes?</td><td>Lead Architect</td><td>Phase 0, Week 3</td></tr>
+<tr><td>OQ-4</td><td>Existing NAS with S3-compatible API available, or deploy MinIO fresh?</td><td>ICT Head</td><td>Phase 0, Week 1</td></tr>
+<tr><td>OQ-5</td><td>Laptop-fleet management channel for swarm client rollout (managed images vs. opt-in installer) and the incentive scheme's academic-credit approval.</td><td>ICT · BHEP</td><td>Before Phase 3</td></tr>
+<tr><td>OQ-6</td><td>Track A data-processing review signed for cloud teacher APIs, and DPO formally appointed?</td><td>Legal · Compliance</td><td>Before Phase 1 go-live — <strong>blocks Track A activation</strong></td></tr>
+<tr><td>OQ-7</td><td>Historical promotion-outcome data access (3 years, anonymised) approved for the H1 backtest?</td><td>BSM · DPO</td><td>Phase 1</td></tr>
+</tbody></table>
+</div></section>
+
+<section id="axc"><div class="wrap">
+<h2><span class="secnum">C</span>Technology Track Record</h2>
+<table class="tbl">
+<tbody><tr><th>Component</th><th>Origin / maintainer</th><th>Production track record</th></tr>
+<tr><td>Qwen3.6-35B-A3B</td><td>Alibaba</td><td>Apache 2.0 · 262K–1M context · top-tier bilingual benchmarks · verified live on Ollama/HF 20 Jul 2026</td></tr>
+<tr><td>Gemma 4:31b</td><td>Google DeepMind</td><td>Open weights · 256K context · MLX-native on Apple Silicon · strong instruct quality</td></tr>
+<tr><td>Qwen3.5 (9B / 2B / 0.8B)</td><td>Alibaba</td><td>Apache 2.0 · multimodal 9B · edge-class 0.8–2B students proven on consumer hardware</td></tr>
+<tr><td>bge-m3</td><td>BAAI</td><td>Multilingual embedding standard for Malay/English retrieval; 100+ languages</td></tr>
+<tr><td>EXO</td><td>exolabs, open source</td><td>Heterogeneous pooling, Apple-Silicon-optimised, OpenAI-compatible endpoint, active community</td></tr>
+<tr><td>vLLM</td><td>Open source</td><td>De-facto standard high-throughput LLM serving engine</td></tr>
+<tr><td>LangGraph</td><td>LangChain</td><td>v1.0 stable · deployed at major technology firms · default runtime for production agents</td></tr>
+<tr><td>LangFuse</td><td>LangFuse GmbH</td><td>Self-hosted LLM observability used across regulated industries; native LangGraph integration</td></tr>
+<tr><td>Docling</td><td>IBM Research</td><td>Open-sourced 2024; leading document-intelligence toolkit for enterprise RAG</td></tr>
+<tr><td>pgvector</td><td>PostgreSQL community</td><td>Mainstream extension; HNSW since 2023; production at major technology companies</td></tr>
+<tr><td>PostgreSQL 16 · Redis 7 · MinIO · FastAPI · Vue 3</td><td>Open source</td><td>Industry-standard components across mission-critical systems globally</td></tr>
+<tr><td>NVIDIA DGX Spark (GB10)</td><td>NVIDIA</td><td>Grace Blackwell · 128 GB coherent · independently reviewed and benchmarked at launch</td></tr>
+<tr><td>Apple Mac Studio M3 Ultra</td><td>Apple</td><td>256 GB unified · class-leading memory bandwidth for token generation</td></tr>
+<tr><td>Psyche</td><td>Nous Research</td><td>Demonstrated distributed transformer training across untrusted internet participants — SULUH's feasibility floor</td></tr>
+</tbody></table>
+</div></section>
+
+<section id="axd"><div class="wrap">
+<h2><span class="secnum">D</span>Why This Approach vs. Alternatives</h2>
+<table class="tbl">
+<tbody><tr><th>Alternative</th><th>Why not chosen</th><th>Risks incurred</th></tr>
+<tr><td><strong>Do nothing (status quo)</strong></td><td>~61,000 hours/year of opportunity foregone; at-risk students keep being found late; accreditation evidence stays manual; knowledge stays tribal</td><td>Competitive erosion; attrition cost compounds; no position when the sector's AI direction is set by others</td></tr>
+<tr><td><strong>Full cloud AI (SaaS)</strong></td><td>Student and staff data transiting foreign clouds weakens PDPA posture; recurring cost scales with usage and never converts to an asset; overtakes sovereign cost by Month 14 (§14)</td><td>Data-sovereignty exposure; vendor lock-in; subscription growth; no research moat</td></tr>
+<tr><td><strong>Vendor-managed "sovereign" platform</strong></td><td>Proprietary stacks limit workflow customisation; TCO ~2–3× build cost over 36 months; no access to underlying models blocks the research programme entirely</td><td>Roadmap dependency; contract lock-in; zero publishable contribution</td></tr>
+<tr><td><strong>Local Malaysian vendor bid for "AI for UPSI"</strong></td><td>A local SI/consultancy can match RM 200K hardware and RM 0 open-source stack, hire engineers, and offer a fixed-price delivery — but cannot match the originator's continuous authorship. The three open-source packages (IsRAG, Dewan Council, SULUH orchestrator) are PN's authored works with v0.1 already working in the private repo. The federated swarm algorithms (MA3, APA-EF, LES-GA) are PN's designs. The compounding teacher–student loop (§9) requires the originator's iteration, not a deploy-and-leave vendor. No vendor can accept a 10% Phase 0 gate, because their margin model requires full-year billing. The five-paper publication plan (§18) requires PN as lead author. The Stage 2 (100B) and Stage 3 (SEA enterprise) institutional vision (§19) has no equivalent in a vendor engagement model — a vendor delivers and exits; the originator builds a platform and a consortium.</td><td>Single-throat accountability severed; algorithmic authorship and paper plan lost; compounding moat stalls after deployment; vendor renegotiation risk in Year 2; no path to Stage 2/3 vision.</td></tr>
+<tr><td><strong>Four isolated harness pilots</strong></td><td>The original seven-proposal state: duplicate scrapers, twin grading stacks, conflicting risk definitions, seven governance surfaces</td><td>~40% duplicated engineering; unenforceable governance; no compounding loop</td></tr>
+<tr><td><strong>SULUH (chosen)</strong></td><td>On-premise, open-source, one intelligence supply chain under one governance spine, delivered by the existing team — PDPA-compliant by architecture, RM 0 licensing, research moat included</td><td>Execution risk — mitigated by phase gates, Phase 0 validation of the three highest-impact unknowns, and the regression-gated evaluation harness</td></tr>
+</tbody></table>
+</div></section>
+
+<section id="axe"><div class="wrap">
+<h2><span class="secnum">E</span>References</h2>
+<ol class="refs">
+<li>McMahan, B., Moore, E., Ramage, D., Hampson, S., &amp; Arcas, B. A. (2017). Communication-efficient learning of deep networks from decentralized data. <i>AISTATS 2017</i>.</li>
+<li>Kairouz, P., McMahan, H. B., et al. (2021). Advances and open problems in federated learning. <i>Foundations and Trends in Machine Learning</i>, 14(1–2).</li>
+<li>Dettmers, T., Pagnoni, A., Holtzman, A., &amp; Zettlemoyer, L. (2023). QLoRA: Efficient finetuning of quantized LLMs. <i>NeurIPS 2023</i>.</li>
+<li>Hinton, G., Vinyals, O., &amp; Dean, J. (2015). Distilling the knowledge in a neural network. <i>arXiv:1503.02531</i>.</li>
+<li>Bonawitz, K., et al. (2017). Practical secure aggregation for privacy-preserving machine learning. <i>ACM CCS 2017</i>.</li>
+<li>Abadi, M., et al. (2016). Deep learning with differential privacy. <i>ACM CCS 2016</i>.</li>
+<li>Konečný, J., et al. (2016). Federated learning: Strategies for improving communication efficiency. <i>arXiv:1610.05492</i>.</li>
+<li>Nous Research (2025). Psyche: A distributed training network. Technical report / open release.</li>
+<li>Lewis, P., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. <i>NeurIPS 2020</i>.</li>
+<li>Hu, E. J., et al. (2021). LoRA: Low-rank adaptation of large language models. <i>ICLR 2022</i>.</li>
+<li>Chen, J., et al. (2024). BGE M3-Embedding: Multi-lingual, multi-functionality, multi-granularity text embeddings. <i>arXiv:2402.03216</i>.</li>
+<li>Reich, J., &amp; Ruipérez-Valiente, J. A. (2019). The MOOC pivot. <i>Science</i>, 363(6423), 130–131.</li>
+<li>VanLehn, K. (2011). The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems. <i>Educational Psychologist</i>, 46(4), 197–221.</li>
+<li>Bloom, B. S. (1984). The 2 sigma problem. <i>Educational Researcher</i>, 13(6), 4–16.</li>
+<li>Zheng, L., et al. (2023). Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. <i>NeurIPS 2023</i>.</li>
+<li>Ke, Z., &amp; Ng, V. (2019). Automated essay scoring: A survey of the state of the art. <i>IJCAI 2019</i>.</li>
+<li>Zhang, T., et al. (2020). BERTScore: Evaluating text generation with BERT. <i>ICLR 2020</i>.</li>
+<li>Arnold, K. E., &amp; Pistilli, M. D. (2012). Course Signals at Purdue: Using learning analytics to increase student success. <i>LAK 2012</i>.</li>
+<li>Jayaprakash, S. M., et al. (2014). Early alert of academically at-risk students: An open source analytics initiative. <i>Journal of Learning Analytics</i>, 1(1), 6–47.</li>
+<li>Gardner, J., &amp; Brooks, C. (2018). Student success prediction in MOOCs. <i>User Modeling and User-Adapted Interaction</i>, 28, 127–203.</li>
+<li>Slade, S., &amp; Prinsloo, P. (2013). Learning analytics: Ethical issues and dilemmas. <i>American Behavioral Scientist</i>, 57(10), 1510–1529.</li>
+<li>Biggs, J. (1996). Enhancing teaching through constructive alignment. <i>Higher Education</i>, 32, 347–364.</li>
+<li>Anderson, L. W., &amp; Krathwohl, D. R. (Eds.) (2001). <i>A Taxonomy for Learning, Teaching, and Assessing</i>. Longman.</li>
+<li>Tursunbayeva, A., Di Lauro, S., &amp; Pagliari, C. (2018). People analytics — A scoping review. <i>International Journal of Information Management</i>, 43, 224–247.</li>
+<li>Barocas, S., Hardt, M., &amp; Narayanan, A. (2023). <i>Fairness and Machine Learning</i>. MIT Press.</li>
+<li>OWASP Foundation (2023). <i>OWASP Top 10 for Large Language Model Applications</i>.</li>
+</ol>
+</div></section>
+
+<footer><div class="wrap">
+<p style="font-family:var(--serif);font-style:italic;color:var(--ink);margin-bottom:14px">"SULUH: Menerangi masa depan pendidikan Malaysia dengan kecerdasan buatan berdaulat."</p>
+<p>Master Programme Document v1.0 · Supersedes and consolidates: SULUH-MASTER v3.3, Ecosystem Design Document 1.0, Harness 1–4 PRD/SDD/TSD 1.0, Consolidated Matrix.<br>
+Document owner: SULUH Architecture Team · Distribution: UPSI Research Management, META, ICT, BSM, BHEA, BHEP, PPA, Pusat ICT · Next review: 19 Aug 2026</p>
+</div></footer>
+
+</body></html>

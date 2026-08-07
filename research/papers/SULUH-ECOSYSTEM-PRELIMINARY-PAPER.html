@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SULUH Ecosystem — Preliminary Paper</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">body {
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 11pt;
+line-height: 1.5;
+color: #1a1a1a;
+max-width: 800px;
+margin: 0 auto;
+padding: 2em;
+}
+h1 { font-size: 20pt; margin-top: 1.5em; border-bottom: 2px solid #1a1a1a; padding-bottom: 0.3em; }
+h2 { font-size: 16pt; margin-top: 1.3em; border-bottom: 1px solid #ddd; }
+h3 { font-size: 13pt; margin-top: 1em; }
+h4 { font-size: 11pt; margin-top: 0.8em; }
+code { background: #f5f5f5; padding: 1px 4px; font-size: 10pt; border-radius: 3px; }
+pre { background: #f5f5f5; padding: 1em; overflow-x: auto; font-size: 9pt; line-height: 1.4; }
+pre code { background: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; font-size: 10pt; }
+th { background: #f0f0f0; }
+blockquote { border-left: 3px solid #ccc; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+a { color: #2563eb; }
+@media print {
+body { font-size: 10pt; }
+pre { font-size: 8pt; }
+@page { margin: 2cm; }
+}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">SULUH Ecosystem — Preliminary Paper</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#suluh-ecosystem-a-sovereign-multi-agent-ai-platform-with-provenance-tracked-retrieval-and-multi-llm-deliberation-for-higher-education-research" id="toc-suluh-ecosystem-a-sovereign-multi-agent-ai-platform-with-provenance-tracked-retrieval-and-multi-llm-deliberation-for-higher-education-research">SULUH
+Ecosystem — A Sovereign Multi-Agent AI Platform with Provenance-Tracked
+Retrieval and Multi-LLM Deliberation for Higher Education Research</a>
+<ul>
+<li><a href="#preliminary-paper-july-2026" id="toc-preliminary-paper-july-2026">Preliminary Paper · July
+2026</a></li>
+<li><a href="#abstract" id="toc-abstract">Abstract</a></li>
+<li><a href="#introduction" id="toc-introduction">1.
+Introduction</a></li>
+<li><a href="#related-work" id="toc-related-work">2. Related
+Work</a></li>
+<li><a href="#the-suluh-ecosystem" id="toc-the-suluh-ecosystem">3. The
+SULUH Ecosystem</a></li>
+<li><a href="#architecture-design-principles" id="toc-architecture-design-principles">4. Architecture &amp; Design
+Principles</a></li>
+<li><a href="#compliance-by-architecture" id="toc-compliance-by-architecture">5. Compliance by
+Architecture</a></li>
+<li><a href="#evaluation-plan" id="toc-evaluation-plan">6. Evaluation
+Plan</a></li>
+<li><a href="#expected-contributions" id="toc-expected-contributions">7.
+Expected Contributions</a></li>
+<li><a href="#limitations-and-future-work" id="toc-limitations-and-future-work">8. Limitations and Future
+Work</a></li>
+<li><a href="#conclusion" id="toc-conclusion">9. Conclusion</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#reproducibility-appendix" id="toc-reproducibility-appendix">Reproducibility Appendix</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="suluh-ecosystem-a-sovereign-multi-agent-ai-platform-with-provenance-tracked-retrieval-and-multi-llm-deliberation-for-higher-education-research">SULUH
+Ecosystem — A Sovereign Multi-Agent AI Platform with Provenance-Tracked
+Retrieval and Multi-LLM Deliberation for Higher Education Research</h1>
+<h2 id="preliminary-paper-july-2026">Preliminary Paper · July 2026</h2>
+<p><strong>Putra Nasution</strong> (Lead Author, Corresponding
+Author)<br />
+<em>Lead Architect &amp; Principal Investigator</em><br />
+poetra@gmail.com</p>
+<p><strong>Dr. Suzani binti Mohamad Samuri</strong><br />
+<em>Universiti Pendidikan Sultan Idris, Faculty of Meta</em><br />
+<em>Oversight Director &amp; Co-Principal Investigator</em></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Higher education institutions in Southeast Asia face a regulatory
+paradox: research data — participant records, ethics approvals,
+pre-publication manuscripts, indigenous knowledge — cannot legally be
+processed by foreign cloud AI services under data protection regimes
+like Malaysia’s PDPA 2010, yet universities must adopt AI to remain
+competitive. Existing solutions are either foreign cloud (regulatory
+risk), vendor-managed (institutional lock-in), or ad-hoc local
+(unsustainable and irreproducible).</p>
+<p>We present the <strong>SULUH Ecosystem</strong>, a sovereign,
+on-premise multi-agent AI platform purpose-built for higher education
+research in Southeast Asia. The ecosystem consists of three composable
+open-source packages: (1) <strong>IsRAG</strong> (<em>Isnad-chain
+Retrieval Augmented Generation</em>), which embeds full provenance
+chains, multi-factor trust scoring, and cultural-context tagging into
+every retrieved knowledge unit — adapting the 1,000-year-old Islamic
+Isnad (إسناد) framework for knowledge validation to modern AI retrieval;
+(2) <strong>Dewan Council</strong>, a three-stage multi-LLM deliberation
+protocol in which seven models produce independent opinions,
+cross-review each other, and synthesise a consensus answer with explicit
+dissent visibility and full audit trail; and (3) <strong>SULUH
+AI</strong>, the orchestration platform comprising a FastAPI gateway,
+LangGraph-based swarm coordinator, hybrid RAG (vector + SQL), PDPA and
+IRB compliance gates enforced in code rather than configuration, and a
+Vue 3 research workbench.</p>
+<p>The architecture follows a four-tier design (user, application,
+orchestration, data) governed by seven immutable design principles
+including sovereignty-by-default, read-only-by-design, and
+evaluation-driven deployment. Compliance with PDPA 2010 and
+institutional IRB requirements is enforced through deterministic
+application-code gates — not configurable feature flags — making the
+platform deployable in regulated research environments where standard AI
+tools are currently unsafe.</p>
+<p>We report the design, the current implementation state (IsRAG and
+Dewan Council are operational at v0.1 with 18/18 passing tests; SULUH AI
+is in planning with a validated architecture), the evaluation
+methodology (200-entry bilingual golden set across five research
+domains), and the 12-month pilot deployment plan at Universiti
+Pendidikan Sultan Idris, Malaysia, serving approximately 275 research
+staff and 2,400 graduate students.</p>
+<p><strong>Keywords:</strong> sovereign AI, retrieval-augmented
+generation, provenance, multi-agent systems, multi-LLM deliberation,
+PDPA compliance, IRB, higher education, Islamic epistemology, Isnad,
+Southeast Asia</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="the-sovereignty-gap">1.1 The Sovereignty Gap</h3>
+<p>The adoption of AI in higher education is accelerating globally, but
+the distribution of that adoption is highly uneven — and the governance
+of it is often non-existent. Universities in middle-income countries
+face a structural disadvantage: their research data cannot legally leave
+their jurisdiction, yet the AI tools that would accelerate their
+research are overwhelmingly cloud-based and foreign-operated.</p>
+<p>Consider a typical Malaysian public university. Its researchers
+generate participant interview transcripts, ethics approvals,
+pre-publication manuscripts, indigenous community knowledge records, and
+clinical data. Under the Personal Data Protection Act 2010 (PDPA), much
+of this data cannot be processed by foreign cloud AI services.
+Institutional Review Boards (IRBs) require auditable, attributable
+decision trails for any research involving human subjects. Yet the AI
+tools available to these researchers — ChatGPT, Claude, Gemini, Copilot
+— process data on foreign servers with opaque provenance and no
+IRB-compatible audit trail.</p>
+<p>The result is a fragmented landscape: well-resourced institutions
+build private AI clusters; under-resourced ones either use foreign cloud
+services and accept the regulatory risk, or forgo AI altogether. This is
+the <strong>sovereignty gap</strong>.</p>
+<h3 id="three-research-questions">1.2 Three Research Questions</h3>
+<p>The SULUH Ecosystem addresses this gap through three integrated
+research contributions, each corresponding to one package in the
+ecosystem:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Research Question</th>
+<th>Package</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RQ1</strong></td>
+<td>Does provenance-tracked retrieval with multi-factor trust scoring
+and cultural-context tagging measurably improve trust calibration,
+factual accuracy, and cultural appropriateness over standard RAG?</td>
+<td>IsRAG</td>
+<td>A retrieval architecture that makes provenance, trust, and cultural
+context first-class citizens of every knowledge unit</td>
+</tr>
+<tr>
+<td><strong>RQ2</strong></td>
+<td>Does a structured multi-LLM deliberation protocol with explicit
+dissent recording produce more auditable, more comprehensive, and more
+internally consistent answers than single-LLM or naive-aggregation
+baselines?</td>
+<td>Dewan Council</td>
+<td>A three-stage deliberation protocol that produces auditable
+consensus with dissent visibility</td>
+</tr>
+<tr>
+<td><strong>RQ3</strong></td>
+<td>Can a reference architecture for sovereign multi-agent AI be
+deployed in a public university in 12 months, satisfying PDPA and IRB
+compliance by architectural design rather than post-hoc
+configuration?</td>
+<td>SULUH AI</td>
+<td>A four-tier, seven-principle reference architecture validated
+through a working pilot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contributions">1.3 Contributions</h3>
+<p>The SULUH Ecosystem makes four contributions:</p>
+<ol type="1">
+<li><p><strong>A provenance-aware retrieval model (IsRAG)</strong> that
+adapts a 1,000-year-old knowledge-validation framework — the Islamic
+Isnad — to modern AI retrieval. Every piece of retrieved knowledge
+carries: an immutable provenance chain, a 5-factor trust score, and a
+cultural-context tag drawn from a 14-framework registry. This is, to our
+knowledge, the first RAG system to treat provenance and cultural
+epistemology as architectural primitives rather than post-hoc
+features.</p></li>
+<li><p><strong>A multi-LLM deliberation protocol (Dewan
+Council)</strong> that produces both better answers (on
+multi-perspective queries) and more auditable answers (in all cases).
+The protocol surfaces dissent rather than absorbing it, names a
+consensus score, and produces a complete provenance chain for every
+deliberation.</p></li>
+<li><p><strong>A reference architecture (SULUH AI)</strong> for
+sovereign, PDPA/IRB-compliant multi-agent AI in higher education,
+governed by seven immutable design principles operationalised in
+application code rather than configuration.</p></li>
+<li><p><strong>A 12-month pilot deployment</strong> at a Malaysian
+public university, providing empirical data on adoption, accuracy,
+compliance, and the practical costs of sovereignty.</p></li>
+</ol>
+<hr />
+<h2 id="related-work">2. Related Work</h2>
+<h3 id="retrieval-augmented-generation">2.1 Retrieval-Augmented
+Generation</h3>
+<p>RAG (Lewis et al., 2020) has become the dominant architecture for
+grounding LLMs in external knowledge. Subsequent work has explored
+retrieval quality (REALM, RETRO, Atlas), hybrid retrieval (vector +
+keyword + SQL), and agentic RAG patterns. However, the vast majority of
+RAG systems treat all retrieved documents as epistemically equivalent: a
+peer-reviewed journal article and an unverified blog post carry the same
+retrieval weight. Citation-based approaches (e.g., Perplexity, You.com)
+surface sources but do not score their trustworthiness. Our work extends
+RAG by embedding provenance, trust, and cultural context directly into
+the retrieval data model.</p>
+<h3 id="provenance-in-information-systems">2.2 Provenance in Information
+Systems</h3>
+<p>Provenance tracking has a long history in databases (Buneman et al.,
+2001), scientific workflows (W3C PROV, 2013), and knowledge graphs.
+However, these systems have not been integrated into the LLM-generation
+loop. The W3C PROV model records <code>wasGeneratedBy</code>,
+<code>wasDerivedFrom</code>, and <code>wasAttributedTo</code> relations
+but has no notion of trust scoring, cultural context, or dynamic
+retrieval-time provenance assembly. IsRAG builds on PROV concepts but
+operationalises them for LLM retrieval: every retrieval operation
+constructs a live provenance chain, not a static annotation.</p>
+<h3 id="the-islamic-isnad-framework">2.3 The Islamic Isnad
+Framework</h3>
+<p>The Isnad (إسناد) system, developed by Islamic scholars in the 2nd
+century AH (8th century CE), is arguably history’s first systematic
+knowledge-validation methodology. Every transmitted report
+(<em>hadith</em>) was evaluated not by its content alone but by the
+complete chain of transmitters (<em>isnad</em>) who carried it: each
+transmitter was named, their reliability was rated, their
+contemporaneity with the previous transmitter was verified, and the
+resulting chain was classified on a spectrum from <em>sahih</em> (sound)
+to <em>mawdu’</em> (fabricated). The system produced a graded, auditable
+knowledge corpus that has survived for over a millennium.</p>
+<p>We argue that this 1,000-year-old epistemology maps directly onto the
+modern AI trust problem. The RAG equivalent: an LLM produces a claim
+(the <em>matn</em>, or content), and the user needs to know the chain
+(<em>isnad</em>) of sources, their credibility, and who verified them.
+Our adaptation is not metaphorical — it is structural: the IsRAG
+<code>KnowledgeEntry</code>, <code>ProvenanceChain</code>,
+<code>TrustEngine</code>, and <code>IsnadChain</code> types map directly
+onto the Isnad data model.</p>
+<h3 id="multi-llm-ensembles-and-deliberation">2.4 Multi-LLM Ensembles
+and Deliberation</h3>
+<p>Multi-LLM patterns have emerged from both research and practice.
+Karpathy’s LLM Council (2024) proposed a three-stage deliberation; Wang
+et al. (2023) introduced self-consistency through multiple sampling; Du
+et al. (2024) explored debate between LLMs. Commercial systems
+increasingly use “best-of-N” sampling or majority voting. However, these
+approaches discard dissent. A majority vote hides minority opinions. A
+confidence-weighted average produces an artificial consensus. Our
+approach differs in two ways: (1) dissent is explicitly recorded and
+surfaced, not absorbed, and (2) the deliberation is grounded in
+provenance-tracked knowledge from IsRAG, so every opinion carries a
+verifiable trust chain.</p>
+<h3 id="sovereign-and-decolonial-ai">2.5 Sovereign and Decolonial
+AI</h3>
+<p>Recent work in decolonial AI (Mohamed et al., 2020; Birhane et al.,
+2022) has critiqued the universalising assumptions of Western AI
+frameworks and called for culturally-grounded, epistemologically-plural
+AI systems. Our cultural-context registry — 14 frameworks ranging from
+Global to Indigenous, operationalised as a first-class data structure in
+the retrieval pipeline — is a direct response to this call. Sovereignty
+in our architecture means not just data locality but epistemological
+plurality: the system explicitly tags knowledge with its cultural
+framework of origin, its applicability boundaries, and its
+limitations.</p>
+<h3 id="compliance-enforcing-architectures">2.6 Compliance-Enforcing
+Architectures</h3>
+<p>The concept of “compliance by architecture” — enforcing regulatory
+requirements through code paths rather than configuration — draws from
+the privacy-by-design literature (Cavoukian, 2009) and from secure
+systems engineering. Our contribution is to operationalise this for AI
+research platforms: PDPA classification and IRB ethics gating are not
+feature flags that can be toggled off by an operator; they are hard code
+paths in the query routing pipeline with fail-closed semantics.</p>
+<hr />
+<h2 id="the-suluh-ecosystem">3. The SULUH Ecosystem</h2>
+<p>The ecosystem consists of three packages designed as a single
+research programme. <code>israg</code> and <code>council</code> are
+<strong>leaf packages</strong> — they have no dependency on
+<code>suluh</code> and can be used standalone. <code>suluh</code> is the
+<strong>composition package</strong> — it depends on both leaves and
+orchestrates them into a unified platform.</p>
+<h3 id="israg-isnad-chain-retrieval-augmented-generation">3.1 IsRAG:
+Isnad-Chain Retrieval Augmented Generation</h3>
+<h4 id="data-model">3.1.1 Data Model</h4>
+<p>IsRAG defines five primary data structures that together form the
+provenance backbone of the ecosystem:</p>
+<p><strong>KnowledgeEntry.</strong> A single piece of ingested knowledge
+with full provenance metadata:</p>
+<pre><code>KnowledgeEntry {
+  content: str           — the knowledge claim itself
+  entry_id: str          — SHA-256 content hash, truncated to 16 chars
+  author: str            — who created this knowledge
+  author_type: str       — &quot;person&quot;, &quot;institution&quot;, &quot;ai&quot;
+  source_type: SourceType — RESEARCH, GOVERNMENT, ACADEMIC, etc. (9 types)
+  verification_level: VerificationLevel — UNVERIFIED → FIELD_VALIDATED (6 levels)
+  cultural_context: CulturalContext | None
+  provenance: list[ProvenanceStep]
+  verifications: list[VerificationRecord]
+  tags: list[str]
+  created_at: datetime
+}</code></pre>
+<p><strong>ProvenanceStep.</strong> One hop in the chain of custody:</p>
+<pre><code>ProvenanceStep {
+  step_type: str         — &quot;creation&quot;, &quot;verification&quot;, &quot;storage&quot;, &quot;retrieval&quot;, &quot;adaptation&quot;
+  entity: str            — who or what performed this step
+  entity_type: str       — &quot;person&quot;, &quot;institution&quot;, &quot;system&quot;
+  timestamp: datetime
+  action: str            — human-readable description
+  metadata: dict
+}</code></pre>
+<p><strong>TrustEngine.</strong> Computes a 0.0–1.0 composite trust
+score from five weighted factors:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Weight</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verification level</td>
+<td>0.30</td>
+<td>The highest verification level across all verifiers (normalised:
+level/5)</td>
+</tr>
+<tr>
+<td>Source credibility</td>
+<td>0.25</td>
+<td>Base credibility of the source type, with institutional bonus</td>
+</tr>
+<tr>
+<td>Verification quality</td>
+<td>0.20</td>
+<td>Average rating from verifiers plus count bonus (diminishing
+returns)</td>
+</tr>
+<tr>
+<td>Cross-references</td>
+<td>0.15</td>
+<td>Number of other entries that reference this one (via metadata)</td>
+</tr>
+<tr>
+<td>Freshness</td>
+<td>0.10</td>
+<td>Age in days; decays from 1.0 at &lt;30 days to 0.6 at &gt;730
+days</td>
+</tr>
+</tbody>
+</table>
+<p>The trust score is mapped to a human-readable confidence level:
+<code>very_high</code> (≥0.9), <code>high</code> (≥0.75),
+<code>medium</code> (≥0.5), <code>low</code> (≥0.3),
+<code>unverified</code> (&lt;0.3).</p>
+<p><strong>CulturalContext.</strong> Tags knowledge with its
+epistemological framework:</p>
+<pre><code>CulturalContext {
+  framework: CulturalFramework  — 14 options: GLOBAL, WESTERN, EAST_ASIAN,
+                                   SOUTHEAST_ASIAN, SOUTH_ASIAN, INDONESIAN,
+                                   MALAYSIAN, THAI, VIETNAMESE, FILIPINO,
+                                   SINGAPOREAN, ISLAMIC, BUDDHIST, INDIGENOUS
+  language_original: str
+  applicability: list[str]      — where does this knowledge apply?
+  limitations: list[str]        — what are the boundaries?
+  local_terms: dict[str, str]   — local terminology with translations
+  adaptation_notes: str
+}</code></pre>
+<p><strong>IsnadChain.</strong> The complete human-readable provenance
+trail for a single knowledge entry, assembled at retrieval time:</p>
+<pre><code>IsnadChain {
+  entry_id, provenance_steps, verifications,
+  cultural_context, trust_score, confidence_level
+}</code></pre>
+<p>The chain can be rendered for display with
+<code>format_for_display()</code>, producing a structured terminal
+output showing the full provenance, verifications, and cultural context
+in both English and Bahasa Malaysia (“Rantai Asal-Usul
+Pengetahuan”).</p>
+<h4 id="retrieval-pipeline">3.1.2 Retrieval Pipeline</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>engine.retrieve(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    query: <span class="bu">str</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    min_trust_score: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.0</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    cultural_filter: CulturalFramework <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    source_filter: SourceType <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    limit: <span class="bu">int</span> <span class="op">=</span> <span class="dv">10</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    include_isnad: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">list</span>[RetrievalResult]</span></code></pre></div>
+<p>Each <code>RetrievalResult</code> carries: content, relevance score,
+trust score, confidence level, full isnad chain (if requested), source
+type, and cultural context. Results are sorted by a combined score:
+<code>relevance_score × 0.6 + trust_score × 0.4</code>.</p>
+<p>The current implementation uses keyword-based relevance scoring; the
+Phase 1 upgrade replaces this with vector similarity (bge-m3 embeddings
+indexed in pgvector with HNSW).</p>
+<h4 id="current-implementation-status">3.1.3 Current Implementation
+Status</h4>
+<p>IsRAG is operational at v0.1 alpha with <strong>18/18 tests
+passing</strong> (pytest, 0.03 seconds). The core engine is 783 lines of
+Python with a full CLI interface. Key capabilities demonstrated: ingest
+with provenance, keyword retrieval with trust filtering,
+cultural-context-aware retrieval, verification chaining, and knowledge
+base statistics. The implementation is in-memory with no persistent
+storage or vector search — these are Phase 1 deliverables.</p>
+<h3 id="dewan-council-multi-llm-deliberation">3.2 Dewan Council:
+Multi-LLM Deliberation</h3>
+<h4 id="the-three-stage-protocol">3.2.1 The Three-Stage Protocol</h4>
+<p>Dewan Council implements a structured deliberation protocol inspired
+by Karpathy’s LLM Council (2024) and the Islamic tradition of scholarly
+consultation (<em>shura</em>):</p>
+<p><strong>Stage 1: First Opinions.</strong> Each of N council members
+is queried independently with the same prompt. Each member produces an
+<code>Opinion</code> carrying: the response text, a self-assessed
+confidence score (1–10), and the model identifier. Stage 1 produces N
+opinions.</p>
+<p><strong>Stage 2: Cross-Review.</strong> Each member reviews every
+other member’s Stage 1 opinion. For N members, this produces N × (N−1) =
+N² − N reviews. Each <code>Review</code> carries: reviewer identity,
+reviewed member identity, rating (1–10), free-text feedback, and a list
+of issues found (factual errors, missing context, unsupported claims,
+bias). Stage 2 produces a complete review matrix.</p>
+<p><strong>Stage 3: Chairman Synthesis.</strong> A designated chairman
+LLM receives the original query, all Stage 1 opinions, all Stage 2
+reviews, and the review matrix summary. The chairman produces:
+<code>final_answer</code> (the synthesised response),
+<code>consensus_score</code> (0.0–1.0), <code>dissenting_views</code>
+(list of opinions that disagreed with the majority), and a full
+<code>isnad_chain</code> (complete audit trail).</p>
+<p>The chairman is the member with <code>role=&quot;chairman&quot;</code> (Claude
+Opus 4.7 in the reference council). The chairman’s trust weight is 1.2×;
+all other members are weighted at 1.0–1.1×.</p>
+<h4 id="the-reference-council">3.2.2 The Reference Council</h4>
+<p>The reference council used in all experiments consists of seven
+members spanning four model families, accessed via a single OpenRouter
+API:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Role</th>
+<th>Model (OpenRouter ID)</th>
+<th>Specialty</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Chairman</td>
+<td><code>anthropic/claude-opus-4.7</code></td>
+<td>Synthesis, judgment, nuanced analysis</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Member</td>
+<td><code>openai/gpt-5.5</code></td>
+<td>Deep reasoning, multi-step logic</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Member</td>
+<td><code>google/gemini-3-flash-preview</code></td>
+<td>Data analysis, multimodal, fast reasoning</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Member</td>
+<td><code>moonshotai/kimi-k2.6</code></td>
+<td>Long context, multi-agent perspective</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Member</td>
+<td><code>deepseek/deepseek-v4-flash</code></td>
+<td>Chain-of-thought, mathematical rigour</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Member</td>
+<td><code>qwen/qwen3.6-plus</code></td>
+<td>Agentic coding, multilingual, Asian market context</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Member</td>
+<td><code>nvidia/nemotron-3-super</code></td>
+<td>Open model, hardware-software integration</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Council composition is configurable — any set of
+<code>CouncilMember</code> objects with arbitrary model IDs and trust
+weights can be passed at initialisation.</p>
+<h4 id="integration-with-israg">3.2.3 Integration with IsRAG</h4>
+<p>Dewan Council is designed to ground its deliberation in
+IsRAG-retrieved knowledge. When integrated, Stage 1 opinions are
+constrained to cite specific <code>KnowledgeEntry</code> objects; the
+chairman’s synthesis inherits the trust scores of the cited entries.
+This produces a two-layer provenance chain: the knowledge provenance
+(from IsRAG) and the deliberation provenance (from Dewan Council),
+linked together in a single <code>DeliberationResult</code>.</p>
+<h4 id="when-to-use-deliberation-vs.-direct-retrieval">3.2.4 When to Use
+Deliberation vs. Direct Retrieval</h4>
+<p>Deliberation is triggered for approximately 10% of queries — those
+classified as SWARM-route by the SULUH query router. The routing
+decision considers query complexity, multi-perspective nature, and the
+presence of heterogeneous sources. Simple single-fact queries are routed
+to IsRAG directly (FAST or PRIMARY lanes). Deliberation is most valuable
+when: (a) the query has multiple defensible framings, (b) the sources
+are heterogeneous in quality, and (c) the downstream user benefits from
+seeing the reasoning and dissent.</p>
+<h4 id="current-implementation-status-1">3.2.5 Current Implementation
+Status</h4>
+<p>Dewan Council is operational at v0.1 alpha with a 775-line core
+engine. Key capabilities demonstrated: full three-stage deliberation
+with configurable members, OpenRouter API integration, mock mode for
+testing without API keys, and structured output with dissent recording.
+The implementation uses synchronous, sequential API calls — streaming
+and async deliberation are Phase 1 deliverables.</p>
+<h3 id="suluh-ai-the-sovereign-orchestration-platform">3.3 SULUH AI: The
+Sovereign Orchestration Platform</h3>
+<p>SULUH AI is the composition layer that integrates IsRAG and Dewan
+Council into a unified platform with gateways, routing, compliance
+enforcement, and user interfaces. Unlike the two leaf packages, SULUH AI
+is in the planning phase with a validated architecture but zero
+implementation code.</p>
+<h4 id="component-architecture">3.3.1 Component Architecture</h4>
+<pre><code>packages/suluh/
+├── gateway/     FastAPI: JWT validation, RBAC, rate limiting, SSE, audit logging
+├── router/      Query classifier: PDPA level, IRB indicator, complexity scorer
+├── swarm/       LangGraph v1.0: 6-step pipeline, subgraph composition
+├── rag/         Hybrid RAG: pgvector HNSW + Text-to-SQL with sqlglot sandbox
+├── docling/     IBM Docling: OCR, table extraction, figure extraction
+├── pdpa/        PDPA masking: presidio-based PII detection, fail-closed
+├── irb/         IRB ethics gate: deterministic classifier, protocol matcher
+└── registry/    Agent registry: capability manifests, signed agent deployment</code></pre>
+<h4 id="the-query-routing-decision-tree">3.3.2 The Query Routing
+Decision Tree</h4>
+<p>Every user query traverses the following decision path:</p>
+<ol type="1">
+<li><strong>Gateway</strong> validates JWT, enforces RBAC, emits audit
+event.</li>
+<li><strong>Router</strong> classifies the query on three axes: PDPA
+level (PUBLIC/INTERNAL/CONFIDENTIAL/RESTRICTED), IRB relevance
+(human-subject indicators), and complexity (LOW/MEDIUM/HIGH).</li>
+<li><strong>IRB Gate</strong> checks: if human-subject indicators are
+detected, cross-reference against approved IRB protocols. No protocol
+match → blocked for human review. Fail-closed.</li>
+<li><strong>PDPA Masking</strong> applies: RESTRICTED data is blocked
+from any cloud escalation. CONFIDENTIAL data is masked.
+Fail-closed.</li>
+<li><strong>Route Decision</strong>: FAST (55% of queries: vector
+retrieval + Qwen 3.6 direct), PRIMARY (30%: vector + SQL + Qwen
+extended), SWARM (10%: IsRAG + Council deliberation), ESCALATE (&lt;5%:
+anonymised → Anthropic Claude API, only when all conditions met).</li>
+<li><strong>Synthesis</strong> assembles the response with full
+IsnadChain and returns to user.</li>
+</ol>
+<h4 id="the-swarm-coordinator-planned">3.3.3 The Swarm Coordinator
+(Planned)</h4>
+<p>The LangGraph-based swarm coordinator implements a 6-step pipeline
+for multi-agent research tasks:</p>
+<ol type="1">
+<li><strong>Query Analyzer</strong> — understand intent, scope,
+domain</li>
+<li><strong>Discovery</strong> — identify relevant agents, tools, data
+sources</li>
+<li><strong>Decompose</strong> — break into subtasks, assign to
+agents</li>
+<li><strong>Execute</strong> — run agent tasks in parallel subgraphs
+(max 15 steps/workflow, 10-second tool timeout)</li>
+<li><strong>Consensus</strong> — aggregate results, resolve conflicts
+via Council deliberation</li>
+<li><strong>IRB Gate</strong> — final ethics check before returning to
+user</li>
+</ol>
+<p>All agent actions are read-only in Phase 2. Write capability requires
+Steering Committee approval and is reserved for Phase 3+.</p>
+<hr />
+<h2 id="architecture-design-principles">4. Architecture &amp; Design
+Principles</h2>
+<h3 id="the-four-tiers">4.1 The Four Tiers</h3>
+<p>The SULUH ecosystem follows a four-tier architecture inherited from
+the SULUH SWARM PRD v1.0 (July 2026):</p>
+<ul>
+<li><strong>Tier 1 (User Layer):</strong> Vue 3 AI Workbench, JupyterLab
+extension, REST/SDK, Admin Console. Receives JWT from institutional SSO;
+communicates only with Tier 2.</li>
+<li><strong>Tier 2 (Application Layer):</strong> FastAPI AI Gateway
+handling JWT validation, RBAC, rate limiting, SSE streaming, and audit
+log emission. Strips PII from user context before forwarding to Tier
+3.</li>
+<li><strong>Tier 3 (Orchestration Layer):</strong> Query router,
+LangGraph swarm coordinator, hybrid RAG, multi-LLM deliberation, PDPA
+masking, IRB ethics gate, document intelligence, agent registry.</li>
+<li><strong>Tier 4 (Data Layer):</strong> PostgreSQL AI read replica
+with pgvector/HNSW and immutable audit log, MinIO for document
+artefacts, LangFuse for LLM observability, Redis for agent state and
+caching, Debezium for CDC from production systems.</li>
+</ul>
+<p>An optional cloud quality layer routes &lt;5% of queries to Anthropic
+Claude API, but only when: the query is anonymised, does not involve
+human subjects, the local model confidence is below 0.72, and the data
+classification is PUBLIC or INTERNAL. RESTRICTED data is hard-blocked
+from all cloud escalation.</p>
+<h3 id="the-seven-immutable-design-principles">4.2 The Seven Immutable
+Design Principles</h3>
+<p>The ecosystem is governed by seven principles that are
+<strong>constraints enforced in application code</strong>, not
+preferences or configuration settings:</p>
+<ol type="1">
+<li><p><strong>Sovereign by default.</strong> All research data, agent
+state, model weights, and institutional documents remain within the
+deploying institution’s network perimeter and national jurisdiction. No
+raw research data traverses the public internet under any
+condition.</p></li>
+<li><p><strong>Read-only by design.</strong> AI agents can recommend,
+analyse, synthesise, and generate — but cannot write to production
+research databases, ethics systems, or institutional records. Write
+capability requires a formal Steering Committee design
+amendment.</p></li>
+<li><p><strong>Hybrid retrieval, not pure RAG.</strong> Research systems
+require vector search for documents, SQL generation for structured data,
+and deterministic controls for compliance. Pure semantic RAG will
+produce incorrect research outputs in database-backed
+environments.</p></li>
+<li><p><strong>Document intelligence is mandatory.</strong> Document
+OCR, table extraction, and figure extraction from research papers, grant
+proposals, and scanned documents are first-class requirements — not
+Phase 2 enhancements.</p></li>
+<li><p><strong>Auditability over novelty.</strong> Every agent action
+must be explainable, attributable to a source agent and model version,
+and logged to the immutable audit trail. IRB and reproducibility
+compliance is non-negotiable.</p></li>
+<li><p><strong>Evaluation-driven deployment.</strong> No model,
+retrieval configuration, prompt change, or agent workflow reaches
+production without passing the regression gate against the golden
+evaluation set.</p></li>
+<li><p><strong>Model-agnostic architecture.</strong> Switching the
+primary inference model requires updating one config value — not
+rewiring the orchestration or retrieval layers. Swap paths are
+maintained for all candidate models.</p></li>
+</ol>
+<h3 id="package-composition-and-dependency-flow">4.3 Package Composition
+and Dependency Flow</h3>
+<pre><code>suluh (orchestrator — depends on both leaves)
+  │
+  ├──► israg (leaf — zero dependencies)
+  │       Exports: KnowledgeEntry, TrustEngine, IsnadChain, CulturalContext
+  │
+  └──► council (leaf — zero dependencies)
+          Exports: CouncilMember, Opinion, Review, DeliberationResult</code></pre>
+<p>This separation is deliberate. Researchers can use IsRAG standalone
+for provenance-tracked retrieval. Developers can use Dewan Council
+standalone for multi-LLM deliberation. Only when both are needed
+together — for multi-agent research orchestration with compliance
+enforcement — is the full SULUH platform required.</p>
+<hr />
+<h2 id="compliance-by-architecture">5. Compliance by Architecture</h2>
+<p>A core claim of this work is that compliance — with data protection
+law (PDPA) and research ethics requirements (IRB) — should be enforced
+in application code, not in configuration, policy documents, or operator
+training.</p>
+<h3 id="the-dual-gate-model">5.1 The Dual-Gate Model</h3>
+<p>Two compliance gates run on every query, in sequence, before
+routing:</p>
+<pre><code>Query enters
+    │
+    ▼
+[PDPA Gate]     ← runs first; data classification
+    │
+    ├── RESTRICTED → local only, no cloud escalation
+    │
+    ▼
+[IRB Gate]      ← runs second; human-subject check
+    │
+    ├── Human-subject + approved protocol → pass
+    ├── Human-subject + no protocol → block for human review
+    └── Non-human-subject → pass
+    │
+    ▼
+[Routing]       ← only reached if both gates pass</code></pre>
+<p>Both gates are <strong>hard-coded Python functions</strong>, not
+configuration values. The PDPA classification gate is
+<code>suluh.pdpa.gate()</code>, not a feature flag. The IRB gate is a
+LangGraph node in the workflow graph, not a runtime toggle. The
+RESTRICTED-data cloud-escalation block is a hard <code>if/raise</code>
+in the router, not a settings file entry. Both gates <strong>fail
+closed</strong>: if the classifier errors, the query is blocked with an
+audit event, not passed through.</p>
+<h3 id="the-pda-classification-system">5.2 The PDA Classification
+System</h3>
+<p>Four levels, enforced at both ingest and runtime:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Level</th>
+<th>Description</th>
+<th>Cloud Escalation</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUBLIC</td>
+<td>Published papers, anonymised stats, open datasets</td>
+<td>Permitted</td>
+<td>Indefinite</td>
+</tr>
+<tr>
+<td>INTERNAL</td>
+<td>Research aggregates, non-PII project data</td>
+<td>Permitted (anonymised)</td>
+<td>7 years</td>
+</tr>
+<tr>
+<td>CONFIDENTIAL</td>
+<td>Researcher profiles, grant applications, pre-publication
+manuscripts</td>
+<td>Prohibited</td>
+<td>7 years</td>
+</tr>
+<tr>
+<td>RESTRICTED</td>
+<td>Participant IDs, interview transcripts, clinical data, IRB
+investigation records</td>
+<td>Prohibited</td>
+<td>10 years</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-irb-pre-screen">5.3 The IRB Pre-Screen</h3>
+<p>The IRB gate uses a five-question pre-screen classifier, initially
+keyword-based (Phase 0) and later fine-tuned on 200 labelled research
+queries (Phase 1):</p>
+<ol type="1">
+<li>Does the research involve human participants (directly or via their
+data)?</li>
+<li>Does it involve identifiable personal information?</li>
+<li>Does it involve sensitive categories (health, religion, ethnicity,
+political opinion)?</li>
+<li>Does it involve vulnerable populations?</li>
+<li>Has an IRB protocol been approved for this research type?</li>
+</ol>
+<p>Any “yes” on questions 1, 2, or 3 without an approved protocol
+triggers the IRB gate — the workflow pauses, the reviewer is notified,
+and no AI response is returned to the user until the gate is
+cleared.</p>
+<h3 id="the-immutable-audit-log">5.4 The Immutable Audit Log</h3>
+<p>The <code>ai_audit_log</code> PostgreSQL table is protected by a
+database trigger that rejects any UPDATE or DELETE operation. All AI
+operations — queries, SQL executions, agent swarm invocations, cloud
+escalations, PDPA detections, IRB gate decisions, document lifecycles —
+are logged with retention periods of 7–10 years. All user and IP
+identifiers are hashed (SHA-256 with per-deployment salts); plaintext
+identifiers are never logged.</p>
+<hr />
+<h2 id="evaluation-plan">6. Evaluation Plan</h2>
+<h3 id="the-golden-evaluation-set">6.1 The Golden Evaluation Set</h3>
+<p>A 200-entry bilingual (Malay/English) golden set authored by 30+
+researchers from consortium institutions, covering five domains:</p>
+<ul>
+<li><strong>Agriculture:</strong> crop science, palm oil sustainability,
+food security</li>
+<li><strong>Islamic finance:</strong> shariah-compliant instruments,
+waqf, takaful</li>
+<li><strong>Indigenous land rights:</strong> adat law, community
+mapping, customary tenure</li>
+<li><strong>Public health:</strong> epidemiology, vaccination policy,
+health systems</li>
+<li><strong>Digital governance:</strong> data sovereignty, AI
+regulation, e-government</li>
+</ul>
+<p>Each entry includes: query text, golden answer, domain label,
+language, difficulty rating, whether it requires multi-LLM deliberation,
+whether it is IRB-flagged, and the expected trust score range for
+correctly retrieved sources.</p>
+<p>The golden set is expanded in three phases: 50 entries (Phase 0, for
+model benchmarking), 200 entries (Phase 1, for regression testing), and
+ongoing expansion with consortium contributions (Phase 2+).</p>
+<h3 id="evaluation-metrics">6.2 Evaluation Metrics</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Method</th>
+<th>Phase 0 Target</th>
+<th>Phase 3 Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Answer accuracy</td>
+<td>BERTScore vs golden answer</td>
+<td>≥75%</td>
+<td>≥93%</td>
+</tr>
+<tr>
+<td>Trust calibration</td>
+<td>Pre/post Likert survey (100+ participants)</td>
+<td>Baseline established</td>
+<td>Effect size &gt;0.5</td>
+</tr>
+<tr>
+<td>Cultural appropriateness</td>
+<td>Expert review, 3-point ordinal</td>
+<td>Baseline established</td>
+<td>≥90% appropriate</td>
+</tr>
+<tr>
+<td>Hallucination rate</td>
+<td>Claimed citations verified against source DB</td>
+<td>&lt;10%</td>
+<td>&lt;5%</td>
+</tr>
+<tr>
+<td>Provenance completeness</td>
+<td>Binary: does response include full IsnadChain?</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Text-to-SQL correctness</td>
+<td>Execution result matches expected</td>
+<td>—</td>
+<td>≥92%</td>
+</tr>
+<tr>
+<td>Swarm task success</td>
+<td>LangFuse trace review against expected outcome</td>
+<td>—</td>
+<td>≥90%</td>
+</tr>
+<tr>
+<td>PDPA compliance</td>
+<td>Monthly audit log review</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>IRB gate accuracy</td>
+<td>IRB officer review of gate decisions</td>
+<td>—</td>
+<td>≥98%</td>
+</tr>
+<tr>
+<td>Average response latency</td>
+<td>End-to-end (gateway → response)</td>
+<td>&lt;5s</td>
+<td>&lt;2.5s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="baselines">6.3 Baselines</h3>
+<p>IsRAG is evaluated against: - Standard RAG (LangChain default,
+LlamaIndex default) - RAG with citations only (no trust scoring) - RAG
+with cultural context only (no trust scoring) - IsRAG (full: provenance
++ trust + cultural context)</p>
+<p>Dewan Council is evaluated against: - Single-LLM (Claude Opus alone)
+- Best-of-N (N=7 samples from Claude, highest self-assessed confidence)
+- Majority vote (independent sampling, modal answer) - Dewan Council
+(full 3-stage protocol)</p>
+<p>SULUH AI is evaluated against: - Pre-pilot baseline: current research
+productivity and AI tool usage at UPSI - Phased adoption metrics across
+the 12-month pilot - Comparison with institutional cloud AI usage
+patterns at peer universities</p>
+<h3 id="hypotheses">6.4 Hypotheses</h3>
+<p>We hypothesise that:</p>
+<ol type="1">
+<li><p><strong>IsRAG</strong> will match baseline RAG on simple factual
+queries and outperform on multi-perspective, trust-sensitive queries by
+5–10% BERTScore, while reducing hallucination rate by ≥30% and
+significantly improving user trust calibration (effect size
+&gt;0.5).</p></li>
+<li><p><strong>Dewan Council</strong> will match single-LLM on simple
+queries, outperform on multi-perspective synthesis queries by 10–15% on
+comprehensiveness, have lower internal inconsistency, and surface
+dissent that baselines silently absorb.</p></li>
+<li><p><strong>SULUH AI</strong> will demonstrate that a sovereign,
+PDPA/IRB-compliant multi-agent AI platform is deployable in a public
+university within 12 months on a capital-light budget, achieving 75%
+adoption, 100% PDPA compliance, and 90% swarm task success.</p></li>
+</ol>
+<hr />
+<h2 id="expected-contributions">7. Expected Contributions</h2>
+<h3 id="academic-contributions">7.1 Academic Contributions</h3>
+<ol type="1">
+<li><p><strong>IsRAG:</strong> A provenance-aware retrieval architecture
+that adapts the 1,000-year-old Islamic Isnad framework to modern AI,
+demonstrating that trust scoring, cultural context, and provenance
+chains measurably improve RAG output quality and trust calibration.
+Target venues: ACL, EMNLP, FAccT, JCDL.</p></li>
+<li><p><strong>Dewan Council:</strong> A three-stage multi-LLM
+deliberation protocol that produces both better and more auditable
+answers, with structured dissent recording and provenance-grounding via
+IsRAG. Target venues: AAMAS, NeurIPS (workshops), ACL
+(workshops).</p></li>
+<li><p><strong>SULUH AI:</strong> A reference architecture for sovereign
+multi-agent AI in higher education, governed by seven immutable design
+principles operationalised in code, tested through a 12-month pilot.
+Target venues: FAccT, AIES, IEEE Security &amp; Privacy.</p></li>
+</ol>
+<h3 id="institutional-impact">7.2 Institutional Impact</h3>
+<ul>
+<li>15,000–35,000 productive research hours returned to UPSI per year
+(8–18 FTE equivalent)</li>
+<li>75% adoption rate among research staff and graduate students</li>
+<li>100% PDPA compliance, 98% IRB gate accuracy</li>
+<li>Position UPSI as the first Malaysian university to deploy a
+sovereign, PDPA-compliant multi-agent AI research platform on a 1,280 GB
+distributed cluster</li>
+<li>Reusable consortium expansion model for partner institutions (UTM,
+UM, NTU, others)</li>
+</ul>
+<h3 id="strategic-contributions">7.3 Strategic Contributions</h3>
+<ul>
+<li>Reference implementation for Malaysia National AI Agenda
+2026–2030</li>
+<li>Foundation for ASEAN sovereign AI research infrastructure</li>
+<li>A provenance-aware, culturally-grounded AI system as a contribution
+to the global decolonial AI movement</li>
+<li>Demonstration that Islamic epistemology (Isnad) provides a formal,
+operationalisable framework for AI trust that generalises beyond any
+single culture or religion</li>
+</ul>
+<hr />
+<h2 id="limitations-and-future-work">8. Limitations and Future Work</h2>
+<h3 id="current-limitations">8.1 Current Limitations</h3>
+<ol type="1">
+<li><p><strong>IsRAG’s retrieval is keyword-based in v0.1.</strong> The
+Phase 1 upgrade to vector search (bge-m3 + pgvector HNSW) is
+architecturally specified but not implemented. The current trust scoring
+weights are hand-tuned; future work should learn them from user
+feedback.</p></li>
+<li><p><strong>Dewan Council is fully synchronous.</strong> A
+seven-member council with full cross-review requires 43 sequential LLM
+calls per query. Streaming and parallelisation are Phase 1
+priorities.</p></li>
+<li><p><strong>SULUH AI has zero implementation code.</strong> The
+architecture is validated, the data model is specified, and the
+principles are codified — but no gateway, router, swarm, or compliance
+gate code exists yet. This introduces execution risk for the 12-month
+timeline.</p></li>
+<li><p><strong>The cultural framework registry (14 frameworks) is
+curated,</strong> not discovered. Automated cultural-context detection
+from document content is future work.</p></li>
+<li><p><strong>Single-site pilot.</strong> The evaluation is at one
+Malaysian university. Multi-institution validation with consortium
+partners is a Phase 3 deliverable.</p></li>
+<li><p><strong>The golden set is small.</strong> 200 entries across 5
+domains is sufficient for Phase 0–1 regression testing but not for
+publication-grade evaluation. 1,000+ entries are needed for the final
+paper submissions.</p></li>
+</ol>
+<h3 id="future-work">8.2 Future Work</h3>
+<ul>
+<li><strong>Automated trust weight learning:</strong> replace hand-tuned
+TrustEngine weights with learned weights from user trust calibration
+feedback.</li>
+<li><strong>Dynamic council composition:</strong> learned chairman
+selection and council composition based on query type and domain.</li>
+<li><strong>Cultural-context auto-detection:</strong> classify documents
+into the CulturalFramework registry automatically.</li>
+<li><strong>Consortium federation:</strong> signed manifest exchange,
+capability-based access, no shared data plane. Full spec in Phase
+3.</li>
+<li><strong>Longitudinal adoption study:</strong> 24-month follow-up
+measuring sustained adoption, productivity impact, and quality of
+research outputs.</li>
+<li><strong>Public inference service:</strong> in Phase 3+, open the
+platform as a hosted inference service for SEA universities that cannot
+deploy their own infrastructure.</li>
+</ul>
+<hr />
+<h2 id="conclusion">9. Conclusion</h2>
+<p>The SULUH Ecosystem addresses a real and growing problem — the
+sovereignty gap in higher education AI — with a complete, deployable,
+open-source solution. The architecture is grounded in a 1,000-year-old
+epistemology (the Islamic Isnad) and 21st-century compliance
+requirements (PDPA, IRB).</p>
+<p>We have presented: (1) IsRAG, a provenance-tracked retrieval system
+that makes trust, provenance, and cultural context first-class
+architectural concerns; (2) Dewan Council, a multi-LLM deliberation
+protocol that produces auditable consensus with dissent visibility; and
+(3) SULUH AI, a reference architecture for sovereign, compliant
+multi-agent AI in higher education.</p>
+<p>The three components form a single research programme: IsRAG defines
+<em>what every retrieved fact looks like</em>, Council defines <em>how
+multiple models deliberate</em>, and SULUH defines <em>how agents
+coordinate and execute in a regulated environment</em>. Together, they
+offer a path toward deploying AI in institutional research contexts
+where standard AI tools are currently unsafe.</p>
+<p>The 12-month pilot at UPSI will provide the first empirical data on
+whether a sovereign, provenance-aware, deliberation-grounded multi-agent
+AI platform can be deployed in a public university in a middle-income
+country — and whether it measurably improves research productivity,
+trust, and compliance.</p>
+<hr />
+<h2 id="references">References</h2>
+<ol type="1">
+<li>Lewis, P., et al. (2020). Retrieval-Augmented Generation for
+Knowledge-Intensive NLP Tasks. <em>NeurIPS 2020</em>.</li>
+<li>Karpathy, A. (2024). LLM Council: A Three-Stage Multi-LLM
+Deliberation Pattern. <em>Blog post</em>.</li>
+<li>Wang, X., et al. (2023). Self-Consistency Improves Chain of Thought
+Reasoning in Language Models. <em>ICLR 2023</em>.</li>
+<li>Du, Y., et al. (2024). Improving Factuality and Reasoning in
+Language Models through Multiagent Debate. <em>ICML 2024</em>.</li>
+<li>Buneman, P., Khanna, S., &amp; Tan, W. C. (2001). Why and Where: A
+Characterization of Data Provenance. <em>ICDT 2001</em>.</li>
+<li>W3C (2013). PROV-Overview: An Overview of the PROV Family of
+Documents.</li>
+<li>Mohamed, S., Png, M. T., &amp; Isaac, W. (2020). Decolonial AI:
+Decolonial Theory as Sociotechnical Foresight in Artificial
+Intelligence. <em>Philosophy &amp; Technology</em>.</li>
+<li>Birhane, A., et al. (2022). The Values Encoded in Machine Learning
+Research. <em>FAccT 2022</em>.</li>
+<li>Cavoukian, A. (2009). Privacy by Design: The 7 Foundational
+Principles.</li>
+<li>Malaysia Personal Data Protection Act 2010 (Act 709).</li>
+<li>LangGraph v1.0 (2025). LangChain Inc. Production-grade agent
+orchestration framework.</li>
+<li>IBM Docling. Document understanding and conversion toolkit.</li>
+<li>EXO. Distributed inference for open-weight models.</li>
+<li>pgvector. Open-source vector similarity search for PostgreSQL.</li>
+<li>OpenRouter. Unified API for accessing multiple LLM providers.</li>
+</ol>
+<hr />
+<h2 id="reproducibility-appendix">Reproducibility Appendix</h2>
+<ul>
+<li><strong>Codebase:</strong>
+<code>~/Documents/PROJECTS/suluh-ecosystem/</code> — private monorepo
+(Apache 2.0)</li>
+<li><strong>IsRAG engine:</strong>
+<code>packages/israg/src/israg/israg_engine.py</code> (783 lines,
+Python)</li>
+<li><strong>Dewan Council engine:</strong>
+<code>packages/council/src/council/council_engine.py</code> (775 lines,
+Python)</li>
+<li><strong>Tests:</strong> 18 passing (pytest), covering all IsRAG and
+TrustEngine functionality</li>
+<li><strong>Architecture documentation:</strong>
+<code>docs/ARCHITECTURE.md</code>, <code>docs/PRINCIPLES.md</code>,
+<code>docs/COMPLIANCE.md</code></li>
+<li><strong>Research proposal:</strong>
+<code>research/proposal/SULUH-ECOSYSTEM-PROPOSAL.md</code></li>
+<li><strong>Academic papers (drafts):</strong>
+<code>research/papers/paper-1-israg.md</code>,
+<code>paper-2-council.md</code>, <code>paper-3-suluh.md</code></li>
+<li><strong>Golden set:</strong> <code>research/golden-sets/</code>
+(Phase 0 deliverable: 50 entries in JSONL format)</li>
+<li><strong>Evaluation scripts:</strong> <code>benchmarks/</code> (Phase
+0 deliverable)</li>
+</ul>
+<hr />
+<p><em>Submitted for preliminary review. July 2026.</em></p>
+</body>
+</html>

@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SULUH Ecosystem — Holistic PRD</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">body {
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 11pt;
+line-height: 1.5;
+color: #1a1a1a;
+max-width: 800px;
+margin: 0 auto;
+padding: 2em;
+}
+h1 { font-size: 20pt; margin-top: 1.5em; border-bottom: 2px solid #1a1a1a; padding-bottom: 0.3em; }
+h2 { font-size: 16pt; margin-top: 1.3em; border-bottom: 1px solid #ddd; }
+h3 { font-size: 13pt; margin-top: 1em; }
+h4 { font-size: 11pt; margin-top: 0.8em; }
+code { background: #f5f5f5; padding: 1px 4px; font-size: 10pt; border-radius: 3px; }
+pre { background: #f5f5f5; padding: 1em; overflow-x: auto; font-size: 9pt; line-height: 1.4; }
+pre code { background: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; font-size: 10pt; }
+th { background: #f0f0f0; }
+blockquote { border-left: 3px solid #ccc; margin: 1em 0; padding: 0.5em 1em; color: #555; }
+a { color: #2563eb; }
+@media print {
+body { font-size: 10pt; }
+pre { font-size: 8pt; }
+@page { margin: 2cm; }
+}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">SULUH Ecosystem — Holistic PRD</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#suluh-ecosystem-holistic-product-requirements-document" id="toc-suluh-ecosystem-holistic-product-requirements-document">SULUH
+Ecosystem — Holistic Product Requirements Document</a>
+<ul>
+<li><a href="#executive-summary" id="toc-executive-summary">Executive
+Summary</a></li>
+<li><a href="#project-vision-context" id="toc-project-vision-context">1.
+Project Vision &amp; Context</a>
+<ul>
+<li><a href="#the-sovereignty-gap" id="toc-the-sovereignty-gap">1.1 The
+Sovereignty Gap</a></li>
+<li><a href="#strategic-positioning" id="toc-strategic-positioning">1.2
+Strategic Positioning</a></li>
+<li><a href="#key-metrics-12-month-target" id="toc-key-metrics-12-month-target">1.3 Key Metrics (12-Month
+Target)</a></li>
+</ul></li>
+<li><a href="#current-state-assessment" id="toc-current-state-assessment">2. Current State Assessment</a>
+<ul>
+<li><a href="#what-is-built-working" id="toc-what-is-built-working">2.1
+What Is Built &amp; Working</a></li>
+<li><a href="#what-is-not-built" id="toc-what-is-not-built">2.2 What Is
+NOT Built</a></li>
+</ul></li>
+<li><a href="#architecture-overview" id="toc-architecture-overview">3.
+Architecture Overview</a>
+<ul>
+<li><a href="#four-tier-design" id="toc-four-tier-design">3.1 Four-Tier
+Design</a></li>
+<li><a href="#package-composition" id="toc-package-composition">3.2
+Package Composition</a></li>
+<li><a href="#query-routing-decision-tree" id="toc-query-routing-decision-tree">3.3 Query Routing Decision
+Tree</a></li>
+<li><a href="#data-model-cross-package-types" id="toc-data-model-cross-package-types">3.4 Data Model: Cross-Package
+Types</a></li>
+</ul></li>
+<li><a href="#package-specifications" id="toc-package-specifications">4.
+Package Specifications</a>
+<ul>
+<li><a href="#israg-detailed-api" id="toc-israg-detailed-api">4.1 IsRAG
+— Detailed API</a></li>
+<li><a href="#dewan-council-detailed-api" id="toc-dewan-council-detailed-api">4.2 Dewan Council — Detailed
+API</a></li>
+<li><a href="#suluh-ai-planned-components" id="toc-suluh-ai-planned-components">4.3 SULUH AI — Planned
+Components</a></li>
+</ul></li>
+<li><a href="#compliance-architecture" id="toc-compliance-architecture">5. Compliance Architecture</a>
+<ul>
+<li><a href="#pdpa-data-classification" id="toc-pdpa-data-classification">5.1 PDPA Data Classification</a></li>
+<li><a href="#irb-research-ethics-controls" id="toc-irb-research-ethics-controls">5.2 IRB Research Ethics
+Controls</a></li>
+<li><a href="#audit-log-immutable" id="toc-audit-log-immutable">5.3
+Audit Log (Immutable)</a></li>
+<li><a href="#network-perimeter" id="toc-network-perimeter">5.4 Network
+Perimeter</a></li>
+</ul></li>
+<li><a href="#design-principles-7-immutable" id="toc-design-principles-7-immutable">6. Design Principles (7
+Immutable)</a></li>
+<li><a href="#development-roadmap" id="toc-development-roadmap">7.
+Development Roadmap</a>
+<ul>
+<li><a href="#phase-0-foundation-months-12" id="toc-phase-0-foundation-months-12">7.1 Phase 0: Foundation (Months
+1–2)</a></li>
+<li><a href="#phase-1-core-capabilities-months-36" id="toc-phase-1-core-capabilities-months-36">7.2 Phase 1: Core
+Capabilities (Months 3–6)</a></li>
+<li><a href="#phase-2-agentic-workflows-months-710" id="toc-phase-2-agentic-workflows-months-710">7.3 Phase 2: Agentic
+Workflows (Months 7–10)</a></li>
+<li><a href="#phase-3-full-production-months-1112" id="toc-phase-3-full-production-months-1112">7.4 Phase 3: Full
+Production (Months 11–12)</a></li>
+</ul></li>
+<li><a href="#golden-set-evaluation-plan" id="toc-golden-set-evaluation-plan">8. Golden Set &amp; Evaluation
+Plan</a>
+<ul>
+<li><a href="#golden-set-specification" id="toc-golden-set-specification">8.1 Golden Set Specification</a></li>
+<li><a href="#evaluation-metrics" id="toc-evaluation-metrics">8.2
+Evaluation Metrics</a></li>
+<li><a href="#model-benchmark-phase-0" id="toc-model-benchmark-phase-0">8.3 Model Benchmark (Phase 0)</a></li>
+</ul></li>
+<li><a href="#hardware-infrastructure" id="toc-hardware-infrastructure">9. Hardware &amp; Infrastructure</a>
+<ul>
+<li><a href="#target-cluster-phase-1" id="toc-target-cluster-phase-1">9.1 Target Cluster (Phase 1+)</a></li>
+<li><a href="#phase-0-dev-environment" id="toc-phase-0-dev-environment">9.2 Phase 0 Dev Environment</a></li>
+<li><a href="#software-stack" id="toc-software-stack">9.3 Software
+Stack</a></li>
+</ul></li>
+<li><a href="#team-resources" id="toc-team-resources">10. Team &amp;
+Resources</a>
+<ul>
+<li><a href="#budget-rm-285000-usd-60000" id="toc-budget-rm-285000-usd-60000">Budget: RM 285,000 (~USD
+60,000)</a></li>
+</ul></li>
+<li><a href="#risk-register" id="toc-risk-register">11. Risk
+Register</a></li>
+<li><a href="#repository-structure" id="toc-repository-structure">12.
+Repository Structure</a></li>
+<li><a href="#developer-quick-start" id="toc-developer-quick-start">13.
+Developer Quick Start</a></li>
+<li><a href="#open-questions-for-openscience" id="toc-open-questions-for-openscience">14. Open Questions for
+OpenScience</a></li>
+<li><a href="#relationship-to-other-projects" id="toc-relationship-to-other-projects">15. Relationship to Other
+Projects</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="suluh-ecosystem-holistic-product-requirements-document">SULUH
+Ecosystem — Holistic Product Requirements Document</h1>
+<p><strong>Document version:</strong> v1.0<br />
+<strong>Date:</strong> July 2026<br />
+<strong>Author:</strong> Putra Nasution (Lead Architect &amp; Principal
+Investigator)<br />
+<strong>Status:</strong> Private — for consortium, institutional, and
+AI-agent reference use<br />
+<strong>Repository:</strong>
+<code>~/Documents/PROJECTS/suluh-ecosystem/</code> (private
+monorepo)</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The SULUH Ecosystem is a <strong>sovereign, PDPA-compliant
+multi-agent AI platform for higher education research in Southeast
+Asia</strong>. It consists of three composable open-source packages:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Package</th>
+<th>Role</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IsRAG</strong></td>
+<td>Provenance-aware retrieval with trust scoring and cultural
+context</td>
+<td>v0.1 alpha — 18/18 tests passing, working engine</td>
+</tr>
+<tr>
+<td><strong>Dewan Council</strong></td>
+<td>Multi-LLM deliberation with 3-stage protocol and auditable
+dissent</td>
+<td>v0.1 alpha — working engine, mock mode available</td>
+</tr>
+<tr>
+<td><strong>SULUH AI</strong></td>
+<td>Orchestration platform: gateway, router, LangGraph workflows,
+PDPA+IRB gates, Vue 3 Workbench</td>
+<td>Planned — package skeleton exists, zero implementation</td>
+</tr>
+</tbody>
+</table>
+<p>The three packages form <strong>one academic research
+programme</strong>: IsRAG defines <em>what every retrieved fact looks
+like</em> (the data model), Council defines <em>how multiple LLMs
+deliberate</em>, and SULUH defines <em>how agents coordinate and
+execute</em>. Each is independently usable; together they form a
+sovereign, auditable, deliberation-grounded multi-agent platform with
+cultural and epistemological awareness built in by default.</p>
+<p><strong>Primary deployment target:</strong> 12-month pilot at
+Universiti Pendidikan Sultan Idris (UPSI), Malaysia — serving ~275
+research staff and 2,400+ graduate students.</p>
+<hr />
+<h2 id="project-vision-context">1. Project Vision &amp; Context</h2>
+<h3 id="the-sovereignty-gap">1.1 The Sovereignty Gap</h3>
+<p>Higher education institutions in Malaysia and Southeast Asia face a
+regulatory paradox:</p>
+<ul>
+<li>Research data (participant records, ethics approvals,
+pre-publication manuscripts, indigenous knowledge) <strong>cannot
+legally be processed by foreign cloud AI services</strong> under PDPA
+2010, GDPR, and sectoral rules like HIPAA and IRB.</li>
+<li>Universities <strong>must adopt AI</strong> to remain competitive in
+research productivity, reproducibility, and funding.</li>
+<li>The current landscape is fragmented: ad-hoc local GPU workstations,
+foreign cloud tools IRBs cannot approve, and a widening capability gap
+between well-resourced and under-resourced institutions.</li>
+</ul>
+<p>SULUH resolves this paradox by providing a <strong>sovereign,
+on-premise platform</strong> where all data, model weights, and agent
+state remain within institutional jurisdiction.</p>
+<h3 id="strategic-positioning">1.2 Strategic Positioning</h3>
+<ul>
+<li><strong>First-mover advantage:</strong> First Malaysian university
+to deploy a sovereign, PDPA-compliant multi-agent AI research platform
+on a 1,280 GB distributed cluster.</li>
+<li><strong>National alignment:</strong> Reference implementation for
+Malaysia National AI Agenda 2026–2030.</li>
+<li><strong>Regional template:</strong> Consortium expansion model for
+partner institutions (UTM, UM, NTU, and other ASEAN universities).</li>
+<li><strong>Academic contribution:</strong> Grounded in a 1,000-year-old
+epistemology (Islamic Isnad) applied to modern AI — contributes to the
+global decolonial AI movement.</li>
+</ul>
+<h3 id="key-metrics-12-month-target">1.3 Key Metrics (12-Month
+Target)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Research-domain answer accuracy</td>
+<td>93%</td>
+</tr>
+<tr>
+<td>Swarm task success rate</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>PDPA compliance score</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>IRB gate accuracy</td>
+<td>98%</td>
+</tr>
+<tr>
+<td>Staff adoption rate</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>Average response latency</td>
+<td>&lt; 2.5s</td>
+</tr>
+<tr>
+<td>Anthropic cloud escalation share</td>
+<td>&lt; 5%</td>
+</tr>
+<tr>
+<td>Productive hours returned/year</td>
+<td>15,000–35,000 (8–18 FTE equivalent)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="current-state-assessment">2. Current State Assessment</h2>
+<h3 id="what-is-built-working">2.1 What Is Built &amp; Working</h3>
+<h4 id="israg-packagesisrag-v0.1-alpha">IsRAG
+(<code>packages/israg/</code>) — v0.1 alpha</h4>
+<p><strong>18/18 tests passing</strong> (pytest, 0.03 seconds). Full
+implementation:</p>
+<ul>
+<li><strong>Core engine:</strong> <code>IsRAGEngine</code> class with
+<code>ingest()</code>, <code>retrieve()</code>,
+<code>add_verification()</code>, <code>get_entry()</code>,
+<code>list_entries()</code>, <code>get_stats()</code>.</li>
+<li><strong>Data model:</strong> <code>KnowledgeEntry</code>,
+<code>ProvenanceStep</code>, <code>VerificationRecord</code>,
+<code>TrustEngine</code>, <code>IsnadChain</code>,
+<code>CulturalContext</code>, <code>RetrievalResult</code>.</li>
+<li><strong>5-factor trust engine:</strong> Verification level (30%),
+source credibility (25%), verification quality (20%), cross-references
+(15%), freshness (10%).</li>
+<li><strong>13 cultural frameworks:</strong> Global, Western, East
+Asian, Southeast Asian, South Asian, Indonesian, Malaysian, Thai,
+Vietnamese, Filipino, Singaporean, Islamic, Buddhist, Indigenous.</li>
+<li><strong>Isn’t yet:</strong> Vector search (currently keyword-based),
+persistent storage (in-memory dict), embedding pipeline.</li>
+</ul>
+<h4 id="dewan-council-packagescouncil-v0.1-alpha">Dewan Council
+(<code>packages/council/</code>) — v0.1 alpha</h4>
+<p>Working engine with full protocol:</p>
+<ul>
+<li><strong>3-stage deliberation:</strong> (1) Independent first
+opinions → (2) Cross-review matrix → (3) Chairman synthesis with
+dissent.</li>
+<li><strong>7-member reference council:</strong> Ketua Claude (Opus
+4.7), Anggota GPT (5.5), Gemini (3 Flash), Kimi (K2.6), Deepseek (V4
+Flash), Qwen (3.6 Plus), Nemotron (3 Super).</li>
+<li><strong>Mock mode:</strong> Works without API key for testing the
+protocol.</li>
+<li><strong>OpenRouter integration:</strong> Single API for all
+models.</li>
+<li><strong>Integration with IsRAG:</strong> Council opinions can be
+grounded in IsRAG KnowledgeEntry objects.</li>
+<li><strong>Isn’t yet:</strong> Streaming, async deliberation, learned
+chairman selection.</li>
+</ul>
+<h4 id="documentation">Documentation</h4>
+<ul>
+<li><code>README.md</code> — ecosystem-level overview</li>
+<li><code>docs/ARCHITECTURE.md</code> — 4-tier architecture with
+composability model (~20 KB)</li>
+<li><code>docs/PRINCIPLES.md</code> — 7 immutable design principles,
+operationalised in code</li>
+<li><code>docs/COMPLIANCE.md</code> — PDPA + IRB dual-gate model (~7
+KB)</li>
+<li><code>docs/SULUH-PRD-ANALYSIS.md</code> — analysis of the original
+SULUH SWARM PRD v1.0</li>
+<li><code>docs/REBRAND-KRAG-TO-ISRAG.md</code> — migration note</li>
+<li><code>research/proposal/SULUH-ECOSYSTEM-PROPOSAL.md</code> — unified
+programme proposal (RM 285K budget)</li>
+<li><code>research/papers/paper-1-israg.md</code> — IsRAG paper
+draft</li>
+<li><code>research/papers/paper-2-council.md</code> — Dewan Council
+paper draft</li>
+<li><code>research/papers/paper-3-suluh.md</code> — SULUH AI paper
+draft</li>
+</ul>
+<h3 id="what-is-not-built">2.2 What Is NOT Built</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Status</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SULUH FastAPI gateway (<code>suluh/gateway/</code>)</td>
+<td>Zero code</td>
+<td>P0 — Phase 0 deliverable</td>
+</tr>
+<tr>
+<td>Query router (<code>suluh/router/</code>)</td>
+<td>Zero code</td>
+<td>P0 — Phase 0 deliverable</td>
+</tr>
+<tr>
+<td>LangGraph Swarm Coordinator (<code>suluh/swarm/</code>)</td>
+<td>Zero code</td>
+<td>P1 — Phase 2</td>
+</tr>
+<tr>
+<td>Hybrid RAG (<code>suluh/rag/</code>) — pgvector + Text-to-SQL</td>
+<td>Zero code</td>
+<td>P0 — Phase 1</td>
+</tr>
+<tr>
+<td>Docling ingestion pipeline (<code>suluh/docling/</code>)</td>
+<td>Zero code</td>
+<td>P1 — Phase 1</td>
+</tr>
+<tr>
+<td>PDPA masking layer (<code>suluh/pdpa/</code>)</td>
+<td>Zero code</td>
+<td>P0 — Phase 1</td>
+</tr>
+<tr>
+<td>IRB ethics gate (<code>suluh/irb/</code>)</td>
+<td>Zero code</td>
+<td>P0 — Phase 0</td>
+</tr>
+<tr>
+<td>Agent registry (<code>suluh/registry/</code>)</td>
+<td>Zero code</td>
+<td>P1 — Phase 1</td>
+</tr>
+<tr>
+<td>Vue 3 Workbench UI</td>
+<td>Zero code</td>
+<td>P1 — Phase 1</td>
+</tr>
+<tr>
+<td>Golden evaluation set</td>
+<td>Zero entries</td>
+<td>P0 — Phase 0</td>
+</tr>
+<tr>
+<td>Vector search (replaces keyword matching)</td>
+<td>Not implemented</td>
+<td>P0 — Phase 1</td>
+</tr>
+<tr>
+<td>Persistent storage (replaces in-memory)</td>
+<td>Not implemented</td>
+<td>P0 — Phase 1</td>
+</tr>
+<tr>
+<td>Git history</td>
+<td>No <code>.git</code> initialised</td>
+<td>P0 — immediate</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="architecture-overview">3. Architecture Overview</h2>
+<h3 id="four-tier-design">3.1 Four-Tier Design</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│ TIER 1 — USER LAYER                                                     │
+│                                                                          │
+│   Vue 3 AI Workbench · JupyterLab Extension · REST/SDK · Admin Console  │
+│   Receives JWT from institutional SSO; speaks only to T2 (gateway).      │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │  HTTPS · JWT
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TIER 2 — APPLICATION LAYER (FastAPI AI Gateway)                         │
+│                                                                          │
+│   JWT validation · RBAC enforcement · Rate limiting                     │
+│   SSE streaming · OpenAPI spec                                          │
+│   Agent Registry endpoint                                               │
+│   Audit log emitter (PDPA + IRB events)                                 │
+│   Forwards to T3 with user context stripped of PII.                     │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TIER 3 — ORCHESTRATION LAYER                                             │
+│                                                                          │
+│   Query Router          — PDPA classify → IRB pre-screen → complexity   │
+│   Swarm Coordinator     — LangGraph v1.0, 6-step pipeline               │
+│   Hybrid RAG            — pgvector HNSW + Text-to-SQL                   │
+│   Multi-LLM Deliberation — Council (triggered on SWARM route)           │
+│   Document Intelligence — IBM Docling (OCR, tables, figures)            │
+│   PDPA Masking Layer    — Fail-closed PII detection                     │
+│   IRB Ethics Gate       — Deterministic classifier + protocol matcher   │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ TIER 4 — DATA LAYER                                                      │
+│                                                                          │
+│   PostgreSQL AI Replica (read-only) — pgvector/HNSW, audit log (immutable)│
+│   MinIO / Internal NAS — Docling-processed artefacts                    │
+│   LangFuse — self-hosted LLM observability                              │
+│   Redis — agent state, conversation cache                                │
+│   Debezium / pg_logical — production → AI replica streaming             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+        ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+        OPTIONAL CLOUD QUALITY LAYER
+          Anthropic Claude API
+          Conditions: anonymised + non-human-subject + confidence &lt; 0.72
+          Target share: &lt; 5% of all queries
+          Hard-blocked for: RESTRICTED data, human-subject research
+        ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</code></pre>
+<h3 id="package-composition">3.2 Package Composition</h3>
+<pre><code>packages/suluh/ (orchestrator — depends on both leaf packages)
+    │
+    ├──► packages/israg/     (leaf — no dependency on suluh)
+    │       Provides: KnowledgeEntry, TrustEngine, IsnadChain, CulturalContext
+    │
+    └──► packages/council/   (leaf — no dependency on suluh)
+            Provides: CouncilMember, Opinion, Review, DeliberationResult</code></pre>
+<p>This separation is deliberate. A researcher can
+<code>pip install israg</code> standalone. A developer can
+<code>pip install council</code> standalone. A university IT team
+installs the whole ecosystem.</p>
+<h3 id="query-routing-decision-tree">3.3 Query Routing Decision
+Tree</h3>
+<pre><code>1. User submits query
+      │
+      ▼
+2. Gateway validates JWT, applies RBAC, emits audit event
+      │
+      ▼
+3. Router classifies:
+   ├─ PDPA class: PUBLIC → INTERNAL → CONFIDENTIAL → RESTRICTED
+   ├─ IRB indicator: yes / no
+   └─ Complexity: LOW / MEDIUM / HIGH
+      │
+      ▼
+4. IRB Gate (if flagged):
+   ├─ matched protocol → pass
+   ├─ no protocol match → block for human review
+   └─ non-human-subject → continue
+      │
+      ▼
+5. PDPA Masking:
+   ├─ RESTRICTED → block from cloud, continue locally only
+   └─ Other → continue
+      │
+      ▼
+6. Route:
+   ├─ FAST (~55%): israg.retrieve(vector) → Qwen 3.6 direct
+   ├─ PRIMARY (~30%): israg.retrieve(vector+SQL) → Qwen extended
+   ├─ SWARM (~10%): israg + council.deliberate
+   └─ ESCALATE (&lt;5%): anonymise → Anthropic → return
+      │
+      ▼
+7. Synthesis + Isnad chain assembly → Response to user</code></pre>
+<h3 id="data-model-cross-package-types">3.4 Data Model: Cross-Package
+Types</h3>
+<p>IsRAG defines the <strong>canonical data structures</strong> that
+flow through the ecosystem:</p>
+<pre><code>KnowledgeEntry {
+  content: str
+  entry_id: str (hash-based)
+  author: str
+  author_type: str
+  source_type: SourceType (8 types)
+  verification_level: VerificationLevel (6 levels)
+  cultural_context: CulturalContext | None
+  trust_score: float (computed)
+  provenance: list[ProvenanceStep]
+  verifications: list[VerificationRecord]
+  tags: list[str]
+  created_at: datetime
+}
+
+TrustEngine computes 5-factor score:
+  verification_level (30%) + source_credibility (25%) +
+  verification_quality (20%) + cross_reference (15%) + freshness (10%)
+
+SourceType: RESEARCH · INSTITUTIONAL · GOVERNMENT · ACADEMIC · NEWS ·
+            EXPERT · COMMUNITY · AI_GENERATED · FIELD_DATA
+
+VerificationLevel (0–5):
+  UNVERIFIED → SELF_REPORTED → PEER_REVIEWED →
+  INSTITUTION_VERIFIED → MULTI_SOURCE_CONFIRMED → FIELD_VALIDATED
+
+CulturalFramework (14):
+  GLOBAL · WESTERN · EAST_ASIAN · SOUTHEAST_ASIAN · SOUTH_ASIAN ·
+  INDONESIAN · MALAYSIAN · THAI · VIETNAMESE · FILIPINO ·
+  SINGAPOREAN · ISLAMIC · BUDDHIST · INDIGENOUS</code></pre>
+<p>Council <strong>consumes</strong> IsRAG types:</p>
+<pre><code>CouncilMember: name, role (chairman|member), model_id, specialty, trust_weight
+Opinion: member, response, confidence, timestamp
+Review: reviewer, reviewed, rating (1–10), feedback, issues_found
+DeliberationResult: final_answer, isnad_chain, consensus_score, dissenting_views</code></pre>
+<p>SULUH <strong>wraps</strong> both:</p>
+<pre><code>QueryRequest: user_id_hash, routing_label, pdpa_classification,
+              irb_flagged, query, context
+QueryResponse: answer, isnad_chain, deliberation, pdpa_masking_applied,
+               irb_gate_decision, confidence, citations, audit_log_entry</code></pre>
+<hr />
+<h2 id="package-specifications">4. Package Specifications</h2>
+<h3 id="israg-detailed-api">4.1 IsRAG — Detailed API</h3>
+<p><strong>Location:</strong>
+<code>packages/israg/src/israg/israg_engine.py</code> (783 lines)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> IsRAGEngine:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, storage_path: Optional[<span class="bu">str</span>] <span class="op">=</span> <span class="va">None</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ingest(content, author, source_type, author_type<span class="op">=</span><span class="st">&quot;person&quot;</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>               verification_level<span class="op">=</span>UNVERIFIED, cultural_context<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>               tags<span class="op">=</span><span class="va">None</span>, metadata<span class="op">=</span><span class="va">None</span>, entry_id<span class="op">=</span><span class="va">None</span>) <span class="op">-&gt;</span> KnowledgeEntry</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> retrieve(query, min_trust_score<span class="op">=</span><span class="fl">0.0</span>, cultural_filter<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                 source_filter<span class="op">=</span><span class="va">None</span>, limit<span class="op">=</span><span class="dv">10</span>, include_isnad<span class="op">=</span><span class="va">False</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[RetrievalResult]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_verification(entry_id, verifier, verifier_type, level,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                         rating, feedback<span class="op">=</span><span class="st">&quot;&quot;</span>, issues_found<span class="op">=</span><span class="va">None</span>) <span class="op">-&gt;</span> KnowledgeEntry <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_entry(entry_id) <span class="op">-&gt;</span> KnowledgeEntry <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> list_entries(source_type<span class="op">=</span><span class="va">None</span>, min_trust<span class="op">=</span><span class="fl">0.0</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[KnowledgeEntry]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_stats() <span class="op">-&gt;</span> <span class="bu">dict</span></span></code></pre></div>
+<p><strong>RetrievalResult:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RetrievalResult:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    content: <span class="bu">str</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    entry_id: <span class="bu">str</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    relevance_score: <span class="bu">float</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    trust_score: <span class="bu">float</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    confidence_level: <span class="bu">str</span>  <span class="co"># very_high, high, medium, low, unverified</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    isnad_chain: IsnadChain <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    source_type: SourceType</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    cultural_context: CulturalContext <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> format_for_display(show_isnad<span class="op">=</span><span class="va">False</span>) <span class="op">-&gt;</span> <span class="bu">str</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> to_dict() <span class="op">-&gt;</span> <span class="bu">dict</span></span></code></pre></div>
+<p><strong>Current limitations to address in Phase 1:</strong> -
+<code>_calculate_relevance()</code> uses naive keyword matching —
+replace with vector similarity (bge-m3 embeddings + pgvector HNSW) -
+<code>knowledge_base</code> is an in-memory dict — replace with
+persistent store (PostgreSQL + pgvector) - No embedding model
+integration yet — need <code>sentence-transformers</code> or
+<code>bge-m3</code> via HuggingFace</p>
+<h3 id="dewan-council-detailed-api">4.2 Dewan Council — Detailed
+API</h3>
+<p><strong>Location:</strong>
+<code>packages/council/src/council/council_engine.py</code> (775
+lines)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DewanCouncil:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, api_key<span class="op">=</span><span class="va">None</span>, members<span class="op">=</span><span class="va">None</span>, provider<span class="op">=</span><span class="st">&quot;openrouter&quot;</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                 verbose<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> deliberate(query, skip_reviews<span class="op">=</span><span class="va">False</span>, max_reviewers<span class="op">=</span><span class="dv">3</span>) <span class="op">-&gt;</span> DeliberationResult</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Internal stages</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _stage1_get_opinions(query) <span class="op">-&gt;</span> <span class="bu">list</span>[Opinion]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _stage2_cross_review(query, opinions, max_reviewers) <span class="op">-&gt;</span> <span class="bu">list</span>[Review]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _stage3_synthesize(query, opinions, reviews) <span class="op">-&gt;</span> <span class="bu">dict</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _call_llm(member, prompt) <span class="op">-&gt;</span> <span class="bu">str</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Mock mode: set no API key and council auto-generates plausible mock responses</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># for testing the deliberation protocol without burning tokens.</span></span></code></pre></div>
+<p><strong>Reference Council (7 members, OpenRouter model
+IDs):</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Model</th>
+<th>Specialty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chairman</td>
+<td>Ketua Claude</td>
+<td><code>anthropic/claude-opus-4.7</code></td>
+<td>Synthesis, judgment</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Anggota GPT</td>
+<td><code>openai/gpt-5.5</code></td>
+<td>Deep reasoning</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Anggota Gemini</td>
+<td><code>google/gemini-3-flash-preview</code></td>
+<td>Data, multimodal</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Anggota Kimi</td>
+<td><code>moonshotai/kimi-k2.6</code></td>
+<td>Long context, multi-agent</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Anggota Deepseek</td>
+<td><code>deepseek/deepseek-v4-flash</code></td>
+<td>Chain-of-thought</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Anggota Qwen</td>
+<td><code>qwen/qwen3.6-plus</code></td>
+<td>Multilingual, Asia</td>
+</tr>
+<tr>
+<td>Member</td>
+<td>Anggota Nemotron</td>
+<td><code>nvidia/nemotron-3-super</code></td>
+<td>Open model, free tier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Current limitations to address:</strong> - Mock mode is
+helpful but should be extended with structured test data - No streaming
+support — all deliberation is synchronous - Chairman selection is
+hardcoded (first member with role=“chairman”) - No learned chairman
+selection or dynamic council composition</p>
+<h3 id="suluh-ai-planned-components">4.3 SULUH AI — Planned
+Components</h3>
+<p><strong>Location:</strong> <code>packages/suluh/</code> (skeleton
+only)</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Path</th>
+<th>Function</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gateway</td>
+<td><code>suluh/gateway/</code></td>
+<td>FastAPI, JWT, RBAC, audit, SSE</td>
+<td>Phase 0</td>
+</tr>
+<tr>
+<td>Router</td>
+<td><code>suluh/router/</code></td>
+<td>Query classifier, complexity scorer</td>
+<td>Phase 0</td>
+</tr>
+<tr>
+<td>IRB Gate</td>
+<td><code>suluh/irb/</code></td>
+<td>Deterministic ethics classifier</td>
+<td>Phase 0</td>
+</tr>
+<tr>
+<td>Hybrid RAG</td>
+<td><code>suluh/rag/</code></td>
+<td>pgvector + Text-to-SQL</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>PDPA Masking</td>
+<td><code>suluh/pdpa/</code></td>
+<td>PII detection, fail-closed</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>Docling</td>
+<td><code>suluh/docling/</code></td>
+<td>Document intelligence pipeline</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>Swarm</td>
+<td><code>suluh/swarm/</code></td>
+<td>LangGraph coordinator</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>Registry</td>
+<td><code>suluh/registry/</code></td>
+<td>Agent catalogue</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td><code>frontend/</code></td>
+<td>Vue 3 Workbench</td>
+<td>Phase 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gateway API contract (planned):</strong></p>
+<pre><code>GET  /health
+POST /query          — main query endpoint
+GET  /sessions       — list user sessions
+GET  /sessions/{id}  — get session with full audit trail
+POST /sessions/{id}/stop — stop running session
+GET  /models         — list available models
+GET  /agents         — list registered agents
+GET  /audit          — query audit log (admin)</code></pre>
+<p><strong>Router contract (planned):</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> QueryRouter:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> classify(query: <span class="bu">str</span>, user_context: UserContext) <span class="op">-&gt;</span> RouteDecision:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Returns:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">            RouteDecision {</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">                pdpa_class: PDPAClass (PUBLIC|INTERNAL|CONFIDENTIAL|RESTRICTED)</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">                irb_flagged: bool</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">                complexity: ComplexityClass (LOW|MEDIUM|HIGH)</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">                route: Route (FAST|PRIMARY|SWARM|ESCALATE)</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">                confidence_threshold: float</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">            }</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span></code></pre></div>
+<p><strong>Swarm Coordinator — 6-step LangGraph pipeline
+(planned):</strong></p>
+<pre><code>1. query_analyzer    — understand intent, scope, domain
+2. discovery         — identify relevant agents, tools, sources
+3. decompose         — break into subtasks, assign to agents
+4. execute           — run agent tasks in parallel subgraphs
+5. consensus         — aggregate results, resolve conflicts
+6. irb_gate          — ethics check before returning to user</code></pre>
+<hr />
+<h2 id="compliance-architecture">5. Compliance Architecture</h2>
+<h3 id="pdpa-data-classification">5.1 PDPA Data Classification</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Level</th>
+<th>Examples</th>
+<th>Cloud escalation</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUBLIC</td>
+<td>Published papers, anonymised stats, open datasets</td>
+<td>Permitted</td>
+<td>Indefinite</td>
+</tr>
+<tr>
+<td>INTERNAL</td>
+<td>Research aggregates, non-PII project data</td>
+<td>Permitted (anonymised)</td>
+<td>7 years</td>
+</tr>
+<tr>
+<td>CONFIDENTIAL</td>
+<td>Researcher profiles, grant apps, pre-publication manuscripts</td>
+<td>Prohibited</td>
+<td>7 years</td>
+</tr>
+<tr>
+<td>RESTRICTED</td>
+<td>Participant IDs, interview transcripts, clinical data, IRB
+records</td>
+<td>Prohibited</td>
+<td>10 years</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enforcement points:</strong> -
+<code>suluh.pdpa.classify()</code> — every document, query, and tool
+output is classified - <code>suluh.pdpa.mask()</code> — CONFIDENTIAL and
+RESTRICTED data masked before processing - RESTRICTED queries never
+leave the intranet regardless of any other condition -
+<strong>Fail-closed:</strong> if the masker errors, the query is
+blocked, not passed through</p>
+<h3 id="irb-research-ethics-controls">5.2 IRB Research Ethics
+Controls</h3>
+<p>The IRB gate runs on <strong>every query</strong> before routing. It
+uses a deterministic decision layer — even when the underlying
+classifier is LLM-based, the decision rule is a Python function.</p>
+<p><strong>Five-question pre-screen:</strong> 1. Human participants
+involved? (directly or via their data) 2. Identifiable personal
+information? 3. Sensitive categories (health, religion, ethnicity,
+political opinion)? 4. Vulnerable populations? 5. Has an IRB protocol
+been approved for this research type?</p>
+<p>Any “yes” on (1), (2), or (3) without an approved protocol →
+<strong>IRB gate blocks</strong>.</p>
+<p><strong>Five research types for Phase 0 classifier:</strong> - Survey
+research (questionnaires, interviews) - Clinical / medical research
+(patient data) - Educational research (student data, classroom
+observation) - Indigenous community research (adat, customary knowledge)
+- Vulnerable population research (children, elderly, prisoners)</p>
+<h3 id="audit-log-immutable">5.3 Audit Log (Immutable)</h3>
+<p>The <code>ai_audit_log</code> PostgreSQL table is append-only —
+UPDATE and DELETE are rejected by trigger. All events retained 7–10
+years per PDPA.</p>
+<p>Key events: AI query submitted, SQL executed, agent swarm invoked,
+Anthropic escalation, PDPA PII detection, IRB gate decision, document
+lifecycle change, routing config change, failed authentication.</p>
+<h3 id="network-perimeter">5.4 Network Perimeter</h3>
+<ul>
+<li>The EXO cluster, AI replica, MinIO, Redis, and LangFuse are on the
+institution’s <strong>intranet only</strong></li>
+<li>Edge DGX Spark nodes are on isolated faculty VLANs with firewall
+rules</li>
+<li>FastAPI gateway is accessible from campus network and VPN —
+<strong>never internet-facing</strong></li>
+<li>Only outbound connection permitted: HTTPS to
+<code>api.anthropic.com</code> from quality router, and only when all
+conditions met</li>
+<li>All intra-service communication: TLS 1.3</li>
+</ul>
+<hr />
+<h2 id="design-principles-7-immutable">6. Design Principles (7
+Immutable)</h2>
+<p>These are <strong>constraints, not preferences</strong>. Any proposal
+that violates them requires a formal Steering Committee design
+amendment.</p>
+<ol type="1">
+<li><strong>Sovereign by default</strong> — all data, state, model
+weights stay inside Malaysian jurisdiction and institutional network
+perimeter.</li>
+<li><strong>Read-only by design</strong> — agents recommend and
+synthesise; no write to production systems. Write capability requires
+Steering Committee approval.</li>
+<li><strong>Hybrid retrieval, not pure RAG</strong> — vector search for
+documents + SQL generation for structured data + deterministic rules for
+compliance. Pure semantic RAG will produce incorrect research
+outputs.</li>
+<li><strong>Document intelligence is mandatory</strong> — Docling-grade
+OCR, table extraction, figure extraction from day one, not a Phase 2
+enhancement.</li>
+<li><strong>Auditability over novelty</strong> — every agent action is
+explainable, attributable to source agent + model version, and logged to
+immutable audit trail.</li>
+<li><strong>Evaluation-driven deployment</strong> — no model, config,
+prompt, or workflow change reaches production without passing the golden
+set regression gate.</li>
+<li><strong>Model-agnostic architecture</strong> — swap the inference
+model by updating one config value. No code changes in the orchestrator
+or retrieval layers.</li>
+</ol>
+<p>Each principle is <strong>operationalised in code</strong> — it is
+enforced at the application level, not at the configuration level. A
+misconfigured environment variable cannot bypass a principle.</p>
+<hr />
+<h2 id="development-roadmap">7. Development Roadmap</h2>
+<h3 id="phase-0-foundation-months-12">7.1 Phase 0: Foundation (Months
+1–2)</h3>
+<p><strong>Validation sprint.</strong> Answer three questions before
+committing to full build:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Task</th>
+<th>Priority</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSO bridge</td>
+<td>P0</td>
+<td>UPSI SSO → JWT validated in FastAPI skeleton</td>
+</tr>
+<tr>
+<td>Schema + FastAPI skeleton</td>
+<td>P0</td>
+<td><code>schema.yaml</code> merged, gateway passing health check</td>
+</tr>
+<tr>
+<td>Bilingual model benchmark</td>
+<td>P0</td>
+<td>Qwen vs Gemma vs Nemotron on 50 golden-set entries</td>
+</tr>
+<tr>
+<td>IRB gate prototype</td>
+<td>P0</td>
+<td>Keyword classifier for 5 research types, &lt;500ms latency</td>
+</tr>
+<tr>
+<td>Golden set v0.1</td>
+<td>P0</td>
+<td>50 Malay/English research queries with ground truth</td>
+</tr>
+<tr>
+<td>Git initialisation</td>
+<td>P0</td>
+<td>Repository under version control</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phase 0 runs on a single developer machine</strong> — a Mac
+(M-series, 64 GB) or single DGX Spark. The cluster is not required to
+start. All Tier 1–3 components are stubbed. Single SQLite or local
+Postgres for Tier 4.</p>
+<p><strong>Exit gate:</strong> SSO validated, schema merged, FastAPI
+skeleton passing, benchmark report accepted, IRB prototype validated,
+golden set at 50 entries.</p>
+<h3 id="phase-1-core-capabilities-months-36">7.2 Phase 1: Core
+Capabilities (Months 3–6)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IsRAG v0.2</td>
+<td>Vector search (bge-m3 + pgvector), persistent storage, embedding
+pipeline</td>
+</tr>
+<tr>
+<td>Dewan Council v0.2</td>
+<td>Streaming support, async deliberation</td>
+</tr>
+<tr>
+<td>Hybrid RAG</td>
+<td>pgvector HNSW + Text-to-SQL with 5-stage sqlglot sandbox</td>
+</tr>
+<tr>
+<td>Text-to-SQL</td>
+<td>Table allowlist, statement-type allowlist, row-limit, query
+timeout</td>
+</tr>
+<tr>
+<td>Docling pipeline</td>
+<td>OCR, table, figure extraction; low-confidence flagging for HITL
+review</td>
+</tr>
+<tr>
+<td>PDPA masking</td>
+<td>presidio-based PII detection, bilingual Malay/English</td>
+</tr>
+<tr>
+<td>IRB gate v1</td>
+<td>Fine-tuned classifier on 200 labelled queries</td>
+</tr>
+<tr>
+<td>Agent Registry</td>
+<td>Agent catalogue, capability manifests, signed agent deployment</td>
+</tr>
+<tr>
+<td>Chat Workbench</td>
+<td>Vue 3 UI: chat, file tree, editor, terminal, session history</td>
+</tr>
+<tr>
+<td>LangFuse</td>
+<td>Self-hosted observability, spans at every layer</td>
+</tr>
+<tr>
+<td>Golden set v0.2</td>
+<td>200 entries across 5 domains</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exit gate:</strong> All Tier 1–3 components on staging, Month
+6 metrics: accuracy 80%, adoption 25%, latency &lt; 4s, PDPA 100%.</p>
+<h3 id="phase-2-agentic-workflows-months-710">7.3 Phase 2: Agentic
+Workflows (Months 7–10)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-Agent Swarm</td>
+<td>LangGraph v1.0, 6-step pipeline, max 15 steps/workflow</td>
+</tr>
+<tr>
+<td>Research Experiment Automation</td>
+<td>Agentic workflow for designing, running, and reporting
+experiments</td>
+</tr>
+<tr>
+<td>IRB Compliance Auditing</td>
+<td>Automated IRB workflow audit, 10% random sample review</td>
+</tr>
+<tr>
+<td>Regression CI</td>
+<td>Golden set gates every deployment; PR blocks on failure</td>
+</tr>
+<tr>
+<td>IRB Audit Dashboard</td>
+<td>Admin console showing gate decisions, flagged queries, protocol
+expiry</td>
+</tr>
+<tr>
+<td>Golden set v1.0</td>
+<td>200 entries, expanded to cover consortium domains</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exit gate:</strong> 3 workflows live, Month 10 metrics:
+accuracy 88%, adoption 55%, latency &lt; 3s, Text-to-SQL 85%, swarm
+success 80%, IRB gate 95%.</p>
+<h3 id="phase-3-full-production-months-1112">7.4 Phase 3: Full
+Production (Months 11–12)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production rollout</td>
+<td>75% adoption across research staff and graduate students</td>
+</tr>
+<tr>
+<td>Admin Console</td>
+<td>Monitoring, user management, audit review</td>
+</tr>
+<tr>
+<td>Consortium API</td>
+<td>Federation spec documented and tested</td>
+</tr>
+<tr>
+<td>Post-go-live monitoring</td>
+<td>LangFuse dashboards, weekly IRB audit samples</td>
+</tr>
+<tr>
+<td>Annual compliance attestation</td>
+<td>Signed by IRB Chair, Legal/Compliance lead, Lead Architect</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exit gate:</strong> 75% adoption, consortium API tested, all
+metrics at target: accuracy 93%, swarm success 90%, latency &lt; 2.5s,
+IRB gate 98%, Anthropic escalation &lt; 5%.</p>
+<hr />
+<h2 id="golden-set-evaluation-plan">8. Golden Set &amp; Evaluation
+Plan</h2>
+<h3 id="golden-set-specification">8.1 Golden Set Specification</h3>
+<ul>
+<li><strong>50 entries (Phase 0) → 200 entries (Phase 1) → 200+ entries
+(Phase 2+)</strong></li>
+<li><strong>5 domains:</strong> agriculture, Islamic finance, indigenous
+land rights, public health, digital governance</li>
+<li><strong>Bilingual:</strong> Malay and English</li>
+<li><strong>Authored by:</strong> 30+ researchers from consortium
+institutions</li>
+<li><strong>Licence:</strong> CC-BY 4.0 with author consent; no PII</li>
+<li><strong>Format:</strong> JSONL with <code>query</code>,
+<code>golden_answer</code>, <code>domain</code>, <code>language</code>,
+<code>difficulty</code>, <code>requires_deliberation</code>,
+<code>irb_flagged</code></li>
+</ul>
+<h3 id="evaluation-metrics">8.2 Evaluation Metrics</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Method</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Answer accuracy</td>
+<td>BERTScore vs golden answer</td>
+<td>93% (Month 12)</td>
+</tr>
+<tr>
+<td>Trust calibration</td>
+<td>Pre/post Likert survey (100+ users)</td>
+<td>Effect size &gt; 0.5</td>
+</tr>
+<tr>
+<td>Cultural appropriateness</td>
+<td>Expert review, 3-point ordinal</td>
+<td>90% appropriate</td>
+</tr>
+<tr>
+<td>Hallucination rate</td>
+<td>Claimed citations that don’t exist or are misattributed</td>
+<td>&lt; 5%</td>
+</tr>
+<tr>
+<td>Provenance completeness</td>
+<td>Does answer include full chain?</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Text-to-SQL correctness</td>
+<td>Execution match</td>
+<td>92%</td>
+</tr>
+<tr>
+<td>Swarm task success</td>
+<td>LangFuse trace review</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>PDPA compliance</td>
+<td>Audit log review</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>IRB gate accuracy</td>
+<td>IRB officer review</td>
+<td>98%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="model-benchmark-phase-0">8.3 Model Benchmark (Phase 0)</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>Size</th>
+<th>Provider</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen 3.6 35B-A3B</td>
+<td>35B (3B active)</td>
+<td>Alibaba</td>
+<td>Primary candidate, MoE, bilingual</td>
+</tr>
+<tr>
+<td>Gemma 4-31B</td>
+<td>31B</td>
+<td>Google</td>
+<td>Strong multilingual</td>
+</tr>
+<tr>
+<td>Nemotron-3 Super</td>
+<td>?</td>
+<td>NVIDIA</td>
+<td>Strong tool-calling, open model</td>
+</tr>
+</tbody>
+</table>
+<p>Benchmark on 50 golden set entries, measuring BERTScore, latency, and
+token efficiency. Winner becomes the primary model; swap paths
+maintained for all three.</p>
+<hr />
+<h2 id="hardware-infrastructure">9. Hardware &amp; Infrastructure</h2>
+<h3 id="target-cluster-phase-1">9.1 Target Cluster (Phase 1+)</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Node</th>
+<th>Hardware</th>
+<th>RAM</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3× DGX Spark</td>
+<td>NVIDIA Founders Edition</td>
+<td>128 GB each</td>
+<td>Edge nodes, data-locality</td>
+</tr>
+<tr>
+<td>2× Mac Studio</td>
+<td>M3 Ultra</td>
+<td>256 GB each</td>
+<td>Core inference nodes</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>5 nodes</strong></td>
+<td><strong>1,280 GB pooled</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Interconnect:</strong> ConnectX-7 200GbE fabric</li>
+<li><strong>Disaggregation:</strong> EXO — edge prefill, core decode
+split</li>
+<li><strong>All on-premise:</strong> No cloud inference for primary
+models</li>
+</ul>
+<h3 id="phase-0-dev-environment">9.2 Phase 0 Dev Environment</h3>
+<ul>
+<li>Single Mac (M-series, 64 GB+) or single DGX Spark</li>
+<li>EXO configured for single-node inference</li>
+<li>SQLite or local Postgres for Tier 4</li>
+<li>LangFuse on <code>localhost:3000</code></li>
+<li>Vue 3 Workbench via <code>npm run dev</code></li>
+</ul>
+<h3 id="software-stack">9.3 Software Stack</h3>
+<p>All open-source. RM 0 licensing:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Models</td>
+<td>Qwen 3.6, Nemotron-3 Super, Gemma 4, bge-m3</td>
+</tr>
+<tr>
+<td>Orchestration</td>
+<td>LangGraph v1.0</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>FastAPI (Python)</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>Vue 3 + Tailwind</td>
+</tr>
+<tr>
+<td>Vector DB</td>
+<td>pgvector (HNSW index)</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>IBM Docling</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>LangFuse (self-hosted)</td>
+</tr>
+<tr>
+<td>Cache/State</td>
+<td>Redis</td>
+</tr>
+<tr>
+<td>Disaggregation</td>
+<td>EXO</td>
+</tr>
+<tr>
+<td>CDC</td>
+<td>Debezium / pg_logical</td>
+</tr>
+<tr>
+<td>Object Store</td>
+<td>MinIO</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="team-resources">10. Team &amp; Resources</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Role</th>
+<th>Allocation</th>
+<th>Responsibilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Putra Nasution</strong> — Lead Architect &amp; PI</td>
+<td>1.0 FTE · 12 months</td>
+<td>Programme design, all architecture and code, paper authorship</td>
+</tr>
+<tr>
+<td><strong>Engineering team (remote)</strong></td>
+<td>0.5 FTE · 12 months</td>
+<td>Frontend (Vue 3 Workbench), testing, documentation, LangFuse
+instrumentation</td>
+</tr>
+<tr>
+<td><strong>Dr. Suzani Mohamad Samuri</strong> — Oversight Director /
+Co-PI</td>
+<td>50% · 12 months</td>
+<td>Architecture oversight, IRB gate validation, paper co-authorship,
+stakeholder engagement</td>
+</tr>
+<tr>
+<td><strong>UPSI DBA Team</strong></td>
+<td>20% Phase 0–1</td>
+<td>PostgreSQL replication, AI read replica provisioning</td>
+</tr>
+<tr>
+<td><strong>UPSI Research Community</strong></td>
+<td>20% Phase 0</td>
+<td>Golden set authorship, query validation, feedback</td>
+</tr>
+<tr>
+<td><strong>UPSI IRB / Ethics Committee</strong></td>
+<td>Milestone-based</td>
+<td>Ethics workflow review, IRB gate validation</td>
+</tr>
+<tr>
+<td><strong>UPSI Legal &amp; Compliance</strong></td>
+<td>Milestone-based</td>
+<td>PDPA compliance sign-off, audit engagement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="budget-rm-285000-usd-60000">Budget: RM 285,000 (~USD
+60,000)</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>RM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hardware (3× DGX Spark + 2× Mac Studio + networking)</td>
+<td>175,000</td>
+</tr>
+<tr>
+<td>Software licensing (open source)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cloud (Anthropic API, &lt;5% queries)</td>
+<td>5,000</td>
+</tr>
+<tr>
+<td>Personnel (0.5 FTE × 12 months)</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td>Training &amp; change management</td>
+<td>15,000</td>
+</tr>
+<tr>
+<td>Travel &amp; publication</td>
+<td>20,000</td>
+</tr>
+<tr>
+<td>Contingency (~3.5%)</td>
+<td>10,000</td>
+</tr>
+</tbody>
+</table>
+<p>PI effort is in-kind. OpenRouter costs for Dewan Council research are
+covered by existing research credits.</p>
+<hr />
+<h2 id="risk-register">11. Risk Register</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Likelihood</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSO integration complexity</td>
+<td>Medium</td>
+<td>High</td>
+<td>Phase 0 critical path, Week 1; Phase 1 cannot begin until
+validated</td>
+</tr>
+<tr>
+<td>Model underperforms on bilingual</td>
+<td>Medium</td>
+<td>High</td>
+<td>Phase 0 benchmark: Qwen vs Gemma vs Nemotron; swap paths
+maintained</td>
+</tr>
+<tr>
+<td>Multi-agent consensus produces misleading outputs</td>
+<td>Medium</td>
+<td>High</td>
+<td>Confidence-gated display, IRB gate, regression golden set gates</td>
+</tr>
+<tr>
+<td>IRB gate adds latency</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Async pre-screening, fast-path for non-human-subject; &lt;500ms
+target</td>
+</tr>
+<tr>
+<td>PI bandwidth split across programmes</td>
+<td>High</td>
+<td>High</td>
+<td>Engineering team absorbs implementation; PI focuses on architecture
++ papers</td>
+</tr>
+<tr>
+<td>Hardware procurement delay</td>
+<td>Medium</td>
+<td>High</td>
+<td>Phase 0 runs on a single Mac if cluster slips; 6-week fast-track
+procurement</td>
+</tr>
+<tr>
+<td>Academic adoption lower than forecast</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Early adopter programme, researcher workshops, embedded support</td>
+</tr>
+<tr>
+<td>Open-source model quality regression</td>
+<td>Low</td>
+<td>High</td>
+<td>Model swap paths maintained; Claude API escalation as safety
+net</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="repository-structure">12. Repository Structure</h2>
+<pre><code>suluh-ecosystem/                          ← private monorepo
+├── README.md                             ← ecosystem-level overview
+├── pyproject.toml                        ← workspace root
+├── LICENSE                               ← Apache 2.0
+│
+├── packages/
+│   ├── israg/                            ← Package 1: provenance-aware RAG
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── src/israg/
+│   │   │   ├── __init__.py
+│   │   │   └── israg_engine.py           ← 783 lines, working
+│   │   ├── tests/
+│   │   │   ├── test_engine.py            ← 10 tests, all passing
+│   │   │   └── test_trust.py             ← 8 tests, all passing
+│   │   └── examples/
+│   │       ├── basic_usage.py
+│   │       ├── trust_verification.py
+│   │       ├── cultural_context.py
+│   │       └── council_integration.py
+│   │
+│   ├── council/                          ← Package 2: multi-LLM deliberation
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── src/council/
+│   │   │   ├── __init__.py
+│   │   │   └── council_engine.py         ← 775 lines, working
+│   │   └── examples/
+│   │
+│   └── suluh/                            ← Package 3: orchestration platform
+│       ├── pyproject.toml
+│       ├── README.md
+│       └── src/suluh/                    ← skeleton, zero implementation
+│           ├── gateway/                  ← FastAPI: JWT, RBAC, audit, SSE
+│           ├── router/                   ← Query classifier + complexity scorer
+│           ├── swarm/                    ← LangGraph Swarm Coordinator
+│           ├── rag/                      ← Hybrid RAG (vector + SQL)
+│           ├── docling/                  ← Document intelligence
+│           ├── pdpa/                     ← PDPA masking layer
+│           ├── irb/                      ← IRB ethics gate
+│           └── registry/                 ← Agent registry
+│
+├── docs/
+│   ├── ARCHITECTURE.md                   ← ecosystem-level architecture
+│   ├── PRINCIPLES.md                     ← 7 immutable design principles
+│   ├── COMPLIANCE.md                     ← PDPA + IRB enforcement model
+│   ├── SULUH-PRD-ANALYSIS.md             ← analysis of source PRD
+│   ├── SULUH-README-ORIGINAL.md          ← preserved original
+│   └── REBRAND-KRAG-TO-ISRAG.md          ← migration note
+│
+├── research/
+│   ├── proposal/
+│   │   └── SULUH-ECOSYSTEM-PROPOSAL.md   ← unified programme proposal
+│   ├── papers/
+│   │   ├── paper-1-israg.md
+│   │   ├── paper-2-council.md
+│   │   └── paper-3-suluh.md
+│   └── golden-sets/                      ← (empty, Phase 0 deliverable)
+│
+├── benchmarks/                           ← (planned)
+└── ops/                                  ← (planned)</code></pre>
+<hr />
+<h2 id="developer-quick-start">13. Developer Quick Start</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> suluh-ecosystem</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">&quot;packages/israg[dev]&quot;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">&quot;packages/council[dev]&quot;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">&quot;packages/suluh[dev]&quot;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Test IsRAG</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pytest packages/israg/tests/ <span class="at">-v</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Run IsRAG engine</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">&quot;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">from israg import IsRAGEngine, SourceType</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">e = IsRAGEngine()</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">e.ingest(content=&#39;ASEAN has 670M people&#39;, author=&#39;UN&#39;, source_type=SourceType.GOVERNMENT)</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">print(e.retrieve(&#39;ASEAN population&#39;))</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Dewan Council (mock mode — no API key needed)</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">&quot;</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="st">from council import DewanCouncil</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="st">c = DewanCouncil()</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="st">result = c.deliberate(&#39;What is the best AI strategy for ASEAN higher education?&#39;)</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="st">print(result.final_answer)</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="open-questions-for-openscience">14. Open Questions for
+OpenScience</h2>
+<p>These are the questions OpenScience should be aware of as it
+researches the project:</p>
+<ol type="1">
+<li><p><strong>Naming:</strong> Is “SULUH” the final ecosystem name, or
+should we reserve space for a model-level branding (e.g.,
+SULUH-EDU)?</p></li>
+<li><p><strong>Training data (“100+ years of UPSI data”):</strong> What
+is the actual composition? Academic content (theses, journals),
+institutional admin (PDPA-sensitive), Malay-language education corpus,
+or all three? The training pipeline, PDPA posture, and licensing all
+depend on this.</p></li>
+<li><p><strong>Socratic AI features:</strong> What does “Socratic” mean
+pedagogically? Dialogue-based guided inquiry, adaptive tutoring
+(Khanmigo-style), or lesson plan generation? The SFT dataset design and
+eval methodology change significantly.</p></li>
+<li><p><strong>Model training strategy:</strong> QLoRA (fast, 95% of
+full FT quality), continued pretraining (CPT) on UPSI corpus, or full
+fine-tune? QLoRA is the default recommendation for Phase 0 with
+escalation to CPT if results don’t meet the accuracy bar.</p></li>
+<li><p><strong>Consortium expansion:</strong> Phase 3 federation design
+— is it a product line, a consulting offering, or a hosted inference
+service? Three very different operating models.</p></li>
+<li><p><strong>Open-source licence:</strong> The codebase is Apache 2.0.
+The model weights will need a separate licence decision (Apache-style,
+Llama-style restrictions, or open-weights-not-open-source).</p></li>
+<li><p><strong>Phase 2+ budget:</strong> The RM 285K covers Phase 0–3
+(12 months). Phase 2 expansion (public inference, consortium launch) may
+need RM 5M — timeline and fundraising vehicle TBD.</p></li>
+</ol>
+<hr />
+<h2 id="relationship-to-other-projects">15. Relationship to Other
+Projects</h2>
+<pre><code>~/Documents/PROJECTS/
+├── suluh-ecosystem/      ← THIS REPOSITORY (consolidated, private)
+├── krag/                 ← legacy: superseded by packages/israg/
+├── dewan-council/        ← legacy: superseded by packages/council/
+├── suluh-ai/             ← legacy: superseded by packages/suluh/
+└── INTELIGENSIA-English/ ← book; SULUH ecosystem referenced as Chapter 12</code></pre>
+<hr />
+<p><strong>End of PRD.</strong> This document should be treated as the
+canonical product specification for the SULUH Ecosystem. The code, the
+architecture docs, and the papers all defer to this file. Update it when
+the architecture or scope changes.</p>
+<hr />
+<p><em>Putra Nasution — Lead Architect &amp; Principal
+Investigator</em><br />
+<em>poetra@gmail.com</em><br />
+<em>July 2026</em></p>
+</body>
+</html>
